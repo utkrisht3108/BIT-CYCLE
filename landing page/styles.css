@@ -80,6 +80,10 @@ h1{
 }
 
 /* signup */
+.tab:hover{
+    cursor: pointer;
+    color: rgb(204, 204, 245);
+}
 .login-box {
     font-family: 'Arvo', serif;
     width: 100%;
@@ -243,7 +247,9 @@ h1{
 :before {
     box-sizing: border-box
 }
-
+input:focus{
+    outline: none;
+}
 .clearfix:after,
 .clearfix:before {
     content: '';
