@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#e5e5e5}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:#1b1c24;stroke:#1b1c24;stroke-width:.5px}
+        </style>
+        <clipPath id="clip-path">
+            <circle id="Ellipse_44" cx="12" cy="12" r="12" class="cls-1" data-name="Ellipse 44"/>
+        </clipPath>
+    </defs>
+    <g id="ic_web_profile_login" transform="translate(-63.348)">
+        <g id="Mask_Group_10" class="cls-2" data-name="Mask Group 10" transform="translate(63.348)">
+            <rect id="Image_26" width="24" height="24" class="cls-1" data-name="Image 26" rx="4"/>
+        </g>
+        <g id="noun_Login_1155273" transform="translate(42.298 -14.673)">
+            <path id="Path_2366" d="M56.127 22.367a1.757 1.757 0 0 0-1.757-1.757h-2.551a.439.439 0 1 0 0 .878h2.551a.878.878 0 0 1 .878.878v9.394a.878.878 0 0 1-.878.878h-2.551a.439.439 0 0 0 0 .878h2.551a1.757 1.757 0 0 0 1.757-1.757z" class="cls-3" data-name="Path 2366" transform="translate(-19.027)"/>
+            <path id="Path_2367" d="M30.337 34.371a.439.439 0 0 0-.024.621l2.119 2.281h-4.993a.439.439 0 0 0 0 .878h4.993l-2.119 2.284a.439.439 0 0 0 .639.6l2.806-3.021.022-.029.024-.033a.439.439 0 0 0 .022-.04c0-.011.013-.022.018-.035a.439.439 0 0 0 .015-.048v-.033a.439.439 0 0 0 0-.081.439.439 0 0 0 0-.081V37.6a.439.439 0 0 0-.015-.048c0-.011-.011-.022-.018-.035a.439.439 0 0 0-.022-.04l-.024-.033-.022-.029-2.806-3.021a.439.439 0 0 0-.615-.023z" class="cls-3" data-name="Path 2367" transform="translate(0 -10.65)"/>
+        </g>
+    </g>
+</svg>
