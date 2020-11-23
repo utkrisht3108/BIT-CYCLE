@@ -250,6 +250,9 @@ h1{
 input:focus{
     outline: none;
 }
+.button:focus{
+    outline: none;
+}
 .clearfix:after,
 .clearfix:before {
     content: '';
