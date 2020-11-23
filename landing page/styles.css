@@ -2,390 +2,394 @@ html {
   scroll-behavior: smooth;
 }
 
-#title {
-  background-image: url("images/bit.jpg");
-  background-size: cover;
-  color: white;
+#title{
+     background-image: url("images/bit.jpg");
+     background-size: cover;
+     color: white;
 }
 #title::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  height: 140%;
-  left: 0px;
-  background-color: rgba(90, 86, 86, 0.45);
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 140%;
+    left: 0px;
+    background-color: rgba(90, 86, 86, 0.45);
 }
-.container-fluid1 {
-  padding: 3% 10%;
+.container-fluid1{
+     padding: 3% 10%;
+} 
+.body{
+    
 }
-
 /* navigation */
-.navbar {
-  padding: 0 0 4.5rem;
+.navbar{
+     padding:0 0 4.5rem;
 }
-.navColor {
-  color: whitesmoke;
+.navColor{
+     color: whitesmoke;
 }
-.navColor1 {
-  color: whitesmoke;
+.navColor1{
+     color: whitesmoke;
 }
-.navColor1:hover {
-  color: white;
+.navColor1:hover{
+     color: white
 }
-.navColor:hover {
-  color: rgb(228, 245, 244);
-  transform: scale(1.15);
+.navColor:hover{
+     color: rgb(228, 245, 244);
+     transform: scale(1.15);
 }
-.navbar-brand {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 2.5rem;
-  font-weight: bold;
-  /* margin-bottom: 10%; */
+.navbar-brand{
+     font-family: 'Ubuntu', sans-serif;
+     font-size: 2.5rem;
+     font-weight: bold;
+     /* margin-bottom: 10%; */
 }
-.nav-item {
-  padding: 0 25px;
+.nav-item{
+     padding: 0 25px;
 }
-.nav-link {
-  font-size: 1.25rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
+.nav-link{
+     font-size: 1.25rem;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 900;
 }
-.img {
-  width: 15%;
-  height: 15%;
+.img{
+     width: 15%;
+     height: 15%;
 }
 /* ahahaha */
-.title-image {
-  margin-left: 10%;
-  width: 80%;
-  height: 85%;
-  padding: 0px 10%;
+.title-image{
+      margin-left: 10%;
+     width: 80%;
+     height: 85%; 
+     padding: 0px 10%;
 }
 /* khatam */
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  line-height: 1.5;
+h1{
+     font-family: 'Montserrat', sans-serif;
+     font-size: 3rem;
+     font-weight: bold;
+     line-height: 1.5;
 }
-.download-button {
-  margin: 5% 3% 5% 0;
+.download-button{
+     margin: 5% 3% 5% 0;
 }
-.loginButton:hover {
-  color: black;
+.loginButton:hover{
+     color: black;
 }
 
 /* signup */
-.tab:hover {
-  cursor: pointer;
-  color: rgb(204, 204, 245);
+.tab:hover{
+    cursor: pointer;
+    color: rgb(204, 204, 245);
 }
 .login-box {
-  font-family: "Arvo", serif;
-  width: 100%;
-  margin: auto;
-  max-width: 525px;
-  min-height: 670px;
-  position: relative;
-  background-image: url("images/wall.jpg");
-  background-size: cover;
-  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Arvo', serif;
+    width: 100%;
+    margin: auto;
+    max-width: 525px;
+    min-height: 670px;
+    position: relative;
+    background-image: url("images/wall.jpg");
+    background-size: cover;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
 
 .login-snip {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  padding: 60px 70px 50px 70px;
-  background: rgba(53, 53, 54, 0.9);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 60px 70px 50px 70px;
+    background: rgba(53, 53, 54, 0.9)
 }
-.thodaAur {
-  padding-top: 5%;
+.thodaAur{
+     padding-top: 5%;
 }
 .login-snip .login,
 .login-snip .sign-up-form {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  transition: all 0.4s linear;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear
 }
 
 .login-snip .sign-in,
 .login-snip .sign-up,
 .login-space .group .check {
-  display: none;
+    display: none
 }
 
 .login-snip .tab,
 .login-space .group .label,
 .login-space .group .button {
-  text-transform: uppercase;
+    text-transform: uppercase
 }
 
 .login-snip .tab {
-  font-size: 22px;
-  margin-right: 15px;
-  padding-bottom: 5px;
-  margin: 0 15px 10px 0;
-  display: inline-block;
-  border-bottom: 2px solid transparent;
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent
 }
 
-.login-snip .sign-in:checked + .tab,
-.login-snip .sign-up:checked + .tab {
-  color: #fff;
-  border-color: #1161ee;
+.login-snip .sign-in:checked+.tab,
+.login-snip .sign-up:checked+.tab {
+    color: #fff;
+    border-color: #1161ee
 }
 
 .login-space {
-  min-height: 345px;
-  position: relative;
-  perspective: 1000px;
-  transform-style: preserve-3d;
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d
 }
 
 .login-space .group {
-  margin-top: 14px;
+    margin-top: 14px
 }
 
 .login-space .group .label,
 .login-space .group .input,
 .login-space .group .button {
-  width: 100%;
-  color: #fff;
-  display: block;
+    width: 100%;
+    color: #fff;
+    display: block
 }
 
 .login-space .group .input,
 .login-space .group .button {
-  border: none;
-  padding: 15px 20px;
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1)
 }
 
 .login-space .group input[data-type="password"] {
-  text-security: circle;
-  -webkit-text-security: circle;
+    text-security: circle;
+    -webkit-text-security: circle
 }
 
 .login-space .group .label {
-  color: #aaa;
-  font-size: 12px;
+    color: #aaa;
+    font-size: 12px
 }
 
 .login-space .group .button {
-  background: #1161ee;
+    background: #1161ee
 }
 
 .login-space .group label .icon {
-  width: 15px;
-  height: 15px;
-  border-radius: 2px;
-  position: relative;
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.1);
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, .1)
 }
 
 .login-space .group label .icon:before,
 .login-space .group label .icon:after {
-  content: "";
-  width: 10px;
-  height: 2px;
-  background: #fff;
-  position: absolute;
-  transition: all 0.2s ease-in-out 0s;
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all .2s ease-in-out 0s
 }
 
 .login-space .group label .icon:before {
-  left: 3px;
-  width: 5px;
-  bottom: 6px;
-  transform: scale(0) rotate(0);
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0)
 }
 
 .login-space .group label .icon:after {
-  top: 6px;
-  right: 0;
-  transform: scale(0) rotate(0);
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0)
 }
 
-.login-space .group .check:checked + label {
-  color: #fff;
+.login-space .group .check:checked+label {
+    color: #fff
 }
 
-.login-space .group .check:checked + label .icon {
-  background: #1161ee;
+.login-space .group .check:checked+label .icon {
+    background: #1161ee
 }
 
-.login-space .group .check:checked + label .icon:before {
-  transform: scale(1) rotate(45deg);
+.login-space .group .check:checked+label .icon:before {
+    transform: scale(1) rotate(45deg)
 }
 
-.login-space .group .check:checked + label .icon:after {
-  transform: scale(1) rotate(-45deg);
+.login-space .group .check:checked+label .icon:after {
+    transform: scale(1) rotate(-45deg)
 }
 
-.login-snip .sign-in:checked + .tab + .sign-up + .tab + .login-space .login {
-  transform: rotate(0);
+.login-snip .sign-in:checked+.tab+.sign-up+.tab+.login-space .login {
+    transform: rotate(0)
 }
 
-.login-snip .sign-up:checked + .tab + .login-space .sign-up-form {
-  transform: rotate(0);
+.login-snip .sign-up:checked+.tab+.login-space .sign-up-form {
+    transform: rotate(0)
 }
 
 *,
 :after,
 :before {
-  box-sizing: border-box;
+    box-sizing: border-box
 }
-input:focus {
-  outline: none;
+input:focus{
+    outline: none;
 }
 .clearfix:after,
 .clearfix:before {
-  content: "";
-  display: table;
+    content: '';
+    display: table
 }
 
 .clearfix:after {
-  clear: both;
-  display: block;
+    clear: both;
+    display: block
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none
 }
 
 .hr {
-  height: 2px;
-  margin: 30px 0 30px 0;
-  background: rgba(255, 255, 255, 0.2);
+    height: 2px;
+    margin: 30px 0 30px 0;
+    background: rgba(255, 255, 255, .2)
 }
 
 .foot {
-  text-align: center;
+    text-align: center
 }
 
 .card {
-  width: 80%;
-  margin-bottom: 10%;
-  left: 10%;
+    width: 80%;
+    margin-bottom: 10%;
+    left: 10%
 }
 
 ::placeholder {
-  color: #b3b3b3;
+    color: #b3b3b3
 }
 
 /* how it works */
-.howWork {
-  text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: 3rem;
-  font-family: "Aclonica", sans-serif;
-  border-bottom: 5px outset black;
-  border-radius: 9%;
+.howWork{
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    font-family: 'Aclonica', sans-serif;
+    border-bottom: 5px outset black;
+    border-radius: 9%;
 }
-#features {
-  padding: 6% 15%;
-  background-image: -webkit-linear-gradient(65deg, #f3f1ed 40%, #f0e9dc 50%);
+#features{
+    padding: 6% 15%;
+    background-image: -webkit-linear-gradient(65deg, #f7f7f7 10%, #e4ffe0 80%);
 }
-.photo {
-  text-align: center;
-  padding: 2%;
+.photo{
+     text-align: center;
+     padding: 2%;
 }
-h3 {
-  font-weight: bold;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
+h3{
+     font-weight: bold;
+     text-align: center;
+     font-family: 'Montserrat', sans-serif;
 }
-.head1 {
-  padding-top: 10%;
+.head1{
+    padding-top: 10%;
 }
-.container-fluid2 {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+.container-fluid2{
+     width: 100%;
+     margin-right: auto;
+     margin-left: auto;
 }
-.icon1 {
-  font-size: 400%;
-  padding: 12.5%;
-  border: 10px outset #373a40;
-  background-color: #eeeded;
-  border-radius: 100%;
-  color: #494ca2;
+.icon1{
+     font-size: 400%;
+     padding: 12.5%;
+     border: 10px outset #373a40;
+     background-color: #eeeded;
+     border-radius: 100%;
+     color: #494ca2;
 }
-.icon1:hover {
-  transform: scale(1.175);
-  color: #ffa34d;
-  border: 10px outset #feb72b;
-  border-radius: 100%;
-  background-color: #323232;
-  transition: 0.3s;
+.icon1:hover{
+     transform: scale(1.175);
+     color: #ffa34d;
+      border: 10px outset #feb72b;
+     border-radius: 100%;
+     background-color: #323232;
+     transition: 0.3s;
 }
-.container-fluid {
-  color: gray;
+.container-fluid{
+     color: gray;
 }
-hr {
-  border-style: none;
-  border-top-style: dashed;
-  border-color: rgb(27, 27, 29);
-  border-width: 1px;
-  margin-top: 0;
-  margin-bottom: 0;
-  background-image: -webkit-linear-gradient(295deg, #f3f1ed 40%, #f0e9dc 50%);
-}
+
 /* reviews */
 
-.frow {
-  border: 5px outset rgb(247, 247, 247);
-  border-radius: 1%;
-  background-color: whitesmoke;
+.frow{
+   border: 5px outset rgb(0, 0, 0);
+   border-radius: 1%;
+   background-image: url("images/wall.jpg");
+   background-size: cover;
+   color: white;
 }
-#reviews {
-  padding: 6% 15%;
-  background-image: -webkit-linear-gradient(295deg, #f3f1ed 40%, #f0e9dc 50%);
+#reviews{
+    padding: 4% 15% 10%;
+    background-image: -webkit-linear-gradient(295deg, #f7f7f7 10%, #e4ffe0 80%);
 }
-.revHead {
-  padding: 3%;
+h2{
+     font-family: 'Coming Soon', cursive;
+     font-weight: bold;
+     font-size: 1.5rem;
+     line-height: 1.5;
 }
-.rev {
-  width: 100%;
-  text-align: center;
-  height: 300px;
-  /* background-color: rgb(109, 105, 105); */
-  border-radius: 2%;
+#ut{
+    text-align: center;
 }
-.revText {
-  /* color: whitesmoke; */
-  font-size: 2rem;
+.test-image{
+     width: 10%;
+     border-radius: 100%;
+     margin: 20px;
+     padding-bottom: 2%;
+}
+.carousel-item{
+     padding: 3% 15%;
+}
+.revHead{
+    padding: 3%;
+    font-family: 'Trykker', serif;
+    font-weight: bolder;
 }
 
 /* FOOTER */
-.fsoc {
-  background-color: #799351;
+.fsoc{
+    background-color: #799351;
 }
-.fback {
-  background-color: #000000;
+.fback{
+    background-color: #000000;
 }
-.uparthoda {
-  padding-top: 3%;
+.uparthoda{
+    padding-top: 3%;
 }
-.feedback {
-  width: 60px;
-  margin-bottom: 4px;
+.feedback{
+    width: 60px;
+    margin-bottom: 4px;
 }
-.fandar {
-  color: whitesmoke;
+.fandar{
+    color: whitesmoke;
 }
-.flink:hover {
-  color: turquoise;
+.flink:hover{
+    color: turquoise;
 }
