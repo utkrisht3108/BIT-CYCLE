@@ -1,336 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>BIT Cycle</title>
-    <link rel="icon" href="favicon (1).ico" />
-    <script
-      src="https://kit.fontawesome.com/eec8b92df6.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="icon" href="favicon (1).ico">
+    <script src="https://kit.fontawesome.com/eec8b92df6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Arvo&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Trykker&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+</head>
+<body>
     <section id="title">
-      <div class="container-fluid1">
-        <!-- Nav Bar -->
-        <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand navColor1" href=""
-            ><img src="images/logo.png" class="img" alt="" /> BIT Cycle</a
-          >
-          <button
-            class="navbar-toggler navbar-light"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link navColor" href="#features">How It Works</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navColor" href="#reviews">Reviews</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navColor" href="#footer"
-                  ><img src="images/login.svg" class="svgImg" alt="" /> Contact
-                  Us</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <!-- Title -->
-        <div class="row">
-          <div class="col-lg-6 mx-auto p-0">
-            <div class="card">
-              <div class="login-box">
-                <div class="login-snip">
-                  <input
-                    id="tab-1"
-                    type="radio"
-                    name="tab"
-                    class="sign-in"
-                    checked
-                  /><label for="tab-1" class="tab">Login</label>
-                  <input
-                    id="tab-2"
-                    type="radio"
-                    name="tab"
-                    class="sign-up"
-                  /><label for="tab-2" class="tab">Sign Up</label>
-                  <div class="login-space">
-                    <div class="login">
-                      <div class="group">
-                        <label for="email" class="label">Email Address</label>
-                        <input
-                          id="pass"
-                          type="text"
-                          class="input login-email"
-                          placeholder="Enter your email address"
-                        />
-                      </div>
-                      <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input
-                          id="pass"
-                          type="password"
-                          class="input login-password"
-                          data-type="password"
-                          placeholder="Enter your password"
-                        />
-                      </div>
-                      <div class="group">
-                        <input
-                          id="check"
-                          type="checkbox"
-                          class="check"
-                          checked
-                        />
-                        <label for="check"
-                          ><span class="icon"></span> Keep me Signed in</label
-                        >
-                      </div>
-                      <div class="group">
-                        <input
-                          type="submit"
-                          class="button login-btn"
-                          value="Sign In"
-                        />
-                      </div>
-                      <div class="hr"></div>
-                      <div class="foot"><a href="#">Forgot Password?</a></div>
-                    </div>
-                    <div class="sign-up-form">
-                      <div class="group">
-                        <label for="pass" class="label">Email Address</label>
-                        <input
-                          id="pass"
-                          type="text"
-                          class="input signup-email"
-                          placeholder="Enter your email address"
-                        />
-                      </div>
-                      <div class="group">
-                        <label for="pass" class="label">Password</label>
-                        <input
-                          id="pass"
-                          type="password"
-                          class="input signup-password"
-                          data-type="password"
-                          placeholder="Create your password"
-                        />
-                      </div>
-                      <div class="group">
-                        <label for="pass" class="label">Repeat Password</label>
-                        <input
-                          id="pass"
-                          type="password"
-                          class="input signup-passwordConfirm"
-                          data-type="password"
-                          placeholder="Repeat your password"
-                        />
-                      </div>
-                      <div class="group thodaAur">
-                        <input
-                          type="submit"
-                          class="button signup-btn"
-                          value="Sign Up"
-                        />
-                      </div>
-                      <div class="hr"></div>
-                      <div class="foot">
-                        <label for="tab-1">Already Member?</label>
-                      </div>
-                    </div>
-                  </div>
+        <div class="container-fluid1">
+            <!-- Nav Bar -->
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand navColor1" href=""><img src="images/logo.png" class="img" alt=""> BIT Cycle</a>
+                <button class="navbar-toggler navbar-light btn-outline-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link navColor" href="#features">How It Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navColor" href="#reviews">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navColor" href="#footer"><img src="images/login.svg" class="svgImg" alt=""> Contact Us</a>
+                        </li>
+                    </ul>
                 </div>
-              </div>
+            </nav>
+            <!-- Title -->
+            <div class="row">
+                <div class="col-lg-6 mx-auto p-0">
+                    <div class="card">
+                        <div class="login-box">
+                            <div class="login-snip"> 
+                                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> 
+                                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                                <div class="login-space">
+                                    <div class="login">
+                                        <div class="group"> <label for="pass" class="label">Email Address</label> <input id="pass" type="text" class="input" placeholder="Enter your email address"> </div>
+                                        <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
+                                        <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
+                                        <div class="group"> <input type="submit" class="button" value="Sign In"> </div>
+                                        <div class="hr"></div>
+                                        <div class="foot"> <a href="#">Forgot Password?</a> </div>
+                                    </div>
+                                    <div class="sign-up-form">
+                                        <div class="group"> <label for="pass" class="label">Email Address</label> <input id="pass" type="text" class="input" placeholder="Enter your email address"> </div>
+                                        <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
+                                        <div class="group"> <label for="pass" class="label">Repeat Password</label> <input id="pass" type="password" class="input" data-type="password" placeholder="Repeat your password"> </div>
+                                        <div class="group thodaAur"> <input type="submit" class="button" value="Sign Up"> </div>
+                                        <div class="hr"></div>
+                                        <div class="foot"> <label for="tab-1">Already Member?</label> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mx-auto p-0">
+                    <img class="title-image" src="images/cycle.jpg" alt="cycle-mockup">
+                </div>
             </div>
-          </div>
-          <div class="col-lg-6 mx-auto p-0">
-            <img
-              class="title-image"
-              src="images/cycle.jpg"
-              alt="cycle-mockup"
-            />
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- How it Works -->
+      <!-- How it Works -->
     <section id="features">
-      <h1 class="howWork">How It Works</h1>
-      <div class="row">
-        <div class="col-lg-3 photo">
-          <i class="fas fa-search-location icon1"></i>
-          <h3 class="head1">Select Cycle</h3>
-          <p class="container-fluid">
-            Choose Cycle based on availability and rent.
-          </p>
+        <h1 class="howWork ">How It Works</h1>
+        <div class="row ">
+            <div class="col-lg-3 photo">
+                <i class="fas fa-search-location icon1 "></i>
+                <h3 class="head1">Select Cycle</h3>
+                <p class="container-fluid">Choose Cycle based on availability and rent.</p>
+            </div>
+            <div class="col-lg-3 photo">
+                <i class="fas fa-phone icon1 "></i>
+                <h3 class="head1">Contact Owner</h3>
+                <p class="container-fluid">Decide and Confirm the duration of your rent.</p>
+            </div>
+            <div class="col-lg-3 photo">
+                <i class="fas fa-biking icon1 "></i>
+                <h3 class="head1">Enjoy Cycling.</h3>
+                <p class="container-fluid">Save your time and energy by cycling and enjoying.</p>
+            </div>
+            <div class="col-lg-3 photo">
+                <i class="fas fa-undo-alt icon1 "></i>
+                <h3 class="head1">Return to owner.</h3>
+                <p class="container-fluid">Return the cycle to the owner by the due date.</p>
+            </div>
         </div>
-        <div class="col-lg-3 photo">
-          <i class="fas fa-phone icon1"></i>
-          <h3 class="head1">Contact Owner</h3>
-          <p class="container-fluid">
-            Decide and Confirm the duration of your rent.
-          </p>
-        </div>
-        <div class="col-lg-3 photo">
-          <i class="fas fa-biking icon1"></i>
-          <h3 class="head1">Enjoy Cycling.</h3>
-          <p class="container-fluid">
-            Save your time and energy by cycling and enjoying.
-          </p>
-        </div>
-        <div class="col-lg-3 photo">
-          <i class="fas fa-undo-alt icon1"></i>
-          <h3 class="head1">Return to owner.</h3>
-          <p class="container-fluid">
-            Return the cycle to the owner by the due date.
-          </p>
-        </div>
-      </div>
+        
     </section>
-    <hr />
-
     <!-- reviews -->
     <section id="reviews">
-      <div class="frow">
-        <h1 class="revHead">Reviews</h1>
-        <div class="rev">
-          <p class="revText">mast banaya haibe partyyyy</p>
+        <div class="frow">
+            <h1 class="revHead">Reviews</h1>
+            <div id="ut" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="hover">
+                <ol class="carousel-indicators">
+                    <li data-target="#ut" data-slide-to="0" class="active"></li>
+                    <li data-target="#ut" data-slide-to="1"></li>
+                    <li data-target="#ut" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h2>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</h2>
+                        <img src="images/logo.png" class="test-image" alt="dog-profile">
+                        <em>BIT Mesra</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h2 class="testimonial-text">veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderi</h2>
+                        <img src="images/Utkrisht.jpg" class="test-image" alt="lady-profile">
+                        <em>utkrisht3108</em>
+                    </div>
+                    <div class="carousel-item">
+                        <h2 class="testimonial-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+                        <img src="images/lady-img.jpg" class="test-image" alt="lady-profile">
+                        <em>Sasur</em>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#ut" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#ut" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
-      </div>
     </section>
-  </body>
-  <!-- Footer -->
-  <footer class="page-footer font-small blue-grey lighten-5 fandar" id="footer">
+</body>
+<!-- Footer -->
+<footer class="page-footer font-small blue-grey lighten-5 fandar" id="footer">
     <div class="fsoc">
-      <div class="container">
-        <div class="row py-4 d-flex align-items-center">
-          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0">Get connected with us on social networks!</h6>
-          </div>
-          <div class="col-md-6 col-lg-7 text-center text-md-right">
-            <a class="flink fb-ic">
-              <i class="fab fa-facebook-f white-text mr-4"> </i>
-            </a>
-            <a class="flink tw-ic">
-              <i class="fab fa-twitter white-text mr-4"> </i>
-            </a>
-            <a class="flink gplus-ic">
-              <i class="fab fa-google-plus-g white-text mr-4"> </i>
-            </a>
-            <a class="flink li-ic">
-              <i class="fab fa-linkedin-in white-text mr-4"> </i>
-            </a>
-            <a class="flink ins-ic">
-              <i class="fab fa-instagram white-text"> </i>
-            </a>
-          </div>
+        <div class="container">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h6 class="mb-0">Get connected with us on social networks!</h6>
+                </div>
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+                    <a class="flink fb-ic">
+                        <i class="fab fa-facebook-f white-text mr-4"> </i>
+                    </a>
+                    <a class="flink tw-ic">
+                        <i class="fab fa-twitter white-text mr-4"> </i>
+                    </a>
+                    <a class="flink gplus-ic">
+                        <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                    </a>
+                    <a class="flink li-ic">
+                        <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                    </a>
+                    <a class="flink ins-ic">
+                        <i class="fab fa-instagram white-text"> </i>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
     <div class="fback">
-      <div class="container text-center text-md-left">
-        <div class="row dark-grey-text uparthoda">
-          <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-            <h6 class="text-uppercase font-weight-bold">Feedback!</h6>
-            <hr class="teal accent-3 d-inline-block mx-auto feedback" />
-            <p>
-              Do give us your valuable feedback and reviews by contacting us
-              with the mentioned social media accounts
-            </p>
-          </div>
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase font-weight-bold">Cycle Info</h6>
-            <hr class="teal accent-3 d-inline-block mx-auto feedback" />
-            <p>
-              <a class="flink dark-grey-text" href="#!">Edit cycle details</a>
-            </p>
-            <p>
-              <a class="flink dark-grey-text" href="#!"
-                >Change Cycle Availability</a
-              >
-            </p>
-            <p>
-              <a class="flink dark-grey-text" href="#!">Add Cycle</a>
-            </p>
-            <p>
-              <a class="flink dark-grey-text" href="#!">Remove Cycle</a>
-            </p>
-          </div>
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase font-weight-bold">User Info</h6>
-            <hr
-              class="teal accent-3 mb-4 d-inline-block mx-auto"
-              style="width: 60px"
-            />
-            <p>
-              <a class="flink dark-grey-text" href="#!">Create Account</a>
-            </p>
-            <p>
-              <a class="flink dark-grey-text" href="#!">Login</a>
-            </p>
-            <p>
-              <a class="flink dark-grey-text" href="#!">Edit User details</a>
-            </p>
-            <p>
-              <a class="flink dark-grey-text" href="#!">Logout</a>
-            </p>
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <h6 class="text-uppercase font-weight-bold">Contact</h6>
-            <hr
-              class="teal accent-3 mb-4 d-inline-block mx-auto"
-              style="width: 60px"
-            />
-            <p><i class="fas fa-envelope mr-3"></i> bitcycle@gmail.com</p>
-            <p><i class="fas fa-phone mr-3"></i> +91 7045457636</p>
-            <p><i class="fas fa-phone mr-3"></i> +91 peeeeeeeee</p>
-            <p><i class="fas fa-phone mr-3"></i> +91 ladduladdu</p>
-          </div>
+        <div class="container text-center text-md-left">
+            <div class="row dark-grey-text uparthoda">
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Feedback!</h6>
+                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
+                    <p>Do give us your valuable feedback and reviews by contacting us with the mentioned social media accounts</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Cycle Info</h6>
+                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Edit cycle details</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Change Cycle Availability</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Add Cycle</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Remove Cycle</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">User Info</h6>
+                    <hr class="teal accent-3 mb-4  d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Create Account</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Login</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Edit User details</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Logout</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="teal accent-3 mb-4  d-inline-block mx-auto" style="width: 60px;">
+                    <p><i class="fas fa-envelope mr-3"></i> bitcycle@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 7045457636</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 peeeeeeeee</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 ladduladdu</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="footer-copyright text-center text-black-50 py-3">
-        IEEE MegaProject: Team Name - SUPI6E
-      </div>
+    <div class="footer-copyright text-center text-black-50 py-3">IEEE MegaProject: Team Name - SUPI6E</div>
     </div>
-  </footer>
-  <script src="landingPage.js"></script>
+</footer>
 </html>
