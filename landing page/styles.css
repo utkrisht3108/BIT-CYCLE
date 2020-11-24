@@ -1,7 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+.hidden {
+  display: none;
+}
 #title{
      background-image: url("images/bit.jpg");
      background-size: cover;
@@ -354,13 +356,17 @@ h3{
    background-size: cover;
    color: white;
 }
+.readBtn{
+    font-size: 1.2rem;
+    font-family: monospace;
+}
 #reviews{
     padding: 4% 15% 10%;
     background-image: -webkit-linear-gradient(295deg, #f7f7f7 10%, #e4ffe0 80%);
 }
 h2{
-     font-family: 'Coming Soon', cursive;
-     font-weight: bold;
+     font-family: 'The Girl Next Door', cursive;
+     font-weight: 200;
      font-size: 1.5rem;
      line-height: 1.5;
 }
@@ -469,7 +475,7 @@ h2{
     }
     /* review */
     #reviews{
-        padding-top: 20%;
+        padding: 20% 7.5%;
     }
     h2{
         font-size: 1rem;
