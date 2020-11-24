@@ -54,6 +54,10 @@ html {
      font-family: 'Montserrat', sans-serif;
      font-weight: 900;
 }
+.navbar-toggler-icon{
+    background-color: white;
+    border-radius: 10%;
+}
 .img{
      width: 15%;
      height: 15%;
@@ -101,7 +105,7 @@ h1{
     height: 100%;
     position: absolute;
     padding: 60px 70px 50px 70px;
-    background: rgba(53, 53, 54, 0.9)
+    background: rgba(62, 62, 63, 0.80)
 }
 .thodaAur{
      padding-top: 5%;
@@ -282,7 +286,8 @@ a {
 .card {
     width: 80%;
     margin-bottom: 10%;
-    left: 10%
+    left: 10%;
+    background: none;
 }
 
 ::placeholder {
@@ -358,6 +363,7 @@ h2{
      font-size: 1.5rem;
      line-height: 1.5;
 }
+
 #ut{
     text-align: center;
 }
@@ -395,4 +401,71 @@ h2{
 }
 .flink:hover{
     color: turquoise;
+}
+
+@media (max-width: 1300px){
+    
+    .nav-link{
+        font-size: 1rem;
+    }
+    
+    .login-snip .tab{
+        font-size: 100%;
+    }
+}
+@media (max-width: 1139px){
+    .nav-link{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 1139px){
+    .nav-link{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 600px){
+    /* login signup */
+    .foot{
+        font-size: 80%;
+    }
+    .login-box{
+        min-height: 550px;
+    }
+    .login-snip{
+        padding: 15%;
+    }
+    .login-snip .tab{
+        font-size: 100%;
+    }
+    .login-space .group .input, .login-space .group .button, .login-space .group .check:checked+label{
+        font-size: 80%;
+    }
+    /* features  */
+    .howWork{
+        font-size: 2.2rem;
+        padding-top: 10%;
+    }
+    .head1{
+        font-size: 1.75rem;
+    }
+    .icon1{
+        font-size: 350%;
+        border: 5px outset #373a40;
+    }
+    /* review */
+    #reviews{
+        padding-top: 20%;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .revHead{
+        font-size: 2rem;
+    }
+    .test-image{
+        width: 15%;
+    }
+    em{
+        font-size: 1.1rem;
+    }
 }
