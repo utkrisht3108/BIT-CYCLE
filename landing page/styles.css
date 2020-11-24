@@ -30,12 +30,6 @@ html {
 .navColor{
      color: whitesmoke;
 }
-.navColor1{
-     color: whitesmoke;
-}
-.navColor1:hover{
-     color: white
-}
 .navColor:hover{
      color: rgb(228, 245, 244);
      transform: scale(1.15);
@@ -44,7 +38,14 @@ html {
      font-family: 'Ubuntu', sans-serif;
      font-size: 2.5rem;
      font-weight: bold;
+     /* margin-right: 0; */
      /* margin-bottom: 10%; */
+}
+.navColor1{
+     color: whitesmoke;
+}
+.navColor1:hover{
+     color: white;
 }
 .nav-item{
      padding: 0 25px;
@@ -413,17 +414,31 @@ h2{
         font-size: 100%;
     }
 }
-@media (max-width: 1139px){
+@media (max-width: 1197px){
     .nav-link{
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+    }
+    .nav-item{
+        padding: 0 10px;
     }
 }
-@media (max-width: 1139px){
+@media (max-width: 1040px){
     .nav-link{
-        font-size: 1rem;
+        font-size: 0.7rem;
+    }
+    .nav-item{
+        padding: 0 8px;
     }
 }
-@media (max-width: 600px){
+@media (max-width: 992px){
+    .nav-link{
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 625px){
+    .navbar-brand{
+         width: 75%;
+    }
     /* login signup */
     .foot{
         font-size: 80%;
