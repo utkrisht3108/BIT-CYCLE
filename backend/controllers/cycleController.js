@@ -1,10 +1,13 @@
 const multer = require('multer');
+const fs = require('fs');
+const { promisify } = require('util');
 const { Cycle } = require('../models/cycleModel');
+const { User } = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, 'public/upload/');
+    callback(null, 'img/');
   },
   filename: (req, file, callback) => {
     const extension = file.mimetype.split('/')[1];
@@ -25,8 +28,9 @@ const upload = multer({
 
 module.exports = {
   getAllCycles: catchAsync(async (req, res, next) => {
+    console.log(__dirname);
     const cycle = await Cycle.find();
-    console.log("hahhahhah");
+    console.log('hahhahhah');
     res.status(200).json({
       status: 'success',
       data: {
@@ -36,7 +40,14 @@ module.exports = {
   }),
   addCycle: catchAsync(async (req, res, next) => {
     const newCycle = await Cycle.create(req.body);
-    
+    const cycleId = newCycle._id;
+    const cycleOwner = await User.findById(newCycle.owner);
+    if (!cycleOwner) {
+      next(new Error('No such user exists'));
+    }
+    if (!cycleOwner.cycles.includes(cycleId)) {
+      await cycleOwner.updateOne({ cycles: [...cycleOwner.cycles, cycleId] });
+    }
     if (req.file) {
       newCycle.image = req.file.filename;
       newCycle.save();
@@ -83,6 +94,16 @@ module.exports = {
     if (!deletedCycle) {
       throw new Error('No cycle with such id found');
     }
+    if(deletedCycle.image){
+      await promisify(fs.unlink)(`img/${deletedCycle.image}`)
+    }
+    const cycleId = deletedCycle._id.toString();
+    const ownerId = deletedCycle.owner;
+    const cycleOwner = await User.findById(ownerId);
+    const cycles = cycleOwner.cycles.filter(
+      (userCycle) => userCycle != cycleId
+    );
+    await cycleOwner.updateOne({ cycles: cycles });
     res.status(200).json({
       status: 'success',
       deletedCycle,
