@@ -24,9 +24,9 @@ const cycleSchema = new mongoose.Schema({
       },
     },
   ],
-  image: {
+  images: [{
     type: String,
-  },
+  }],
 });
 
 

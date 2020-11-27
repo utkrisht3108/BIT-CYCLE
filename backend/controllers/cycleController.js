@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, callback) => {
     const extension = file.mimetype.split('/')[1];
-    callback(null, file.originalname);
+    callback(null, Date.now() + file.originalname);
   },
 });
 const filter = (req, file, callback) => {
@@ -48,8 +48,8 @@ module.exports = {
     if (!cycleOwner.cycles.includes(cycleId)) {
       await cycleOwner.updateOne({ cycles: [...cycleOwner.cycles, cycleId] });
     }
-    if (req.file) {
-      newCycle.image = req.file.filename;
+    if (req.files) {
+      newCycle.images = req.files.map((file) => file.filename);
       newCycle.save();
     }
     res.status(201).json({
@@ -88,14 +88,14 @@ module.exports = {
       data: { updatedCycle },
     });
   }),
-  uploadImage: upload.single('image'),
+  uploadImage: upload.array('images', 8),
   deleteCycle: catchAsync(async (req, res, next) => {
     const deletedCycle = await Cycle.findByIdAndDelete(req.params.id);
     if (!deletedCycle) {
       throw new Error('No cycle with such id found');
     }
-    if(deletedCycle.image){
-      await promisify(fs.unlink)(`img/${deletedCycle.image}`)
+    if (deletedCycle.image) {
+      await promisify(fs.unlink)(`img/${deletedCycle.image}`);
     }
     const cycleId = deletedCycle._id.toString();
     const ownerId = deletedCycle.owner;
