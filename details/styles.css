@@ -28,6 +28,7 @@
 /* row  */
 .party{
      background-image: url("images/photo.jpg");
+     background-size: cover;
 }
 .thodaAur{
      margin-bottom: 20px;

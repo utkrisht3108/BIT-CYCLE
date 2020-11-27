@@ -66,3 +66,7 @@ document.querySelector(".signup-btn").onclick = async () => {
       slide.classList.add("hidden");
       btn2.classList.add("hidden");
     };
+    var sbtn = document.getElementById("signupButton");
+    sbtn.onclick = () =>{
+      window.location.href="../details/";
+    }
