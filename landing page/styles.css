@@ -22,9 +22,6 @@ html {
 .container-fluid1{
      padding: 3% 10%;
 } 
-.body{
-    
-}
 /* navigation */
 .navbar{
      padding:0 0 4.5rem;
@@ -68,6 +65,8 @@ html {
 /* ahahaha */
 .container{
     position: relative;
+}
+.csize{
     width: 50%;
 }
 .title-image{
@@ -212,7 +211,6 @@ h1{
 }
 
 .login-space .group input[data-type="password"] {
-    text-security: circle;
     -webkit-text-security: circle
 }
 
@@ -472,8 +470,9 @@ h2{
     .nav-link{
         font-size: 1.1rem;
     }
-    .container{
-        width: 80%;
+    .csize{
+        left: 0;
+        width: 100%;
     }
 }
 @media (max-width: 625px){
