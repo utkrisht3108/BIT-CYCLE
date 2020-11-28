@@ -22,9 +22,6 @@ html {
 .container-fluid1{
      padding: 3% 10%;
 } 
-.body{
-    
-}
 /* navigation */
 .navbar{
      padding:0 0 4.5rem;
@@ -66,11 +63,45 @@ html {
      height: 15%;
 }
 /* ahahaha */
+.container{
+    position: relative;
+}
+.csize{
+    width: 50%;
+}
 .title-image{
       margin-left: 10%;
      width: 80%;
      height: 85%; 
+     display: block;
      padding: 0px 10%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20%;
+  right: 0;
+  height: 85%;
+  width: 60%;
+  opacity: 0;
+  transition: .5s ease;
+  background-image: -webkit-linear-gradient(65deg, #2632a3 10%, #44b4d6 80%);
+}
+
+.container:hover .overlay {
+  opacity: 0.9;
+}
+.itext {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 /* khatam */
 h1{
@@ -180,7 +211,6 @@ h1{
 }
 
 .login-space .group input[data-type="password"] {
-    text-security: circle;
     -webkit-text-security: circle
 }
 
@@ -439,6 +469,10 @@ h2{
 @media (max-width: 992px){
     .nav-link{
         font-size: 1.1rem;
+    }
+    .csize{
+        left: 0;
+        width: 100%;
     }
 }
 @media (max-width: 625px){
