@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+#cycle-page{
+
+}
+#all-cycles{
+    display: flex;
+    /* align-items: center; */
+    flex-wrap: wrap ;
+    justify-content: space-around;
+    /* justify-items: auto; */
+    width: 70%;
+    
+    align-items: stretch;
+    overflow: hidden;
+    position: relative;
+    left:20%;
+}
+.cycle{
+    padding: 4px;
+    width: 20vw;
+    border: 1px gray solid;
+    /* height: auto; */
+    align-content: center;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.cycle:hover{
+    transform: scale(1.05);  
+    transition: 0.3s;
+    z-index: 3;
+}
+.cycle-photo{
+    width: 95%;
+    height: 60%;
+    overflow: hidden;
+    align-content: center;
+}
+.cycle-photo img{
+    
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.cycle-photo:hover{
+    transform: scale(1.05);  
+    transition: 0.3s;
+}
+.cycle-model{
+    font-family: "Piedra";
+    text-align: left;
+    /* font-weight: bold; */
+    font-size: 2vw;
+}
+.cycle-price{
+    font-size: 20px;
+}
+.book-button{
+    float: right;
+}
