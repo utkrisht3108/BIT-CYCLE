@@ -1,30 +1,9 @@
-const multer = require('multer');
 const fs = require('fs');
 const { promisify } = require('util');
 const { Cycle } = require('../models/cycleModel');
 const { User } = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
-
-const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    callback(null, 'img/');
-  },
-  filename: (req, file, callback) => {
-    const extension = file.mimetype.split('/')[1];
-    callback(null, Date.now() + file.originalname);
-  },
-});
-const filter = (req, file, callback) => {
-  if (file.mimetype.startsWith('image')) {
-    callback(null, true);
-  } else {
-    callback(new Error('Invalid file type'), false);
-  }
-};
-const upload = multer({
-  storage: storage,
-  fileFilter: filter,
-});
+const upload = require('../utils/imageUpload');
 
 module.exports = {
   getAllCycles: catchAsync(async (req, res, next) => {
@@ -88,7 +67,7 @@ module.exports = {
       data: { updatedCycle },
     });
   }),
-  uploadImage: upload.array('images', 8),
+  uploadImage: upload.array('cycleImages', 8),
   deleteCycle: catchAsync(async (req, res, next) => {
     const deletedCycle = await Cycle.findByIdAndDelete(req.params.id);
     if (!deletedCycle) {

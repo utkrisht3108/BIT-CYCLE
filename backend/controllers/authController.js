@@ -2,6 +2,7 @@ const util = require('util');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
+const upload = require('../utils/imageUpload');
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
@@ -10,6 +11,18 @@ const generateToken = (id) => {
 };
 module.exports = {
   signup: catchAsync(async (req, res, next) => {
+    let userId, userImage;
+    if (!req.files) {
+      throw new Error('Please upload your id');
+    } else {
+      req.files.forEach((file) => {
+        if (file.fieldname === 'userId') {
+          userId = file.filename;
+        } else if (file.fieldname === 'userImage') {
+          userImage = file.filename;
+        }
+      });
+    }
     const newUser = await User.create({
       name: req.body.name,
       email: req.body.email,
@@ -17,6 +30,8 @@ module.exports = {
       passwordConfirm: req.body.passwordConfirm,
       mobile: req.body.mobile,
       passwordChangedAt: req.body.passwordChangedAt,
+      userId: userId,
+      userImage: userImage,
     });
     const token = generateToken(newUser._id);
     res.cookie('token', token, {
@@ -98,4 +113,5 @@ module.exports = {
     const users = await User.find();
     res.status(200).json({ status: 'success', users });
   }),
+  uploadImage: upload.any(),
 };

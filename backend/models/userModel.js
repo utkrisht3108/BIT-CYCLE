@@ -54,6 +54,25 @@ const userSchema = new mongoose.Schema({
       unique: false,
     },
   ],
+  hostel: {
+    type: Number,
+    min: 1,
+    max: 14,
+    // required: true,
+  },
+  room: {
+    type: Number,
+    min: 1,
+    max: 500,
+    // required: true,
+  },
+  userImage: {
+    type: String,
+  },
+  userId: {
+    type: String,
+    // required: true,
+  },
 });
 
 userSchema.pre('save', async function (next) {
@@ -79,7 +98,6 @@ userSchema.methods.checkPasswordChange = function (timestamp) {
   const lastChange = this.passwordChangedAt.getTime() / 1000;
   return lastChange > timestamp;
 };
-
 
 exports.User = mongoose.model('User', userSchema);
 exports.userSchema = userSchema;
