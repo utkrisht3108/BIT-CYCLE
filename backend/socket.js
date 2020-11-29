@@ -2,26 +2,34 @@ const socketIo = require('socket.io');
 const Message = require('./models/messageModel');
 
 module.exports = (server) => {
-  const socket = socketIo(server);
-  socket.on('connection', (socket) => {
-    socket.emit("connected");
-    console.log('User connected');
+  const io = socketIo(server);
+  io.on('connection', (socket) => {
+    socket.emit('connected');
+    console.log('User connected',socket.id);
     socket.on('chat-message', async (message) => {
       message.time = Date.now();
-      socket.emit('received', { message: message.message });
-      const newMessage = await Message.create(message);
-      console.log(newMessage);
+      socket.broadcast.emit('received', { message: message.message });
+      await Message.create(message);
     });
     socket.on('load', async (users) => {
-      console.log("hiiiiiiiii");
+      console.log('hiiiiiiiii');
       const oldMessages = await Message.find({
-        sender: users.firstUser,
-        receiver: users.secondUser,
-      }).limit(100);
+        $or: [
+          {
+            sender: users.firstUser,
+            receiver: users.secondUser,
+          },
+          {
+            sender: users.secondUser,
+            receiver: users.firstUser,
+          },
+        ],
+      })
+        .sort('time')
+        .limit(100);
       socket.emit('loadOldMessages', oldMessages);
     });
   });
-  
 };
 
 //5fb8ba3bbe2f7734546a0fad
