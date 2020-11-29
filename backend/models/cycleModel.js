@@ -2,8 +2,15 @@ const mongoose = require('mongoose');
 const { User, userSchema } = require('./userModel');
 
 const cycleSchema = new mongoose.Schema({
+  color: {
+    type: String,
+    required: true,
+    lowercase: true,
+    trim: true,
+  },
   brand: {
     type: String,
+    required: true,
   },
   model: {
     type: String,
@@ -27,11 +34,13 @@ const cycleSchema = new mongoose.Schema({
       },
     },
   ],
-  images: [{
-    type: String,
-  }],
+  images: [
+    {
+      type: String,
+    },
+  ],
+  accessories: [{ type: String, lowercase: true, trim: true }],
 });
-
 
 cycleSchema.pre(/^find/, function (next) {
   this.populate('owner');
