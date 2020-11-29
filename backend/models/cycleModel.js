@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const { User, userSchema } = require('./userModel');
 
 const cycleSchema = new mongoose.Schema({
+  brand: {
+    type: String,
+  },
   model: {
     type: String,
   },

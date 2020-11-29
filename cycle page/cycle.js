@@ -1,12 +1,13 @@
 /* eslint-disable */
 export default class Cycle {
-    constructor(id, owner, model, comments,available) {
+    constructor(id, owner, model, comments,available,brand) {
       this.id = id;
       this.owner=owner;
       this.model = model;
       this.el = null;
       this.comments = comments;
       this.available=available;
+      this.brand=brand;
     }
     getelement() {
       var temp = this.gettemplate(

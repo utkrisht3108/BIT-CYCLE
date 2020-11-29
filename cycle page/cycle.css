@@ -1,10 +1,29 @@
 *{
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+    -x: hidden;
+}padding: 0;
+    overflow
 #cycle-page{
 
+}
+#filter{
+    width: 20%;
+    position: fixed;
+    left:2%;
+    top:10%;
+}
+#filter h3{
+    font-family: "Castoro";
+}
+#filter h5{
+    font-family: "Castoro";
+}
+#filter li{
+    font-family: "Dancing Script";
+    padding-left: 8px;
+    list-style: none;
+    font-weight: bold;
+    font-size: 20px;
 }
 #all-cycles{
     display: flex;
