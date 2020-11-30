@@ -1,16 +1,68 @@
 *{
     margin: 0;
     -x: hidden;
-}padding: 0;
-    overflow
-#cycle-page{
-
 }
+html {
+  scroll-behavior: smooth;
+}
+/* navbar  */
+#title{
+    background-image: url("images/bit.jpg");
+    background-size: cover;
+}
+#cycle-page{
+    background-color: rgb(255, 255, 255);
+}
+.navbar{
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+}
+.navColor{
+     color: whitesmoke;
+}
+.navColor:hover{
+     color: rgb(228, 245, 244);
+     transform: scale(1.15);
+}
+.navbar-brand{
+     font-family: 'Ubuntu', sans-serif;
+     vertical-align: middle;
+     font-size: 2.5rem;
+     font-weight: bold;
+     /* margin-right: 0; */
+     /* margin-bottom: 10%; */
+}
+.navColor1{
+     color: whitesmoke;
+}
+.navColor1:hover{
+     color: white;
+}
+.nav-item{
+     padding: 0 25px;
+}
+.nav-link{
+     font-size: 1.25rem;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 900;
+}
+.navbar-toggler-icon{
+    background-color: white;
+    border-radius: 10%;
+}
+.img{
+     width: 15%;
+     height: 15%;
+}
+
+/* padding: 0; */
+    /* overflow */
+
 #filter{
-    width: 20%;
-    position: fixed;
+    width: 18%;
+    position: absolute;
     left:2%;
-    top:10%;
+    top:22%;
 }
 #filter h3{
     font-family: "Castoro";
@@ -70,14 +122,98 @@
     transition: 0.3s;
 }
 .cycle-model{
-    font-family: "Piedra";
+    /* font-family: "Piedra"; */
     text-align: left;
     /* font-weight: bold; */
-    font-size: 2vw;
-}
-.cycle-price{
-    font-size: 20px;
 }
 .book-button{
     float: right;
+}
+.row1{
+    padding-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -90px;
+    margin-left: 90px;
+}
+.card-img-top{
+    height: 250px;
+}
+.row2{
+    display: flex;
+    flex-wrap: wrap;
+}
+.neeche{
+    margin-bottom: 2%;
+}
+.sidethoda{
+    padding-left: 6%;
+}
+.sidethoda1{
+    padding-left: 10%;
+}
+
+.card-body{
+    background-color: rgb(248, 248, 248);
+}
+.card-body:hover{
+    background-color: #d4d3d3;
+}
+.card:hover{
+    transform: scale(1.05);  
+    transition: 0.3s;
+
+}
+#filter1{
+        display: block;
+        width: 100%;
+        position: relative;
+        left:2%;
+}
+@media(min-width: 577px){
+    #filter1{
+        display: none;
+    }
+}
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+@media(max-width: 577px){
+    #filter{
+        display: none;
+    }
+    .row1{
+        margin-left: 0px;
+        padding-top: 0%;
+    }
+    .card{
+        width: 70%;
+    }
+    .row2{
+        /* width: 50%; */
+        height: 50%;    
+    }
+    .btn{
+        font-size: 0.5rem;
+        width: 80%;
+        height: 80%; 
+    }
+}
+/* FOOTER */
+.fsoc{
+    background-color: #799351;
+}
+.fback{
+    background-color: #000000;
+}
+.uparthoda{
+    padding-top: 3%;
+}
+.feedback{
+    width: 60px;
+    margin-bottom: 4px;
+}
+.fandar{
+    color: whitesmoke;
+}
+.flink{
+     color: whitesmoke;
 }

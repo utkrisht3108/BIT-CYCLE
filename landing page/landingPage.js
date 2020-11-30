@@ -70,3 +70,7 @@ document.querySelector(".signup-btn").onclick = async () => {
     sbtn.onclick = () =>{
       window.location.href="../details/";
     }
+    var lbtn = document.getElementById("loginButton");
+    lbtn.onclick = () =>{
+      window.location.href="../cycle page/";
+    }
