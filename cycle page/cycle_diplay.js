@@ -79,7 +79,7 @@ function filtered_render(){
 
   }
   if(c==0){
-    cycle_box.innerHTML="...<h2>No cycles of the desired brand</h2>....";
+    cycle_box.innerHTML="...<h2>No cycle found</h2>....";
   }
   if(filter_brands.length==0 &&filter_access.length==0){
     cycle_box.innerHTML="";

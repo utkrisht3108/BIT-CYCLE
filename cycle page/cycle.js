@@ -25,20 +25,24 @@ export default class Cycle {
     }
     gettemplate(model,brand) {
       return`
-      <div class="cycle">
-          <div class="cycle-photo">
-             <img src="kids-ranger-cycle-500x500.jpg">    
-          </div>
-          <div class="cycle-model">
-              ${brand}-${model}
-          </div>
-          <div class="cycle-price">
-             10/hr (expected)
-          </div>
-          <div class="book-button" >
-              <button class="btn btn-primary">Book</button>
-          </div>
-      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 ">
+                        <div class="card  mb-4 box-shadow">
+                            <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text cycle-model">${brand}-${model}</p>
+                                <div class="d-flex justify-content-between sidethoda1">
+                                         <div class="row2">
+                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
+                                             <div class="text-muted cycle-price neeche sidethoda"> 9000rs</div>
+                                         </div>
+                                         <div class="row2">
+                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
+                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                         </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
       `;
       }
     }
