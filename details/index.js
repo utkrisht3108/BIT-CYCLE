@@ -40,6 +40,13 @@ function party4() {
   }
 }
 
+const addWrongInput = (e, i) => {
+  e.target.elements[i].classList.add("wrong-input");
+};
+
+const removeWrongInput = (e, i) => {
+  e.target.elements[i].classList.remove("wrong-input");
+};
 let requiredField = ["userId", "room", "phone", "first_name", "last_name"];
 document.querySelector(".details-form").onsubmit = (e) => {
   e.preventDefault();
@@ -58,9 +65,19 @@ document.querySelector(".details-form").onsubmit = (e) => {
       value = e.target.elements[i].files[0];
     }
     if (requiredField.includes(attr) && !val) {
-      e.target.elements[i].classList.add("wrong-input");
+      addWrongInput(e, i);
     } else {
-      e.target.elements[i].classList.remove("wrong-input");
+      removeWrongInput(e, i);
+    }
+    if (attr === "phone" && !val.match(/^(\+\d{1,3}[- ]?)?\d{10}$/)) {
+      addWrongInput(e, i);
+    } else if (attr === "phone") {
+      removeWrongInput(e, i);
+    }
+    if (attr === "room" && !val.match(/^[1-4][0-9]{2}|500/)) {
+      addWrongInput(e, i);
+    } else if (attr === "room") {
+      removeWrongInput(e, i);
     }
   }
 };
