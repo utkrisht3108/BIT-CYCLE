@@ -327,24 +327,10 @@ h6 {
   font-family: inherit;
 }
 
-.btn--radius {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
 .btn--radius-2 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-}
-
-.btn--red {
-  background: #ff4b5a;
-}
-
-.btn--red:hover {
-  background: #eb3746;
 }
 
 /* form  */
@@ -438,6 +424,7 @@ input {
   background: #e5e5e5;
   line-height: 50px;
   -webkit-border-radius: 5px;
+  border: 2px outset #e5e5e5;
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding: 0 22px;
@@ -446,8 +433,9 @@ input {
 }
 .input--style-x {
   background: #e5e5e5;
-  width: 55px;
+  width: 65px;
   line-height: 50px;
+  border: 2px outset #e5e5e5;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -455,7 +443,11 @@ input {
   font-size: 16px;
   color: #555;
 }
-
+.colorInput:active,
+.colorInput:focus{
+  border: 3.5px solid #3797a4;
+  text-transform:uppercase;
+}
 .input-group-desc {
   position: relative;
   margin-right: 10%;

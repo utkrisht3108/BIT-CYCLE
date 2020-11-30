@@ -30,13 +30,13 @@
                                 <div class="row row-space thodaAur">
                                     <div class="col-6">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name" required >
+                                            <input class="input--style-5 colorInput" type="text" name="first_name" required >
                                             <label class="label--desc">first name</label>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="last_name">
+                                            <input class="input--style-5 colorInput" type="text" name="last_name">
                                             <label class="label--desc">last name</label>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                             <div class="name">Email *</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email" required>
+                                    <input class="input--style-5" type="email" name="email" disabled placeholder="signup se uthake daal dena">
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                                 <div class="row row-refine">
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5 mobile" type="text" name="phone" maxlength="10" minlength="10" required pattern="\d{10}">
+                                            <input class="input--style-5 mobile colorInput" type="text" name="phone" maxlength="10" minlength="10" required pattern="\d{10}">
                                             <label class="label--desc">10 digit mobile number</label>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                 <div class="row row-space thodaAur">
                                     <div class="col-2 khatam">
                                         <div class="input-group-desc">
-                                            <select name="hostel" class="input--style-5 hostelSelect" required>
+                                            <select name="hostel" class="input--style-5 hostelSelect colorInput" required>
                                                  <option value="1">1</option>
                                                   <option value="2">2</option>
                                                   <option value="3">3</option>
@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="col-2 push">
                                         <div class="input-group-desc">
-                                            <input class="input--style-x" type="text" name="room" maxlength="3" minlength="3" required>
+                                            <input class="input--style-x colorInput" type="text" name="room" maxlength="3" minlength="3" required>
                                             <label class="label--desc">Room(XXX)</label>
                                         </div>
                                     </div>
@@ -144,7 +144,7 @@
                                    <div class="name">Cycle Model *</div>
                                    <div class="value">
                                         <div class="input-group">
-                                             <input class="input--style-5" type="text" name="cycleName" required>
+                                             <input class="input--style-5 colorInput" type="text" name="cycleName" required>
                                         </div>
                                    </div>
                               </div>
@@ -152,7 +152,7 @@
                                    <div class="name">Cycle Color *</div>
                                    <div class="value">
                                         <div class="input-group">
-                                             <input class="input--style-5" type="text" name="cycleColor" required>
+                                             <input class="input--style-5 colorInput" type="text" name="cycleColor" required >
                                         </div>
                                    </div>
                               </div>
@@ -160,7 +160,7 @@
                                    <div class="name">Bought in? *</div>
                                    <div class="value">
                                         <div class="input-group">
-                                            <select name="boughtIn" class="input--style-5 hostelSelect" required>
+                                            <select name="boughtIn" class="input--style-5 hostelSelect colorInput" required >
                                                  <option value="1">2011</option>
                                                   <option value="2">2012</option>
                                                   <option value="3">2013</option>
@@ -175,36 +175,13 @@
                                         </div>
                                    </div>
                               </div>
-                              <div class="form-row except">
-                                   <div class="name">Accessories *</div>
-                                   <div class="value uparthoda">
-                                        <input class="change" type="checkbox" id="qq" name="acc">
-                                        <label for="">Gears</label>
-                                   </div>
-                                   <div class="value">
-                                        <input type="checkbox" id="qq" class="change" name="acc">
-                                        <label for="">Bell</label>
-                                   </div>
-                                   <div class="value">
-                                        <input type="checkbox" id="qq" class="change" name="acc">
-                                        <label for="">Reflector</label>
-                                   </div>
-                                   <div class="value">
-                                        <input type="checkbox" id="qq" class="change" name="acc">
-                                        <label for="">Mudgaurd</label>
-                                   </div>
-                                   <div class="value">
-                                        <input type="checkbox" id="qq" class="change" name="acc">
-                                        <label for="">Warranty</label>
-                                   </div>                                   
-                              </div>
                               <div class="form-row m-b-40 ">
-                                   <div class="name">Your Image</div>
+                                   <div class="name">Cycle Image(s)</div>
                                    <div class="value">
                                         <div>
                                              <div class="input-group-desc">
                                                   <input type="file" name="photos" multiple>
-                                                  <label class="label--desc">Better for other people to decide</label><br>
+                                                  <label class="label--desc">Better for other people to decide. MAX 8</label><br>
                                              </div>
                                         </div>
                                    </div>
@@ -225,15 +202,58 @@
                                         <div class="name">Cycle Price *</div>
                                         <div class="value">
                                              <div class="input-group-desc">
-                                                  <input class="input--style-5" type="text" name="cycleName" required>
+                                                  <input class="input--style-5 colorInput" type="text" name="cycleName" required>
                                                   <label class="label--desc">Don't put any commas</label>
                                              </div>
                                         </div>
                                    </div>
+                                   <div class="form-row except">
+                                        <div class="name">Accessories *</div>
+                                        <div class="value uparthoda">
+                                                <input class="change" type="checkbox" id="qq" name="acc">
+                                                <label for="">Gear</label>
+                                        </div>
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Bell</label>
+                                        </div>
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Reflector</label>
+                                        </div>
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Mudgaurd</label>
+                                        </div>
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Warranty</label>
+                                        </div> 
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Cycle Lock</label>
+                                        </div> 
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Bottle Cage</label>
+                                        </div>                           
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Carrier</label>
+                                        </div>         
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Cycle Pump</label>
+                                        </div> 
+                                        <div class="value">
+                                                <input type="checkbox" id="qq" class="change" name="acc">
+                                                <label for="">Seat Cover</label>
+                                        </div> 
+                                    </div>
                               </span>
                         </span>
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                            <button class="btn btn--radius-2 btn-danger" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
