@@ -4,22 +4,37 @@ var cycle_arr = [];                //array of cycles(class)
 var brands =[];
 var i=0;
 var filter_brands= [];
+var filter_access=[];
 var cycle_box =document.querySelector("#all-cycles");
 var check_boxes=document.querySelectorAll(".checks");
-console.log(check_boxes);
 brand_filter();
 function brand_filter(){
   console.log(check_boxes);
   check_boxes.forEach((check_box) => {
     check_box.onclick = () =>{
       if(check_box.checked===true){
-        filter_brands.push(check_box.value);
+        if(check_box.classList.contains("brand-check")){
+          console.log("lolll");
+          filter_brands.push(check_box.value);
+        }
+        if(check_box.classList.contains("access-check")){
+          console.log("lolll");
+          filter_access.push(check_box.value);
+        }
         filtered_render();
-
       }
       else{
-        var a= filter_brands.indexOf(check_box.value);
-        filter_brands.splice(a,1);
+        if(check_box.classList.contains("brand-check")){
+          console.log("lolll");
+          var a= filter_brands.indexOf(check_box.value);
+          filter_brands.splice(a,1);
+        }
+        if(check_box.classList.contains("access-check")){
+          console.log("lolll");
+          var a= filter_access.indexOf(check_box.value);
+          filter_access.splice(a,1);
+        }
+        
         filtered_render();
       }
     };
@@ -27,23 +42,46 @@ function brand_filter(){
 }
 
 render_cycles();
+
+
 function filtered_render(){
   cycle_box.innerHTML="";
   var c=0
   console.log(filter_brands);
-  cycle_arr.forEach((element) => {
-    console.log(element.brand);
-    if(filter_brands.indexOf(element.brand)>-1){
-      c++;
-      cycle_box.appendChild(element.getelement());
-    }
-    // temp=element.getelement();
-    
-  });
+  console.log(filter_access);
+  if(filter_brands.length==0){
+    cycle_arr.forEach((element) => {
+      console.log(element.brand);
+      if(filter_access.some(r=> element.accessories.indexOf(r)>-1)){
+        c++;
+        cycle_box.appendChild(element.getelement());
+      } 
+    });
+
+  }
+  else if(filter_access.length==0){
+    cycle_arr.forEach((element) => {
+      console.log(element.brand);
+      if(filter_brands.indexOf(element.brand)>-1){
+        c++;
+        cycle_box.appendChild(element.getelement());
+      } 
+    });
+  }
+  else{
+    cycle_arr.forEach((element) => {
+      console.log(element.brand);
+      if(filter_brands.indexOf(element.brand)>-1 && filter_access.some(r=> element.accessories.indexOf(r)>-1)){
+        c++;
+        cycle_box.appendChild(element.getelement());
+      } 
+    });
+
+  }
   if(c==0){
     cycle_box.innerHTML="...<h2>No cycles of the desired brand</h2>....";
   }
-  if(filter_brands.length==0){
+  if(filter_brands.length==0 &&filter_access.length==0){
     cycle_box.innerHTML="";
     cycle_arr.forEach((element) => {
       // temp=element.getelement();
@@ -81,7 +119,10 @@ async function get_cycles()
             element.model,
             element.comments,
             element.available,
-            element.brand
+            element.brand,
+            element.color,
+            element.accessories,
+            element.images
           )
         );
         if(brands.indexOf(element.brand)==-1){
