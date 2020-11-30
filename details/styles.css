@@ -2,6 +2,11 @@
      display: none ;
 }
 
+.wrong-input{
+  border-color: red !important;
+  border-width: 1rem;
+}
+
 .title {
   font-size: 2.5rem;
   text-transform: uppercase;
@@ -445,7 +450,7 @@ input {
 }
 .colorInput:active,
 .colorInput:focus{
-  border: 3.5px solid #3797a4;
+  border: 3.5px solid #3797a4 !important;
   text-transform:uppercase;
 }
 .input-group-desc {

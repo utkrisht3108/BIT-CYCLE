@@ -23,14 +23,14 @@
                     <h2 class="title">User Details</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form class="details-form">
                         <div class="form-row">
                             <div class="name">Name *</div>
                             <div class="value">
                                 <div class="row row-space thodaAur">
                                     <div class="col-6">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5 colorInput" type="text" name="first_name" required >
+                                            <input class="input--style-5 colorInput" type="text" name="first_name"  >
                                             <label class="label--desc">first name</label>
                                         </div>
                                     </div>
@@ -65,7 +65,7 @@
                                 <div class="row row-refine">
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5 mobile colorInput" type="text" name="phone" maxlength="10" minlength="10" required pattern="\d{10}">
+                                            <input class="input--style-5 mobile colorInput" type="text" name="phone" maxlength="10" minlength="10"  pattern="\d{10}">
                                             <label class="label--desc">10 digit mobile number</label>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                 <div class="row row-space thodaAur">
                                     <div class="col-2 khatam">
                                         <div class="input-group-desc">
-                                            <select name="hostel" class="input--style-5 hostelSelect colorInput" required>
+                                            <select name="hostel" class="input--style-5 hostelSelect colorInput" >
                                                  <option value="1">1</option>
                                                   <option value="2">2</option>
                                                   <option value="3">3</option>
@@ -99,7 +99,7 @@
                                     </div>
                                     <div class="col-2 push">
                                         <div class="input-group-desc">
-                                            <input class="input--style-x colorInput" type="text" name="room" maxlength="3" minlength="3" required>
+                                            <input class="input--style-x colorInput" type="text" name="room" maxlength="3" minlength="3" >
                                             <label class="label--desc">Room(XXX)</label>
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                             <div class="value">
                                 <div>
                                    <div class="input-group-desc">
-                                        <input type="file" name="photo">
+                                        <input type="file" name="userPhoto">
                                         <label class="label--desc">Better for other people to Contact you in Public</label>
                                    </div>
                                 </div>
@@ -122,7 +122,7 @@
                             <div class="value">
                                 <div>
                                    <div class="input-group-desc">
-                                        <input type="file" name="photo">
+                                        <input type="file" name="userId">
                                         <label class="label--desc">A proof that you're a student of BIT</label>
                                    </div>
                                 </div>
@@ -131,7 +131,7 @@
                         <div class="form-row p-t-30">
                             <label class="label x1">Do you want to sell or rent out a Cycle? *</label>
                                 <label class="radio-container thodaBaju">Yes
-                                    <input type="radio" name="exist" class="exist" onclick="party1()" required>
+                                    <input type="radio" name="exist" class="exist" onclick="party1()" >
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="radio-container">No
@@ -144,7 +144,7 @@
                                    <div class="name">Cycle Model *</div>
                                    <div class="value">
                                         <div class="input-group">
-                                             <input class="input--style-5 colorInput" type="text" name="cycleName" required>
+                                             <input class="input--style-5 colorInput" type="text" name="cycleName" >
                                         </div>
                                    </div>
                               </div>
@@ -152,7 +152,7 @@
                                    <div class="name">Cycle Color *</div>
                                    <div class="value">
                                         <div class="input-group">
-                                             <input class="input--style-5 colorInput" type="text" name="cycleColor" required >
+                                             <input class="input--style-5 colorInput" type="text" name="cycleColor"  >
                                         </div>
                                    </div>
                               </div>
@@ -160,7 +160,7 @@
                                    <div class="name">Bought in? *</div>
                                    <div class="value">
                                         <div class="input-group">
-                                            <select name="boughtIn" class="input--style-5 hostelSelect colorInput" required >
+                                            <select name="boughtIn" class="input--style-5 hostelSelect colorInput"  >
                                                  <option value="1">2011</option>
                                                   <option value="2">2012</option>
                                                   <option value="3">2013</option>
@@ -189,7 +189,7 @@
                               <div class="form-row p-t-30">
                                    <label class="label x1">Do you want to Sell the Cycle? *</label>
                                         <label class="radio-container thodaBaju">Yes
-                                             <input type="radio" name="exist1" class="exist1" onclick="party3()" required>
+                                             <input type="radio" name="exist1" class="exist1" onclick="party3()" >
                                              <span class="checkmark"></span>
                                         </label>
                                         <label class="radio-container">No
@@ -202,7 +202,7 @@
                                         <div class="name">Cycle Price *</div>
                                         <div class="value">
                                              <div class="input-group-desc">
-                                                  <input class="input--style-5 colorInput" type="text" name="cycleName" required>
+                                                  <input class="input--style-5 colorInput" type="text" name="cyclePrice" >
                                                   <label class="label--desc">Don't put any commas</label>
                                              </div>
                                         </div>
