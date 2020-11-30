@@ -79,22 +79,12 @@ html {
 }
 #all-cycles{
     display: flex;
-    /* align-items: center; */
     flex-wrap: wrap ;
-    justify-content: space-around;
-    /* justify-items: auto; */
-    width: 70%;
-    
-    align-items: stretch;
-    overflow: hidden;
-    position: relative;
-    left:20%;
 }
 .cycle{
     padding: 4px;
     width: 20vw;
     border: 1px gray solid;
-    /* height: auto; */
     align-content: center;
     overflow: hidden;
     border-radius: 3px;
@@ -185,6 +175,7 @@ html {
         padding-top: 0%;
     }
     .card{
+        left: 7.5%;
         width: 70%;
     }
     .row2{
