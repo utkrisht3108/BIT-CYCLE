@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const { User } = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const upload = require('../utils/imageUpload');
+const email = require('../utils/email');
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
@@ -114,4 +115,45 @@ module.exports = {
     res.status(200).json({ status: 'success', users });
   }),
   uploadImage: upload.any(),
+  forgotPassword: catchAsync(async (req, res, next) => {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      throw new Error('NO user with this email exists');
+    }
+    const resetToken = await user.generatePasswordResetToken();
+    await user.save({ validateBeforeSave: false });
+    const subject = 'BIT-CYCLES password reset';
+    const message = `Your password reset token is ${resetToken}. Paste this token in the forgot password form. This token will expire in 10 mins. If you don't want to reset your password kindly ignore this email`;
+    await email({ email: user.email, subject, message });
+    res.send('sent');
+  }),
+  resetPasssword: catchAsync(async (req, res, next) => {
+    const { email, resetToken } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new Error('No User with such email exists');
+    }
+    const check = await user.checkResetToken(resetToken);
+    if (check.status === 'success') {
+      user.passwordResetToken = undefined;
+      user.resetTokenExpires = undefined;
+      user.password = req.body.password;
+      user.passwordConfirm = req.body.passwordConfirm;
+      user.passwordChangedAt = Date.now();
+      await user.save();
+      const token = generateToken(user._id);
+      res.cookie('token', token, {
+        expires: new Date(
+          Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+        ),
+        httpOnly: true,
+      });
+      res.status(200).json({
+        status: 'success',
+        token,
+      });
+    } else {
+      throw new Error(check.message);
+    }
+  }),
 };

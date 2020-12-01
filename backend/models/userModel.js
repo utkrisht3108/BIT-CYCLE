@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
 const { cycleSchema, Cycle } = require('./cycleModel');
 
 const userSchema = new mongoose.Schema({
@@ -73,11 +74,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     // required: true,
   },
+  passwordResetToken: String,
+  resetTokenExpires: Date,
 });
 
 userSchema.pre('save', async function (next) {
   if (this.isModified('password')) {
     this.passwordConfirm = undefined;
+    console.log(this.password);
     this.password = await bcrypt.hash(this.password, 12);
   }
   next();
@@ -99,5 +103,30 @@ userSchema.methods.checkPasswordChange = function (timestamp) {
   return lastChange > timestamp;
 };
 
+userSchema.methods.generatePasswordResetToken = async function () {
+  const resetToken = crypto.randomBytes(32).toString('hex');
+  this.passwordResetToken = await bcrypt.hash(resetToken, 12);
+  this.resetTokenExpires = Date.now() + 30 * 60 * 1000;
+  return resetToken;
+};
+
+userSchema.methods.checkResetToken = async function (userToken) {
+  if (!(await bcrypt.compare(userToken, this.passwordResetToken))) {
+    return {
+      status: 'error',
+      message: 'Invalid reset token',
+    };
+  } else if (this.resetTokenExpires < Date.now()) {
+    return {
+      status: 'error',
+      message: 'Token has expired',
+    };
+  } else {
+    return {
+      status: 'success',
+      message: 'Correct reset token and token is not expired',
+    };
+  }
+};
 exports.User = mongoose.model('User', userSchema);
 exports.userSchema = userSchema;
