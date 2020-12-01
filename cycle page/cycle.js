@@ -52,6 +52,15 @@ export default class Cycle {
         buybtn.onclick= () =>{
           console.log("hua");
           localStorage.setItem("selected_cycle_id",this.id);
+          localStorage.setItem("buy-book","1");
+          var y=localStorage.getItem("selected_cycle_id");
+          console.log(y);
+          window.open("/IEEE-Megaproject/selected_cycle/selected.html");
+        }
+        bookbtn.onclick= () =>{
+          console.log("hua");
+          localStorage.setItem("selected_cycle_id",this.id);
+          localStorage.setItem("buy-book","2");
           var y=localStorage.getItem("selected_cycle_id");
           console.log(y);
           window.open("/IEEE-Megaproject/selected_cycle/selected.html");
