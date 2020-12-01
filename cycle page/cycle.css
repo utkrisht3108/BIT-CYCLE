@@ -70,7 +70,7 @@ html {
 .chota{
     width: 20%;
     top: 0;
-    margin-left: 20px;
+    margin-left: 60px;
 }
 .sidenav {
     height: 100%;
@@ -295,9 +295,11 @@ i{
     .open {
         font-size: 15px;
     }
-
+    .chota{
+        margin-left: 15px;
+    }
     .navbar-brand {
-        width: 80%;
+        width: 83%;
         margin-right: 0;
     }
 
