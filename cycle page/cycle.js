@@ -50,20 +50,10 @@ export default class Cycle {
         const buybtn=this.el.querySelector(".buy-btn");
         const bookbtn=this.el.querySelector(".book-btn");
         buybtn.onclick= () =>{
-          console.log("hua");
-          localStorage.setItem("selected_cycle_id",this.id);
-          localStorage.setItem("buy-book","1");
-          var y=localStorage.getItem("selected_cycle_id");
-          console.log(y);
-          window.open("/IEEE-Megaproject/selected_cycle/selected.html");
+          window.open("/IEEE-Megaproject/selected_cycle/selected.html?id="+this.id+"&buybook=1");
         }
         bookbtn.onclick= () =>{
-          console.log("hua");
-          localStorage.setItem("selected_cycle_id",this.id);
-          localStorage.setItem("buy-book","2");
-          var y=localStorage.getItem("selected_cycle_id");
-          console.log(y);
-          window.open("/IEEE-Megaproject/selected_cycle/selected.html");
+          window.open("/IEEE-Megaproject/selected_cycle/selected.html?id="+this.id+"&buybook=2");
         }
         
 
