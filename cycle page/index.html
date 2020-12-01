@@ -17,10 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Castoro&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,22 +27,30 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand navColor1" href="../landing page/"><img src="images/logo.png" class="img" alt=""> BIT Cycle</a>
-                <button class="navbar-toggler navbar-light btn-outline-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link navColor" href="#reviews">isko</a>
+                <div id="mySidenav" class="sidenav" style="width: 275px">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#" class="uparthoda1 sanchit account"><i class="account1 fas fa-user"></i> My Account <img src="images/logo.png" alt="" class="chota sanchit"></a>
+                    <hr>
+                    <a href="#" class="sanchit mess"><i class="mess1 fas fa-bell"></i> Messages</a>
+                    <hr>
+                    <a href="#" class="sanchit wish"><i class="wish1 fas fa-heart"></i> Wishlist</a>
+                    <hr>
+                    <a href="#pageSubmenu" data-toggle="collapse" class="dropdown-toggle fandar sanchit edit"><i class=" edit1 fas fa-edit"></i> Edit Details</a>
+                    <ul class="collapse list-unstyled fandar" id="pageSubmenu">
+                        <li>
+                            <a class="sanchit1" style="padding-top: 20px;" href="#">- Edit User Info</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link navColor" href="#reviews">baadme</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link navColor" href="#footer">dalunga</a>
+                        <li>
+                            <a href="#" class="sanchit1">- Edit Cycle Info</a>
                         </li>
                     </ul>
+                    <hr>
+                    <a href="#" class="sanchit phone"><i class="phone1 fas fa-phone"></i> Contact</a>
+                    <hr>
+                    <a href="#" class="sanchit logout"><i class=" logout1 fas fa-sign-out-alt"></i> Logout</a>
                 </div>
+                <button class="btn btn-lg btn-light ml-auto open" onclick="openNav()">&#9776</button>
+                </script>
             </nav>
         </div>
     </section>
@@ -52,22 +59,22 @@
             <div class="container">
                 <div class="row1">
                     <div id="filter">
-                         <h3>Filters</h3>
-                         <div class="class-1">
-                              <h5>Brand</h5>
-                              <li><input type="checkbox" class="checks brand-check" value="avon"> Avon</li>
-                              <li><input type="checkbox" class="checks brand-check" value="atlas"> Atlas</li>
-                              <li><input type="checkbox" class="checks brand-check" value="hercules"> Hercules</li>
-                              <li><input type="checkbox" class="checks brand-check" value="monsta"> Monsta</li>
-                              <li><input type="checkbox" class="checks brand-check" value="hero"> Hero</li>
-                              <li><input type="checkbox" class="checks brand-check" value="firefox"> Firefox</li>
-                              <h5>Accessories</h5>
-                              <li><input type="checkbox" class="checks access-check" value="gear"> Gears</li>
-                              <li><input type="checkbox" class="checks access-check" value="bell"> Bell</li>
-                              <li><input type="checkbox" class="checks access-check" value="reflector"> Reflector</li>
-                              <li><input type="checkbox" class="checks access-check" value="mudguard"> Mudguard</li>
-                              <li><input type="checkbox" class="checks access-check" value="lock"> Lock</li>
-                         </div>
+                        <h3>Filters</h3>
+                        <div class="class-1">
+                            <h5>Brand</h5>
+                            <li><input type="checkbox" class="checks brand-check" value="avon"> Avon</li>
+                            <li><input type="checkbox" class="checks brand-check" value="atlas"> Atlas</li>
+                            <li><input type="checkbox" class="checks brand-check" value="hercules"> Hercules</li>
+                            <li><input type="checkbox" class="checks brand-check" value="monsta"> Monsta</li>
+                            <li><input type="checkbox" class="checks brand-check" value="hero"> Hero</li>
+                            <li><input type="checkbox" class="checks brand-check" value="firefox"> Firefox</li>
+                            <h5>Accessories</h5>
+                            <li><input type="checkbox" class="checks access-check" value="gear"> Gears</li>
+                            <li><input type="checkbox" class="checks access-check" value="bell"> Bell</li>
+                            <li><input type="checkbox" class="checks access-check" value="reflector"> Reflector</li>
+                            <li><input type="checkbox" class="checks access-check" value="mudguard"> Mudguard</li>
+                            <li><input type="checkbox" class="checks access-check" value="lock"> Lock</li>
+                        </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6" id="filter1">
                         <div class="mb-4">
@@ -91,167 +98,167 @@
                     </div>
                     <section id="all-cycles">
                         <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/Ut_HT_3_82.webp" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/Ut_HT_3_82.webp" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/Ut_HT_3_82.webp" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/Ut_HT_3_82.webp" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/cyc.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/cyc.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 ">
-                        <div class="card  mb-4 box-shadow">
-                            <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text cycle-model">party cycle</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
-                                         </div>
-                                         <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
-                                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </section>
                 </div>
             </div>
@@ -268,7 +275,7 @@
                          10/hr (expected)
                     </div>
                     <div class="book-button">
-                         <button class="btn btn-primary">Book</button>
+                         <button class="btn btnParty btn-primary">Book</button>
                     </div>
                </div>
                <div class="cycle">
@@ -282,7 +289,7 @@
                          10/hr (expected)
                     </div>
                     <div class="book-button">
-                         <button class="btn btn-primary">Book</button>
+                         <button class="btn btnParty btn-primary">Book</button>
                     </div>
                </div>
                <div class="cycle">
@@ -296,7 +303,7 @@
                          10/hr (expected)
                     </div>
                     <div class="book-button">
-                         <button class="btn btn-primary">Book</button>
+                         <button class="btn btnParty btn-primary">Book</button>
                     </div>
                </div>
                <div class="cycle">
@@ -310,15 +317,16 @@
                          10/hr (expected)
                     </div>
                     <div class="book-button">
-                         <button class="btn btn-primary">Book</button>
+                         <button class="btn btnParty btn-primary">Book</button>
                     </div>
                </div>
 
           </div> -->
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
     <script src="cycle_diplay.js" type="module"></script>
     <script src="cycle.js" type="module"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </body>
 <!-- Footer -->
 <footer class="page-footer font-small blue-grey lighten-5 fandar" id="footer">
@@ -398,7 +406,8 @@
                 </div>
             </div>
         </div>
-    <div class="footer-copyright text-center text-black-50 py-3">IEEE MegaProject: Team Name - SUPI6E</div>
+        <div class="footer-copyright text-center text-white-50 py-3">IEEE MegaProject: Team Name - SUPI6E</div>
     </div>
 </footer>
+
 </html>
