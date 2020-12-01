@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const { User, userSchema } = require('./userModel');
+const { ratingSchema } = require('./ratingModel');
+const { commentSchema } = require('./commentSchema');
 
 const cycleSchema = new mongoose.Schema({
   color: {
@@ -23,23 +24,21 @@ const cycleSchema = new mongoose.Schema({
   available: {
     type: Boolean,
   },
-  comments: [
-    {
-      comment: {
-        type: String,
-      },
-      user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    },
-  ],
+  comments: {
+    type: [commentSchema],
+  },
+  ratings: {
+    type: [ratingSchema],
+    //select: false,
+  },
   images: [
     {
       type: String,
     },
   ],
   accessories: [{ type: String, lowercase: true, trim: true }],
+
+  ratingAvg: { type: Number, default: 0 },
 });
 
 cycleSchema.pre(/^find/, function (next) {
