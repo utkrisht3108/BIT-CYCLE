@@ -1,87 +1,188 @@
-*{
+* {
     margin: 0;
     -x: hidden;
 }
+
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
+
 /* navbar  */
-#title{
+#title {
     background-image: url("images/bit.jpg");
     background-size: cover;
 }
-#cycle-page{
+#cycle-page {
     background-color: rgb(255, 255, 255);
 }
-.navbar{
-     padding-top: 1rem;
-     padding-bottom: 1rem;
+
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
-.navColor{
-     color: whitesmoke;
+
+.navColor {
+    color: whitesmoke;
 }
-.navColor:hover{
-     color: rgb(228, 245, 244);
-     transform: scale(1.15);
+
+.navColor:hover {
+    color: rgb(228, 245, 244);
+    transform: scale(1.15);
 }
-.navbar-brand{
-     font-family: 'Ubuntu', sans-serif;
-     vertical-align: middle;
-     font-size: 2.5rem;
-     font-weight: bold;
-     /* margin-right: 0; */
-     /* margin-bottom: 10%; */
+
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+    vertical-align: middle;
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* margin-right: 0; */
+    /* margin-bottom: 10%; */
 }
-.navColor1{
-     color: whitesmoke;
+
+.navColor1 {
+    color: whitesmoke;
 }
-.navColor1:hover{
-     color: white;
+
+.navColor1:hover {
+    color: white;
 }
-.nav-item{
-     padding: 0 25px;
+
+.nav-item {
+    padding: 0 25px;
 }
-.nav-link{
-     font-size: 1.25rem;
-     font-family: 'Montserrat', sans-serif;
-     font-weight: 900;
+
+.nav-link {
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
 }
-.navbar-toggler-icon{
+
+.navbar-toggler-icon {
     background-color: white;
     border-radius: 10%;
 }
-.img{
-     width: 15%;
-     height: 15%;
+
+.img {
+    width: 15%;
+    height: 15%;
+}
+/* yaha se header wala toggle  */
+.chota{
+    width: 20%;
+    top: 0;
+    margin-left: 60px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
-/* padding: 0; */
-    /* overflow */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    color: #818181;
+    display: block;
+    transition: 1s;
+}
 
-#filter{
+.sidenav a:hover {
+    color: #000000;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    padding-bottom: 50px;
+    margin-right: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+hr{
+    margin: 0 ;
+}
+.open {
+    font-size: 30px;
+}
+
+.uparthoda1 {
+    margin-top: 40px;
+}
+.sanchit{
+    line-height: 2.5rem;
+}
+i{
+    margin-right: 10px;
+}
+.sanchit1{
+    line-height: 1.5rem;
+}
+.sanchit1:hover{
+   color: black;
+   font-size: 1.3rem;
+}
+.sanchit:hover + i{
+    
+}
+.sanchit, .sanchit:hover, .sanchit:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+.sanchit:hover{
+    background-color: rgb(192, 191, 191);
+}
+/* yaha tak hai  */
+
+#filter {
     width: 18%;
     position: absolute;
-    left:2%;
-    top:22%;
+    left: 2%;
+    top: 22%;
 }
-#filter h3{
+
+#filter h3 {
     font-family: "Castoro";
 }
-#filter h5{
+
+#filter h5 {
     font-family: "Castoro";
 }
-#filter li{
+
+#filter li {
     font-family: "Dancing Script";
     padding-left: 8px;
     list-style: none;
     font-weight: bold;
     font-size: 20px;
 }
-#all-cycles{
+
+#all-cycles {
     display: flex;
-    flex-wrap: wrap ;
+    flex-wrap: wrap;
+    min-height: 450px;
 }
-.cycle{
+
+.cycle {
     padding: 4px;
     width: 20vw;
     border: 1px gray solid;
@@ -89,122 +190,163 @@ html {
     overflow: hidden;
     border-radius: 3px;
 }
-.cycle:hover{
-    transform: scale(1.05);  
+
+.cycle:hover {
+    transform: scale(1.05);
     transition: 0.3s;
     z-index: 3;
 }
-.cycle-photo{
+
+.cycle-photo {
     width: 95%;
     height: 60%;
     overflow: hidden;
     align-content: center;
 }
-.cycle-photo img{
-    
+
+.cycle-photo img {
+
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
     overflow: hidden;
 }
-.cycle-photo:hover{
-    transform: scale(1.05);  
+
+.cycle-photo:hover {
+    transform: scale(1.05);
     transition: 0.3s;
 }
-.cycle-model{
+
+.cycle-model {
     /* font-family: "Piedra"; */
     text-align: left;
     /* font-weight: bold; */
 }
-.book-button{
+
+.book-button {
     float: right;
 }
-.row1{
+
+.row1 {
     padding-top: 5%;
     display: flex;
     flex-wrap: wrap;
     margin-right: -90px;
     margin-left: 90px;
 }
-.card-img-top{
+
+.card-img-top {
     height: 250px;
 }
-.row2{
+
+.row2 {
     display: flex;
     flex-wrap: wrap;
 }
-.neeche{
+
+.neeche {
     margin-bottom: 2%;
 }
-.sidethoda{
+
+.sidethoda {
     padding-left: 6%;
 }
-.sidethoda1{
+
+.sidethoda1 {
     padding-left: 10%;
 }
 
-.card-body{
+.card-body {
     background-color: rgb(248, 248, 248);
 }
-.card-body:hover{
+
+.card-body:hover {
     background-color: #d4d3d3;
 }
-.card:hover{
-    transform: scale(1.05);  
+
+.card:hover {
+    transform: scale(1.05);
     transition: 0.3s;
 
 }
-#filter1{
-        display: block;
-        width: 100%;
-        position: relative;
-        left:2%;
+
+#filter1 {
+    display: block;
+    width: 100%;
+    position: relative;
+    left: 2%;
 }
-@media(min-width: 577px){
-    #filter1{
+
+@media(min-width: 577px) {
+    #filter1 {
         display: none;
     }
 }
-.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
-@media(max-width: 577px){
-    #filter{
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+@media(max-width: 577px) {
+    #filter {
         display: none;
     }
-    .row1{
+/* aur ye bhi toggle  */
+    .open {
+        font-size: 15px;
+    }
+    .chota{
+        margin-left: 15px;
+    }
+    .navbar-brand {
+        width: 83%;
+        margin-right: 0;
+    }
+
+    .row1 {
         margin-left: 0px;
         padding-top: 0%;
     }
-    .card{
+
+    .card {
         left: 7.5%;
         width: 70%;
     }
-    .row2{
+
+    .row2 {
         /* width: 50%; */
-        height: 50%;    
+        height: 50%;
     }
-    .btn{
+
+    .btnParty {
         font-size: 0.5rem;
         width: 80%;
-        height: 80%; 
+        height: 80%;
     }
 }
+
 /* FOOTER */
-.fsoc{
+.fsoc {
     background-color: #799351;
 }
-.fback{
+
+.fback {
     background-color: #000000;
 }
-.uparthoda{
+
+.uparthoda {
     padding-top: 3%;
 }
-.feedback{
+
+.feedback {
     width: 60px;
     margin-bottom: 4px;
 }
-.fandar{
+
+.fandar {
     color: whitesmoke;
 }
-.flink{
-     color: whitesmoke;
+
+.flink {
+    color: whitesmoke;
 }
