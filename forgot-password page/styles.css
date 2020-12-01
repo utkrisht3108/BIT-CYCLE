@@ -1,0 +1,24 @@
+body {
+  background: url("../landing\ page/images/bit.jpg");
+}
+
+.main{
+  background-color: white;
+  padding: 1rem;
+}
+
+input{
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.buttons{
+  margin: 0.5rem;
+}
+.success{
+  color: green;
+}
+.error{
+  color: red;
+}

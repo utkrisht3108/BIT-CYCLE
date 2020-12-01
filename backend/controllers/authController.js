@@ -116,6 +116,7 @@ module.exports = {
   }),
   uploadImage: upload.any(),
   forgotPassword: catchAsync(async (req, res, next) => {
+    console.log(req.body);
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
       throw new Error('NO user with this email exists');
@@ -125,7 +126,9 @@ module.exports = {
     const subject = 'BIT-CYCLES password reset';
     const message = `Your password reset token is ${resetToken}. Paste this token in the forgot password form. This token will expire in 10 mins. If you don't want to reset your password kindly ignore this email`;
     await email({ email: user.email, subject, message });
-    res.send('sent');
+    res.status(200).json({
+      status: 'success',
+    });
   }),
   resetPasssword: catchAsync(async (req, res, next) => {
     const { email, resetToken } = req.body;
