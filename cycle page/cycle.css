@@ -78,6 +78,7 @@ html {
     font-size: 20px;
 }
 #all-cycles{
+    min-height: 100vw;
     display: flex;
     flex-wrap: wrap ;
 }

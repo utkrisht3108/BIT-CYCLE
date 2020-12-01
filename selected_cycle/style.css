@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    -x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* navbar  */
+#title{
+    background-image: url("images/bit.jpg");
+    background-size: cover;
+}
+#cycle-page{
+    background-color: rgb(255, 255, 255);
+}
+.navbar{
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+}
+.navColor{
+     color: whitesmoke;
+}
+.navColor:hover{
+     color: rgb(228, 245, 244);
+     transform: scale(1.15);
+}
+.navbar-brand{
+     font-family: 'Ubuntu', sans-serif;
+     vertical-align: middle;
+     font-size: 2.5rem;
+     font-weight: bold;
+     /* margin-right: 0; */
+     /* margin-bottom: 10%; */
+}
+.navColor1{
+     color: whitesmoke;
+}
+.navColor1:hover{
+     color: white;
+}
+.nav-item{
+     padding: 0 25px;
+}
+.nav-link{
+     font-size: 1.25rem;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 900;
+}
+.navbar-toggler-icon{
+    background-color: white;
+    border-radius: 10%;
+}
+.img{
+     width: 15%;
+     height: 15%;
+}
+/* nav over*/
+.cycle-display{
+   display: flex;
+}
+.cycle-photo{
+     width: 20%;
+}
+.cycle-info{
+    width: 50%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.cycle-name{
+     font-size: 3rem;
+     text-align: center;
+     font-family: "Oswald";
+}
+.cycle-rating{
+     text-align: center;
+     font-size: 22px;
+}
+
+.checked{
+     color: orange;
+}
+.cycle-details{
+     list-style: none;
+}
+.property{
+     font-weight: bold;
+}

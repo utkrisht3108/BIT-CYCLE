@@ -17,10 +17,11 @@ export default class Cycle {
         this.model,
         this.brand
       );
+      
       var temp_div = document.createElement('div');
       temp_div.innerHTML = temp;
       this.el = temp_div.children[0];
-      
+      this.eventlisterners();
       return this.el;
     }
     gettemplate(model,brand) {
@@ -32,11 +33,11 @@ export default class Cycle {
                                 <p class="card-text cycle-model">${brand}-${model}</p>
                                 <div class="d-flex justify-content-between sidethoda1">
                                          <div class="row2">
-                                             <button type="button" class="btn btn-md btn-primary neeche">Buy</button>
+                                             <button type="button" class="btn btn-md btn-primary neeche buy-btn">Buy</button>
                                              <div class="text-muted cycle-price neeche sidethoda"> 9000rs</div>
                                          </div>
                                          <div class="row2">
-                                              <button type="button" class="btn btn-md btn-danger neeche">Book</button>
+                                              <button type="button" class="btn btn-md btn-danger neeche book-btn">Book</button>
                                              <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
                                          </div>
                                 </div>
@@ -44,6 +45,19 @@ export default class Cycle {
                         </div>
                     </div>
       `;
+      }
+      eventlisterners(){
+        const buybtn=this.el.querySelector(".buy-btn");
+        const bookbtn=this.el.querySelector(".book-btn");
+        buybtn.onclick= () =>{
+          console.log("hua");
+          localStorage.setItem("selected_cycle_id",this.id);
+          var y=localStorage.getItem("selected_cycle_id");
+          console.log(y);
+          window.open("/IEEE-Megaproject/selected_cycle/selected.html");
+        }
+        
+
       }
     }
     
