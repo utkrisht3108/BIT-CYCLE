@@ -235,7 +235,9 @@ i{
 .card-img-top {
     height: 250px;
 }
-
+.card{
+    min-width: 220px;
+}
 .row2 {
     display: flex;
     flex-wrap: wrap;
