@@ -180,3 +180,4 @@ document.querySelector(".details-form").onsubmit = async (e) => {
     }
   }
 };
+document.getElementById("email").placeholder = userAccount.email;
