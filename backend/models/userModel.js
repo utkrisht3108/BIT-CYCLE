@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    // required: [true, 'User must have a name'],
   },
   email: {
     type: String,
@@ -59,20 +58,17 @@ const userSchema = new mongoose.Schema({
     type: Number,
     min: 1,
     max: 14,
-    // required: true,
   },
   room: {
     type: Number,
     min: 1,
     max: 500,
-    // required: true,
   },
   userImage: {
     type: String,
   },
   userId: {
     type: String,
-    // required: true,
   },
   passwordResetToken: String,
   resetTokenExpires: Date,

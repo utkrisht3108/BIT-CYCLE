@@ -29,8 +29,7 @@ module.exports = {
       email: req.body.email,
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
-      mobile: req.body.mobile,
-      passwordChangedAt: req.body.passwordChangedAt,
+      mobile: req.body.phone,
       userId: userId,
       userImage: userImage,
     });

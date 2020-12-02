@@ -39,6 +39,8 @@ const cycleSchema = new mongoose.Schema({
   accessories: [{ type: String, lowercase: true, trim: true }],
 
   ratingAvg: { type: Number, default: 0 },
+  boughtIn: { type: String, required: true },
+  buyPrice: { type: Number },
 });
 
 cycleSchema.pre(/^find/, function (next) {
