@@ -156,6 +156,6 @@ function image_template(images){
 }
 function get_image_template(element){
     return`
-    <img src="/IEEE-Megaproject/backend/img/cycle/${element}" >
+    <img src="../backend/img/cycle/${element}" >
     `;
 }

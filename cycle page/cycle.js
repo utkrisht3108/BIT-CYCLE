@@ -50,10 +50,10 @@ export default class Cycle {
         const buybtn=this.el.querySelector(".buy-btn");
         const bookbtn=this.el.querySelector(".book-btn");
         buybtn.onclick= () =>{
-          window.open("/IEEE-Megaproject/selected_cycle/selected.html?id="+this.id+"&buybook=1");
+          window.open("../selected_cycle/selected.html?id="+this.id+"&buybook=1");
         }
         bookbtn.onclick= () =>{
-          window.open("/IEEE-Megaproject/selected_cycle/selected.html?id="+this.id+"&buybook=2");
+          window.open("../selected_cycle/selected.html?id="+this.id+"&buybook=2");
         }
         
 

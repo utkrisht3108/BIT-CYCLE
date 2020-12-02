@@ -140,9 +140,6 @@ i{
    color: black;
    font-size: 1.3rem;
 }
-.sanchit:hover + i{
-    
-}
 .sanchit, .sanchit:hover, .sanchit:focus {
     color: inherit;
     text-decoration: none;
@@ -349,4 +346,7 @@ i{
 
 .flink {
     color: whitesmoke;
+}
+.flink:hover{
+    color: turquoise;
 }

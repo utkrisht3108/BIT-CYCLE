@@ -54,47 +54,163 @@ html {
      width: 15%;
      height: 15%;
 }
+/* yaha se header wala toggle  */
+.chota{
+    width: 20%;
+    top: 0;
+    margin-left: 60px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    color: #818181;
+    display: block;
+    transition: 1s;
+}
+
+.sidenav a:hover {
+    color: #000000;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    padding-bottom: 50px;
+    margin-right: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+hr{
+    margin: 0 ;
+}
+.open {
+    font-size: 30px;
+}
+
+.uparthoda1 {
+    margin-top: 40px;
+}
+.sanchit{
+    line-height: 2.5rem;
+}
+i{
+    margin-right: 10px;
+}
+.sanchit1{
+    line-height: 1.5rem;
+}
+.sanchit1:hover{
+   color: black;
+   font-size: 1.3rem;
+}
+.sanchit, .sanchit:hover, .sanchit:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+.sanchit:hover{
+    background-color: rgb(192, 191, 191);
+}
+/* yaha tak hai  */
+
 /* nav over*/
+.carousel-indicators li{
+     background-color: black;
+}
+.carousel-indicators .active{
+    background-color: blue;
+}
+.carousel-control-next-icon{
+     background-color: black;
+     border-radius: 100%;
+}
+.carousel-control-prev-icon{
+     background-color: black;
+     border-radius: 100%;
+}
 .cycle-display{
    display: flex;
+   background-image: url("images/bg.jpg");
+   opacity: 0.9;
+   color: whitesmoke;
 }
 .cycle-photos{
      width: 50vw;
-     height: 80vh;
+     height: 95vh;
      padding: 2vw;
+     padding-right: 5%;
+     padding-top: 5%;
 }
 .cycle-photos img{
+     background-image: url("images/bit1.jpg");
+     background-size: cover;
+     padding: 5%;
      width: 100%;
-     height: 100%;
+     height: 525px;
 }
 .cycle-info{
     width: 40%;
     padding-left: 10px;
-    padding-top: 10px;
+    padding-top: 2%;
 }
 .cycle-name{
-     font-size: 200%;
+     background-color: rgb(243, 119, 36);
+     font-family: 'Piedra', cursive;
+     border: 5px outset brown;
+     border-radius: 3%;
+     margin-bottom: 2%;
+     letter-spacing: 5px;
      text-align: center;
-     font-family: "Oswald";
+     font-size: 4rem;
 }
 .cycle-rating{
      text-align: center;
-     font-size: 22px;
+     font-size: 26px;
 }
-
+h4{
+     font-size: 2rem;
+}
 .checked{
      color: orange;
 }
 .cycle-details{
+     font-size: 1.6rem;
      list-style: none;
      padding-bottom: 3vh;
      padding-top: 3vh;
-
+     font-family: 'Josefin Sans', sans-serif;
 }
 .owner-details{
-     padding-bottom: 3vh;
+     font-size: 1.6rem;
      list-style: none;
+     padding-bottom: 3vh;
      padding-top: 3vh;
+     font-family: 'Josefin Sans', sans-serif;
 }
 .user-reviews{
      list-style: none;
@@ -103,23 +219,144 @@ html {
 }
 .property{
      font-weight: bold;
+     border-bottom: 1px solid white;
+     font-size: 1.8rem;
+     line-height: 3.5rem;
+}
+.chatbtn{
+     margin-top: 10%;
+}
+h4{
+     border-bottom: 1px solid white;
 }
 .hidden{
      display: none;
 }
-@media(max-width: 700px){
+.neeche{
+     margin-bottom: 10%;
+}
+.rent-cycle{
+     font-size: 1.2rem;
+     padding-left: 1%;
+     padding-bottom: 5%;
+     border-radius: 2%;
+}
+.rent-dates{
+     font-weight: bold;
+     font-size: 1.5rem;
+     line-height: 2.5rem;
+}
+.thoda{
+     margin-top: 10px;
+}
+/* FOOTER */
+.fsoc{
+    background-color: #799351;
+}
+.fback{
+    background-color: #000000;
+}
+.uparthoda{
+    padding-top: 3%;
+}
+.feedback{
+    width: 60px;
+    margin-bottom: 4px;
+}
+.fandar{
+    color: whitesmoke;
+}
+.flink {
+    color: whitesmoke;
+}
+.flink:hover{
+    color: turquoise;
+}
+
+@media(max-width: 1000px){
+     .cycle-photos img{
+          height: 420px;
+     }
+     .cycle-name{
+          font-size: 3rem;
+     }
+}
+@media(max-width: 760px){
+     
      .cycle-display{
           flex-direction: column;
-          
      }
      .cycle-photos{
           align-self: center;
           padding: 0;
           padding-top:5vh;
           width: 80vw;
-          height: 50vh;
+          height: 50%;
      }
      .cycle-info{
+          padding-top: 100px;
+          width: 90vw;
+     }
+}
+@media (max-width: 625px){
+     .cycle-name{
+          font-size: 2.75rem;
+     }
+    .navbar-brand{
+         width: 75%;
+    }
+    .open {
+        font-size: 15px;
+    }
+    .chota{
+        margin-left: 15px;
+    }
+}
+@media(max-width: 500px){
+     .cycle-display{
+          flex-direction: column;
+     }
+     .cycle-photos{
+          align-self: center;
+          padding: 0;
+          padding-top:5vh;
+          width: 80vw;
+          height: 400px;
+     }
+     .cycle-photos img{
+          align-self: center;
+          width: 80vw;
+          height: 400px;
+     }
+     .cycle-info{
+          padding-top: 50px;
+          width: 90vw;
+     }
+}
+@media(max-width: 415px){
+     .property{
+          font-size: 1.4rem;
+     }
+     .cycle-name{
+          font-size: 2rem;
+     }
+     .cycle-display{
+          flex-direction: column;
+     }
+     .cycle-photos{
+          align-self: center;
+          padding: 0;
+          padding-top:5vh;
+          width: 80vw;
+          height: 300px;
+     }
+     .cycle-photos img{
+          align-self: center;
+          width: 80vw;
+          height: 300px;
+     }
+     .cycle-info{
+          padding-top: 50px;
           width: 90vw;
      }
 }
