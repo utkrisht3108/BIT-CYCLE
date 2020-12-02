@@ -3,12 +3,14 @@ const ratingSchema = new mongoose.Schema({
   rating: {
     type: Number,
     default: 0,
-    required:true
+    required: true,
+    max: 5,
+    min: 1,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required:true
+    required: true,
   },
 });
 

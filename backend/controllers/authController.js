@@ -159,4 +159,14 @@ module.exports = {
       throw new Error(check.message);
     }
   }),
+  getUser: catchAsync(async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      throw new Error('No such user exists');
+    }
+    res.status(200).json({
+      status: 'success',
+      user,
+    });
+  }),
 };
