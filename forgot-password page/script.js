@@ -14,6 +14,7 @@ document.querySelector(".forgot-password").onclick = async (e) => {
       document.querySelector(".secondary-form").classList.remove("hidden");
       document.querySelector(".forgot-password").classList.add("hidden");
       document.querySelector(".reset-password").classList.remove("hidden");
+      document.querySelector(".daalna").classList.add("hidden");
       document
         .querySelector('input[name="email"]')
         .setAttribute("disabled", "true");

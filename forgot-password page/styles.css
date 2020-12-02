@@ -1,24 +1,189 @@
-body {
-  background: url("../landing\ page/images/bit.jpg");
-}
-
-.main{
-  background-color: white;
-  padding: 1rem;
-}
-
-input{
+.gif{
+  width: 30%;
+  margin-top: 5%;
+  border-radius: 100%;
+  position: relative;
+	left:35%;
   display: block;
+}
+.neeche{
+  position: relative;
+  font-size: 0.8rem;
+  padding-right: 70%;
+}
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(170, 170, 170, 0.5);
+}
+body {
+  background-image: url("images/bitx.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.text-center{
+	color:#fff;	
+	text-transform:uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: -50px 0 10px 0;
+    display: block;
+    text-align: center;
+}
+p{
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 60px;
+  color: whitesmoke;
+}
+.box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+  background-color: rgba(0, 0, 0, 0.89);
+	border-radius:3px;
+	padding: 55px 50px;
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:10px 0 5px 0;
+  font-size:19px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;	
+}
+.input-container1{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container1 label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+	transition: all 0.5s ease-in-out;
+}
+.input-container1 input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container1 input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+.input-container1 input:focus ~ label,
+.input-container1 input:valid ~ label{
+	top:-12px;
+	font-size:12px;	
 }
 .hidden {
   display: none;
 }
 .buttons{
   margin: 0.5rem;
+  text-align: center;
+}
+.btn{
+	color:#fff;
+  text-align: center;
+	background-color:#e74c3c;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:20px;
+  margin-bottom: -20px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
 }
 .success{
   color: green;
 }
 .error{
   color: red;
+}
+@media (max-width:1100px){
+  .box{
+    text-align: center;
+    padding: 70px 75px;
+  }
+  .text-center{
+    font-size: 1.5rem;
+  }
+  .gif{
+    width: 30%;
+    left: 35%;
+  }
+}
+@media (max-width:855px){
+  .box{
+    text-align: center;
+    padding: 70px 25px;
+    width: 60%;
+  }
+}
+@media (max-width:555px){
+  .box{
+    text-align: center;
+    padding: 70px 15px;
+    width: 70%;
+  }
+}
+@media (max-width:455px){
+  .box{
+    text-align: center;
+    padding: 70px 15px;
+    width: 80%;
+  }
+  .text-center{
+    font-size: 1.3rem;
+  }
+  p{
+    font-size: 12px;
+  }
+  .gif{
+    width: 40%;
+    left: 30%;
+  }
 }
