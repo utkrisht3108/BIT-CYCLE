@@ -17,6 +17,10 @@ document.querySelector(".login-btn").onclick = async () => {
       }),
     });
     const respJSON = await resp.json();
+    if(resp.status==200){
+      localStorage.setItem("user_id",respJSON.user_id);
+      window.location.href = "../cycle page/";
+    }
     console.log(respJSON);
   } catch (error) {
     console.log(error);
@@ -68,7 +72,7 @@ btn2.onclick = () => {
 // sbtn.onclick = () => {
 //   window.location.href = "../details/";
 // };
-var lbtn = document.getElementById("loginButton");
-lbtn.onclick = () => {
-  window.location.href = "../cycle page/";
-};
+// var lbtn = document.getElementById("loginButton");
+// lbtn.onclick = () => {
+//   window.location.href = "../cycle page/";
+// };

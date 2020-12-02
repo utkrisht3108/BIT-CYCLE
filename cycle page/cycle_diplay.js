@@ -7,6 +7,8 @@ var filter_brands= [];
 var filter_access=[];
 var cycle_box =document.querySelector("#all-cycles");
 var check_boxes=document.querySelectorAll(".checks");
+var loginuser=localStorage.getItem("user_id");
+console.log(loginuser);
 brand_filter();
 function brand_filter(){
   console.log(check_boxes);

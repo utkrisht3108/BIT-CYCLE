@@ -45,7 +45,10 @@ async function get_cycles()
       console.log(access_string);
       var comment_temp=comments_template(cycle.comments);
       var image_temp=image_template(cycle.images);
-      var temp=gettemp(cycle.brand,cycle.model,cycle.color,cycle.owner,access_string,comment_temp,image_temp);
+      var image_temp2=image_template2(cycle.images);
+      console.log(image_temp2);
+      console.log(image_temp);
+      var temp=gettemp(cycle.brand,cycle.model,cycle.color,cycle.owner,access_string,comment_temp,image_temp,image_temp2);
       var temp_div = document.createElement('div');
       temp_div.innerHTML = temp;
       mycycle.innerHTML="";
@@ -53,8 +56,11 @@ async function get_cycles()
       rating_update();
       var buybtn=document.querySelector(".buy");
       var rentbtn=document.querySelector(".rent");
-      if(buy_book=="1")
-      rentbtn.classList.add("hidden");
+      var rentdates=document.querySelector(".rent-cycle");
+      if(buy_book=="1"){
+        rentbtn.classList.add("hidden");
+        rentdates.classList.add("hidden");
+      }
       else
       buybtn.classList.add("hidden");
     }catch (error) {
@@ -73,11 +79,28 @@ function rating_update(){
         stars[i].classList.add("checked");
     }
 }
-function gettemp(brand,model,color,owner,access_string,comment_temp,image_temp){
+function gettemp(brand,model,color,owner,access_string,comment_temp,image_temp,image_temp2){
     return`
     <div class="cycle-display">
         <div class="cycle-photos">
-         ${image_temp}
+        <div id="ut" class="carousel slide" data-ride="carousel" data-pause="hover">
+        <ol class="carousel-indicators">
+            ${image_temp2}
+        </ol>
+        <div class="carousel-inner">
+            ${image_temp}
+        </div>
+        <a class="carousel-control-prev" href="#ut" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#ut" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div> 
+                    
+
         </div>
         <div class="cycle-info">
             <div class="cycle-name"> ${brand}:${model}</div>
@@ -107,8 +130,17 @@ function gettemp(brand,model,color,owner,access_string,comment_temp,image_temp){
                 ${comment_temp}
 
             </div>
-            <button class="btn btn-warning rent">Rent</button>
-            <button class="btn btn-warning buy">Buy</button>
+            <div class="rent-cycle abcd">
+                <h4>Select Date and Time for your Booking</h4>
+                <label for="" class="rent-dates">From (date and time) :</label><br>
+                <input type="datetime-local" id="" name="">
+                <input class="btn btn-danger" type="submit"></input><br><br>
+                <label for="" class="rent-dates">Till (date and time) :</label><br>
+                <input type="datetime-local" id="" name="">
+                <input class="btn btn-danger" type="submit"></input>
+            </div>
+            <button class="btn btn-warning btn-block btn-lg rent neeche">Rent</button>
+            <button class="btn btn-warning btn-block btn-lg buy neeche">Buy</button>
 
         </div>
     </div>
@@ -139,6 +171,29 @@ function get_comment_template(element){
 
 function image_template(images){
     var image_temp=[];
+    var i=0;
+    if(images.length==0){
+        console.log("lol");
+        image_temp.push(`
+        <div class="carousel-item active">
+            <img class="photu" src="../backend/img/cycle/b45d18c2d27a383e95d03bf5ddfe469c.jpg" >
+        </div>
+        `);
+    }
+    else{
+        images.forEach(element => {
+            
+            image_temp.push(get_image_template(element,i));
+            i++;
+        });
+    }
+    console.log(image_temp);
+    return image_temp;
+
+}
+function image_template2(images){
+    var image_temp2=[];
+    var i=0;
     if(images.length==0){
         console.log("lol");
         image_temp=["None"];
@@ -146,16 +201,37 @@ function image_template(images){
     else{
         images.forEach(element => {
             
-            image_temp.push(get_image_template(element));
-            
+            image_temp2.push(get_image_template2(element,i));
+            i++;
         });
     }
-    console.log(image_temp);
-    return image_temp;
+    console.log(image_temp2);
+    return image_temp2;
 
 }
-function get_image_template(element){
+function get_image_template(element,i){
+    if(i==0){
+    console.log("lol");
     return`
-    <img src="../backend/img/cycle/${element}" >
+    <div class="carousel-item active">
+        <img class="photu" src="../backend/img/cycle/${element}" >
+    </div>
+    `;
+    }
+    return`
+    <div class="carousel-item">
+        <img class="photu" src="../backend/img/cycle/${element}" >
+    </div>
+    `;
+}
+function get_image_template2(element,i){
+    if(i==0){
+    console.log("lol");
+    return`
+    <li data-target="#ut" data-slide-to="${i}" class="active"></li>
+    `;
+    }
+    return`
+    <li data-target="#ut" data-slide-to="${i}" ></li>
     `;
 }

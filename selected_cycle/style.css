@@ -213,9 +213,11 @@ h4{
      font-family: 'Josefin Sans', sans-serif;
 }
 .user-reviews{
+     font-size: 1.6rem;
      list-style: none;
      padding-bottom: 3vh;
      padding-top: 3vh;
+     font-family: 'Josefin Sans', sans-serif;
 }
 .property{
      font-weight: bold;

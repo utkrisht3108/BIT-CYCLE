@@ -68,6 +68,7 @@ module.exports = {
     res.status(200).json({
       status: 'success',
       token,
+      user_id: user._id
     });
   }),
   protect: catchAsync(async (req, res, next) => {
