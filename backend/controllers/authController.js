@@ -49,7 +49,6 @@ module.exports = {
     });
   }),
   login: catchAsync(async (req, res, next) => {
-    console.log(req.body);
     const { email, password } = req.body;
     if (!email || !password) {
       throw new Error('Enter email and password');

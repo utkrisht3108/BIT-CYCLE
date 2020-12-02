@@ -7,7 +7,6 @@ const upload = require('../utils/imageUpload');
 
 module.exports = {
   getAllCycles: catchAsync(async (req, res, next) => {
-    console.log(__dirname);
     const cycle = await Cycle.find();
     console.log('hahhahhah');
     res.status(200).json({

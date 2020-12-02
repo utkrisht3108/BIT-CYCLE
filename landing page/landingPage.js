@@ -15,10 +15,11 @@ document.querySelector(".login-btn").onclick = async () => {
         email,
         password,
       }),
+      credentials: "include",
     });
     const respJSON = await resp.json();
-    if(resp.status==200){
-      localStorage.setItem("user_id",respJSON.user_id);
+    if (resp.status == 200) {
+      localStorage.setItem("user_id", respJSON.user_id);
       window.location.href = "../cycle page/";
     }
     console.log(respJSON);
@@ -28,7 +29,7 @@ document.querySelector(".login-btn").onclick = async () => {
 };
 
 console.log(document.getElementById("signupButton"));
-document.getElementById("signupButton").onclick =() => {
+document.getElementById("signupButton").onclick = () => {
   try {
     const email = document.querySelector(".signup-email").value;
     const password = document.querySelector(".signup-password").value;
@@ -49,7 +50,7 @@ document.getElementById("signupButton").onclick =() => {
     account = JSON.stringify(account);
     account = btoa(account);
     localStorage.setItem("userAccount", account);
-    window.location.href = "../details/index.html"
+    window.location.href = "../details/index.html";
   } catch (error) {
     console.log(error);
   }
