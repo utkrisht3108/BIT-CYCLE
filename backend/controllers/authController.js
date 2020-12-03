@@ -32,6 +32,8 @@ module.exports = {
       mobile: req.body.phone,
       userId: userId,
       userImage: userImage,
+      hostel: req.body.hostel,
+      room: req.body.room,
     });
     const token = generateToken(newUser._id);
     res.cookie('token', token, {
@@ -67,7 +69,7 @@ module.exports = {
     res.status(200).json({
       status: 'success',
       token,
-      user_id: user._id
+      user_id: user._id,
     });
   }),
   protect: catchAsync(async (req, res, next) => {

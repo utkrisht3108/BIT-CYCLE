@@ -32,7 +32,8 @@ const cycleSchema = new mongoose.Schema({
     },
   ],
   accessories: [{ type: String, lowercase: true, trim: true }],
-
+  bookingStarts: { type: Date },
+  bookingEnds: { type: Date },
   ratingAvg: { type: Number, default: 1 },
   boughtIn: { type: String, required: true },
   buyPrice: { type: Number },
