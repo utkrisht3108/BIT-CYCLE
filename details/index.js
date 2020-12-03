@@ -179,6 +179,7 @@ document.querySelector(".details-form").onsubmit = async (e) => {
       await postCycle(e, userId, checkRadio1);
       window.location.href = "../cycle page/index.html";
     }
+    
   }
 };
 document.getElementById("email").placeholder = userAccount.email;

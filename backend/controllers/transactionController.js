@@ -12,4 +12,10 @@ module.exports = {
     });
     res.status(201).json({ status: 'success', newTransaction });
   }),
+  sendUserTransaction: catchAsync(async (req, res, next) => {
+    const transactions = await Transaction.find({
+      $or: [{ owner: req.params.id }, { renter: req.params.id }],
+    }).sort('createdAt');
+    res.status(200).json({ status: 'success', transactions });
+  }),
 };
