@@ -4,6 +4,8 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const cycleRouter = require('./routes/cycleRouter');
 const userRouter = require('./routes/userRouter');
+const rentRouter = require('./routes/rentRouter');
+const transactionRouter = require('./routes/transactionRouter');
 
 const app = express();
 
@@ -16,13 +18,15 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
-app.use(express.static(`${__dirname}/public/chat page`))
+app.use(express.static(`${__dirname}/public/chat page`));
 app.use((req, res, next) => {
   //console.log(req.cookies.token);
   next();
 });
 app.use('/api/cycles', cycleRouter);
 app.use('/api/users', userRouter);
+app.use('/api/rent', rentRouter);
+app.use('/api/transactions', transactionRouter);
 app.all('*', (req, res, next) => {
   console.log(req.originalUrl);
   next(new Error('Not Found'));

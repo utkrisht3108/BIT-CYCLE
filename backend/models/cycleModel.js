@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { ratingSchema } = require('./ratingModel');
 const { commentSchema } = require('./commentSchema');
 
 const cycleSchema = new mongoose.Schema({
@@ -27,10 +26,6 @@ const cycleSchema = new mongoose.Schema({
   comments: {
     type: [commentSchema],
   },
-  ratings: {
-    type: [ratingSchema],
-    //select: false,
-  },
   images: [
     {
       type: String,
@@ -38,7 +33,7 @@ const cycleSchema = new mongoose.Schema({
   ],
   accessories: [{ type: String, lowercase: true, trim: true }],
 
-  ratingAvg: { type: Number, default: 0 },
+  ratingAvg: { type: Number, default: 1 },
   boughtIn: { type: String, required: true },
   buyPrice: { type: Number },
 });
