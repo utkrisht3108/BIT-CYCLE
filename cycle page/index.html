@@ -61,6 +61,16 @@
                     <div id="filter">
                         <h3>Filters</h3>
                         <div class="class-1">
+                            <h5 href="#purpose" data-toggle="collapse" class="dropdown-toggle">Purpose</h5>
+                            <ul class="collapse list-unstyled" id="purpose">
+                                <li><input type="checkbox" class="checks purpose-check" value="buy"> Buy</li>
+                                <li><input type="checkbox" class="checks purpose-check" value="rent"> Rent</li>
+                            </ul>
+                            <div class="sell-range hidden">
+                                <h5>Selling Price(max)</h5>
+                                <input type="range" class="range" value="50000" min="0" max="50000">
+                                <span class="rangeval">Max</span>
+                            </div>
                             <h5 href="#brand" data-toggle="collapse" class="dropdown-toggle">Brand</h5>
                             <ul class="collapse list-unstyled" id="brand">
                                 <li><input type="checkbox" class="checks brand-check" value="avon"> Avon</li>
@@ -78,12 +88,29 @@
                                 <li><input type="checkbox" class="checks access-check" value="mudguard"> Mudguard</li>
                                 <li><input type="checkbox" class="checks access-check" value="lock"> Lock</li>
                             </ul>
+                            <h5 href="#color" data-toggle="collapse" class="dropdown-toggle">Colors</h5>
+                            <ul class="collapse list-unstyled" id="color">
+                                <li><input type="checkbox" class="checks color-check" value="red"> Red</li>
+                                <li><input type="checkbox" class="checks color-check" value="blue"> Blue</li>
+                                <li><input type="checkbox" class="checks color-check" value="green"> Green</li>
+                                <li><input type="checkbox" class="checks color-check" value="black"> Black</li>
+                                <li><input type="checkbox" class="checks color-check" value="orange"> Orange</li>
+                            </ul>
+                            
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6" id="filter1">
                         <div class="mb-4">
                             <h3>Filters</h3>
                             <div class="class-1">
+                                <h5>Purpose</h5>
+                                <li><input type="checkbox" class="checks purpose-check" value="buy"> Buy</li>
+                                <li><input type="checkbox" class="checks purpose-check" value="rent"> Rent</li>
+                                <!-- <div class="sell-range hidden">
+                                    <h5>Selling Price(max)</h5>
+                                    <input type="range" class="range" value="50000" min="0" max="50000">
+                                    <span class="rangeval">Max</span>
+                                </div> -->
                                 <h5>Brand</h5>
                                 <li><input type="checkbox" class="checks brand-check" value="avon"> Avon</li>
                                 <li><input type="checkbox" class="checks brand-check" value="atlas"> Atlas</li>
@@ -97,6 +124,12 @@
                                 <li><input type="checkbox" class="checks access-check" value="reflector"> Reflector</li>
                                 <li><input type="checkbox" class="checks access-check" value="mudguard"> Mudguard</li>
                                 <li><input type="checkbox" class="checks access-check" value="lock"> Lock</li>
+                                <h5>Colors</h5>
+                                <li><input type="checkbox" class="checks color-check" value="red"> Red</li>
+                                <li><input type="checkbox" class="checks color-check" value="blue"> Blue</li>
+                                <li><input type="checkbox" class="checks color-check" value="green"> Green</li>
+                                <li><input type="checkbox" class="checks color-check" value="black"> Black</li>
+                                <li><input type="checkbox" class="checks color-check" value="orange"> Orange</li>
                             </div>
                         </div>
                     </div>
@@ -197,7 +230,7 @@
                                 <div class="card-body">
                                     <p class="card-text cycle-model">party cycle</p>
                                     <div class="d-flex justify-content-between sidethoda1">
-                                        <div class="row2">
+                                        <div class="row2 hidden">
                                             <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
                                             <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
                                         </div>

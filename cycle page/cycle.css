@@ -172,6 +172,30 @@ i{
     font-weight: bold;
     font-size: 20px;
 }
+.rangeval{
+    padding: 2px;
+    right: -60px;
+    box-sizing: border-box;
+    background-color: orange;
+    border-radius: 3px;
+    width: 50px;
+}
+.range{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    outline: none;
+    width: 10vw;
+    border-radius: 3px;
+    background-color:orange;
+}
+.hidden{
+    display: none;
+}
+/* .range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+
+} */
 #all-cycles{
     min-height: 100vw;
     display: flex;
