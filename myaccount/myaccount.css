@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 .myaccount-display{
     display: flex;
     padding: 5px;
@@ -22,4 +25,174 @@
 .property{
     font-weight: bold;
     
+}
+/* navbar  */
+#title {
+    background-image: url("images/bit.jpg");
+    background-size: cover;
+}
+#cycle-page {
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navColor {
+    color: whitesmoke;
+}
+
+.navColor:hover {
+    color: rgb(228, 245, 244);
+    transform: scale(1.15);
+}
+
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+    vertical-align: middle;
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* margin-right: 0; */
+    /* margin-bottom: 10%; */
+}
+
+.navColor1 {
+    color: whitesmoke;
+}
+
+.navColor1:hover {
+    color: white;
+}
+
+.nav-item {
+    padding: 0 25px;
+}
+
+.nav-link {
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+    border-radius: 10%;
+}
+
+.img {
+    width: 15%;
+    height: 15%;
+}
+/* yaha se header wala toggle  */
+.chota{
+    width: 20%;
+    top: 0;
+    margin-left: 60px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    color: #818181;
+    display: block;
+    transition: 1s;
+}
+
+.sidenav a:hover {
+    color: #000000;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    padding-bottom: 50px;
+    margin-right: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+hr{
+    margin: 0 ;
+}
+.open {
+    font-size: 30px;
+}
+
+.uparthoda1 {
+    margin-top: 40px;
+}
+.sanchit{
+    line-height: 2.5rem;
+}
+i{
+    margin-right: 10px;
+}
+.sanchit1{
+    line-height: 1.5rem;
+}
+.sanchit1:hover{
+   color: black;
+   font-size: 1.3rem;
+}
+.sanchit, .sanchit:hover, .sanchit:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+.sanchit:hover{
+    background-color: rgb(192, 191, 191);
+}
+/* yaha tak hai  */
+/* FOOTER */
+.fsoc {
+    background-color: #799351;
+}
+
+.fback {
+    background-color: #000000;
+}
+
+.uparthoda {
+    padding-top: 3%;
+}
+
+.feedback {
+    width: 60px;
+    margin-bottom: 4px;
+}
+
+.fandar {
+    color: whitesmoke;
+}
+
+.flink {
+    color: whitesmoke;
+}
+.flink:hover{
+    color: turquoise;
 }

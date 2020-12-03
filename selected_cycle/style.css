@@ -76,6 +76,7 @@ html {
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
+    font-weight: 550;
     text-decoration: none;
     font-size: 1.2rem;
     font-family: 'Inter', sans-serif;

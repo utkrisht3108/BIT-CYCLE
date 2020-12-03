@@ -51,12 +51,12 @@ async function show_data(){
     document.getElementById("phone").value = user.mobile;
     document.getElementById("hostel").value = user.hostel;
     document.getElementById("room").value = user.room;
-    document.getElementById("userPhoto").value = user.userPhoto;
-    document.getElementById("userId").value = user.userId;
+    // document.getElementById("userPhoto").value = user.userImage;
+    // document.getElementById("userId").value = user.userId;
     document.getElementById("cycleName").value = user.cycleName;
     document.getElementById("cycleColor").value = user.cycleColor;
     document.getElementById("boughtIn").value = user.boughtIn;
-    document.getElementById("photos").value = user.photos;
+    // document.getElementById("photos").value = user.photos;
     document.getElementById("cyclePrice").value = user.cyclePrice;
     // checkbox ka patanahi
 }
