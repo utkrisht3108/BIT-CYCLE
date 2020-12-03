@@ -37,11 +37,32 @@ const makeTransaction = async () => {
       if (cycleUpdate.status !== 200) {
         throw new Error(cycleUpdateJson.message);
       }
-      
+      const confirmation = await fetch(
+        "http://localhost:3000/api/rent/confirm",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            ownerId: data.owner,
+            renterId: data.renter,
+            cycleId: data.cycle,
+            from: data.from,
+            to: data.to,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (confirmation.status !== 200) {
+        const confJson = await confirmation.json();
+        throw new Error(confJson.message);
+      }
     } else {
       throw new Error(respJson.message);
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 makeTransaction().catch((err) => {

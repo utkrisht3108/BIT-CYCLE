@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     ],
     unique: false,
   },
-  mobile: {
+  phone: {
     type: Number,
     // required: [true, 'Please enter a mobile number'],
     match: [
