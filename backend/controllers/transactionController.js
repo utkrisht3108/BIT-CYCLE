@@ -1,4 +1,5 @@
 const { Transaction } = require('../models/transactionModel');
+const { Cycle } = require('../models/cycleModel');
 const catchAsync = require('../utils/catchAsync');
 
 module.exports = {
@@ -17,5 +18,26 @@ module.exports = {
       $or: [{ owner: req.params.id }, { renter: req.params.id }],
     }).sort('createdAt');
     res.status(200).json({ status: 'success', transactions });
+  }),
+  updateRating: catchAsync(async (req, res, next) => {
+    const txnId = req.params.id;
+    const newRating = req.body.rating;
+    const updatedTxn = await Transaction.findByIdAndUpdate(
+      txnId,
+      { rating: newRating },
+      { new: true }
+    );
+    const cycleId = updatedTxn.cycle;
+    const resp = await Transaction.aggregate([
+      { $match: { cycle: cycleId } },
+      { $group: { _id: cycleId, average: { $avg: '$rating' } } },
+    ]);
+    await Cycle.findByIdAndUpdate(cycleId, {
+      ratingAvg: resp[0].average,
+    });
+    res.status(200).json({
+      status: 'success',
+    });
+    console.log(resp[0].average);
   }),
 };
