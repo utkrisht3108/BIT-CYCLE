@@ -48,7 +48,7 @@ async function show_data(){
     document.getElementById("fName").value = user.name;
     document.getElementById("sName").value = user.name;
     document.getElementById("email").value = user.email;
-    document.getElementById("phone").value = user.mobile;
+    document.getElementById("phone").value = user.phone;
     document.getElementById("hostel").value = user.hostel;
     document.getElementById("room").value = user.room;
     // document.getElementById("userPhoto").value = user.userImage;

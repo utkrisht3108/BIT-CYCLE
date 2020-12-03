@@ -8,5 +8,8 @@ router.route('/logout').post(authController.logout);
 router.route('/forgotPassword').post(authController.forgotPassword);
 router.route('/resetPassword').patch(authController.resetPasssword);
 router.route('/').get(authController.getAllUser);
-router.route('/:id').get(authController.getUser);
+router
+  .route('/:id')
+  .get(authController.getUser)
+  .patch(authController.updateUser);
 module.exports = router;

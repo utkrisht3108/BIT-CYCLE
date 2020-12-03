@@ -17,6 +17,9 @@ module.exports = {
     const transactions = await Transaction.find({
       $or: [{ owner: req.params.id }, { renter: req.params.id }],
     }).sort('createdAt');
+    if (!transactions) {
+      throw new Error('Invalid Id');
+    }
     res.status(200).json({ status: 'success', transactions });
   }),
   updateRating: catchAsync(async (req, res, next) => {
@@ -27,14 +30,21 @@ module.exports = {
       { rating: newRating },
       { new: true }
     );
+    if (!updatedTxn) {
+      throw new Error('Incorrect Id');
+    }
     const cycleId = updatedTxn.cycle;
     const resp = await Transaction.aggregate([
       { $match: { cycle: cycleId } },
       { $group: { _id: cycleId, average: { $avg: '$rating' } } },
     ]);
-    await Cycle.findByIdAndUpdate(cycleId, {
+    const updatedCycle = await Cycle.findByIdAndUpdate(cycleId, {
       ratingAvg: resp[0].average,
-    });
+    },{new:true});
+    console.log(updatedCycle.ratingAvg);
+    if (!updatedCycle) {
+      throw new Error('Wrong cycle Id');
+    }
     res.status(200).json({
       status: 'success',
     });

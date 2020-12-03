@@ -170,4 +170,15 @@ module.exports = {
       user,
     });
   }),
+  updateUser: catchAsync(async (req, res, next) => {
+    const userId = req.params.id;
+    if (req.body.password || req.body.passwordConfirm) {
+      throw new Error('Cannot change password');
+    }
+    const user = await User.findByIdAndUpdate(userId, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    res.status(200).json({ status: 'success', user });
+  }),
 };
