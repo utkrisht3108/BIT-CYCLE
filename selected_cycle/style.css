@@ -156,9 +156,10 @@ i{
 }
 .cycle-display{
    display: flex;
-   background-image: url("images/bg.jpg");
+   /* background-color: whitesmoke; */
+   background-image: -webkit-linear-gradient(300deg, #dddddd 60%, #4e5f70 90%);
    opacity: 0.9;
-   color: whitesmoke;
+   color: rgb(58, 58, 58);
 }
 .cycle-photos{
      width: 50vw;
@@ -168,9 +169,10 @@ i{
      padding-top: 5%;
 }
 .cycle-photos img{
-     background-image: url("images/bit1.jpg");
+     /* background-image: url("images/bit1.jpg");  */
+     background-color: black;
      background-size: cover;
-     padding: 5%;
+     padding: 2.5%;
      width: 100%;
      height: 525px;
 }
@@ -180,57 +182,65 @@ i{
     padding-top: 2%;
 }
 .cycle-name{
-     background-color: rgb(243, 119, 36);
-     font-family: 'Piedra', cursive;
-     border: 5px outset brown;
+     font-family: 'Bebas Neue', cursive;
+     color: black;
+     border-bottom: 5px outset darkgray;
      border-radius: 3%;
-     margin-bottom: 2%;
+     margin-bottom: 5%;
      letter-spacing: 5px;
-     text-align: center;
-     font-size: 4rem;
+     text-align: left;
+     font-size: 3.5rem;
 }
 .cycle-rating{
      text-align: center;
      font-size: 26px;
 }
 h4{
-     font-size: 2rem;
+     font-size: 1.5rem;
 }
 .checked{
      color: orange;
 }
 .cycle-details{
-     font-size: 1.6rem;
+     font-size: 1.2rem;
      list-style: none;
      padding-bottom: 3vh;
      padding-top: 3vh;
      font-family: 'Josefin Sans', sans-serif;
 }
 .owner-details{
-     font-size: 1.6rem;
+     font-size: 1.2rem;
      list-style: none;
      padding-bottom: 3vh;
      padding-top: 3vh;
      font-family: 'Josefin Sans', sans-serif;
 }
 .user-reviews{
-     font-size: 1.6rem;
+     font-size: 1.5rem;
      list-style: none;
-     padding-bottom: 3vh;
-     padding-top: 3vh;
+     padding-bottom: 10%;
+     padding-top: 5%;
      font-family: 'Josefin Sans', sans-serif;
+}
+.userHead{
+     color: rgb(3, 3, 26);
+}
+.upar{
+     margin-top: 10px;
+     margin-bottom: 10px;
 }
 .property{
      font-weight: bold;
-     border-bottom: 1px solid white;
-     font-size: 1.8rem;
-     line-height: 3.5rem;
+     font-size: 1.4rem;
+     line-height: 2.5rem;
 }
 .chatbtn{
      margin-top: 10%;
 }
 h4{
-     border-bottom: 1px solid white;
+     border-bottom: 1px solid black;
+     border-radius: 6%;
+     font-weight: bold;
 }
 .hidden{
      display: none;
@@ -238,9 +248,16 @@ h4{
 .neeche{
      margin-bottom: 10%;
 }
+.comment{
+     font-size: 1.1rem;
+}
+.thodaUpar{
+     margin-top: 20px;
+}
 .rent-cycle{
-     font-size: 1.2rem;
-     padding-left: 1%;
+     /* font-size: 1.2rem; */
+     color: black;
+     padding-top: 20px;
      padding-bottom: 5%;
      border-radius: 2%;
 }
@@ -303,7 +320,7 @@ h4{
 }
 @media (max-width: 625px){
      .cycle-name{
-          font-size: 2.75rem;
+          font-size: 2.5rem;
      }
     .navbar-brand{
          width: 75%;
@@ -332,13 +349,15 @@ h4{
           height: 400px;
      }
      .cycle-info{
-          padding-top: 50px;
           width: 90vw;
      }
 }
 @media(max-width: 415px){
      .property{
           font-size: 1.4rem;
+     }
+     .navbar-brand{
+          width: 77%;
      }
      .cycle-name{
           font-size: 2rem;
@@ -359,7 +378,6 @@ h4{
           height: 300px;
      }
      .cycle-info{
-          padding-top: 50px;
           width: 90vw;
      }
 }
