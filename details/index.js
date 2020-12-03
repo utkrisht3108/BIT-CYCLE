@@ -177,6 +177,7 @@ document.querySelector(".details-form").onsubmit = async (e) => {
     const userId = await postUser(e);
     if (checkRadio) {
       await postCycle(e, userId, checkRadio1);
+      window.location.href = "../cycle page/index.html";
     }
   }
 };
