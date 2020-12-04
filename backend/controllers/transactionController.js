@@ -4,18 +4,12 @@ const catchAsync = require('../utils/catchAsync');
 
 module.exports = {
   addTransaction: catchAsync(async (req, res, next) => {
-    const newTransaction = await Transaction.create({
-      owner: req.body.owner,
-      renter: req.body.renter,
-      cycle: req.body.cycle,
-      bookingStart: req.body.from,
-      bookingEnd: req.body.to,
-    });
+    const newTransaction = await Transaction.create(req.body);
     res.status(201).json({ status: 'success', newTransaction });
   }),
   sendUserTransaction: catchAsync(async (req, res, next) => {
     const transactions = await Transaction.find({
-      $or: [{ owner: req.params.id }, { renter: req.params.id }],
+      $or: [{ owner: req.params.id }, { otherParty: req.params.id }],
     }).sort('createdAt');
     if (!transactions) {
       throw new Error('Invalid Id');
@@ -35,12 +29,16 @@ module.exports = {
     }
     const cycleId = updatedTxn.cycle;
     const resp = await Transaction.aggregate([
-      { $match: { cycle: cycleId } },
+      { $match: { cycle: cycleId, txnType: 'rent' } },
       { $group: { _id: cycleId, average: { $avg: '$rating' } } },
     ]);
-    const updatedCycle = await Cycle.findByIdAndUpdate(cycleId, {
-      ratingAvg: resp[0].average,
-    },{new:true});
+    const updatedCycle = await Cycle.findByIdAndUpdate(
+      cycleId,
+      {
+        ratingAvg: resp[0].average,
+      },
+      { new: true }
+    );
     console.log(updatedCycle.ratingAvg);
     if (!updatedCycle) {
       throw new Error('Wrong cycle Id');
