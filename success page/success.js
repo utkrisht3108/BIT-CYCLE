@@ -109,7 +109,7 @@ const buyCycle = async (data) => {
     const confJson = await confirmation.json();
     throw new Error(confJson.message);
   }
-  const cycleUpdate = await fetch(
+  const cycleDel = await fetch(
     `http://localhost:3000/api/cycles/${data.cycle}`,
     {
       method: "DELETE",
@@ -118,9 +118,9 @@ const buyCycle = async (data) => {
       },
     }
   );
-  const cycleUpdateJson = await cycleUpdate.json();
+  const cycleDelJson = await cycleDel.json();
   if (cycleUpdate.status !== 200) {
-    throw new Error(cycleUpdateJson.message);
+    throw new Error(cycleDelJson.message);
   }
 };
 makeTransaction().catch((err) => {
