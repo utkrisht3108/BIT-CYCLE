@@ -1,6 +1,6 @@
 document.querySelector(".logout").onclick = async () => {
   try {
-    const resp = await fetch("http://localhost:3000/api/users/logout", {
+    const resp = await fetch("/api/users/logout", {
       method: "POST",
       credentials: "include",
     });

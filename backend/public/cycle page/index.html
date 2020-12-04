@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>BIT Cycle | Cycles</title>
+    <link rel="icon" href="favicon (1).ico">
+    <script src="https://kit.fontawesome.com/eec8b92df6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="cycle.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Castoro&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section id="title">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand navColor1" href=""><img src="images/logo.png" class="img" alt=""> BIT Cycle</a>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="../myaccount/myaccount.html" class="uparthoda1 sanchit account"><i class="account1 fas fa-user"></i> My Account <img src="images/logo.png" alt="" class="chota sanchit"></a>
+                    <hr>
+                    <a href="#" class="sanchit mess"><i class="mess1 fas fa-bell"></i> Messages</a>
+                    <hr>
+                    <a href="#" class="sanchit wish"><i class="wish1 fas fa-heart"></i> Wishlist</a>
+                    <hr>
+                    <a href="#pageSubmenu" data-toggle="collapse" class="dropdown-toggle fandar sanchit edit"><i class=" edit1 fas fa-edit"></i> Edit Details</a>
+                    <ul class="collapse list-unstyled fandar" id="pageSubmenu">
+                        <li>
+                            <a href="../edit page/index.html" class="sanchit1 editcycle" style="padding-top: 20px;">- Edit User Info</a>
+                        </li>
+                        <li>
+                            <a href="../edit page/index.html#footer" class="sanchit1 deletcycle">- Edit Cycle Info</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <a href="#footer" class="sanchit phone"><i class="phone1 fas fa-phone"></i> Contact</a>
+                    <hr>
+                    <a href="#" class="sanchit logout"><i class=" logout1 fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+                <button class="btn btn-lg btn-light ml-auto open" onclick="openNav()">&#9776</button>
+                </script>
+            </nav>
+        </div>
+    </section>
+    <div id="cycle-page">
+        <div class="album py-5">
+            <div class="container">
+                <div class="row1">
+                    <div id="filter">
+                        <h3>Filters</h3>
+                        <div class="class-1">
+                            <h5 href="#purpose" data-toggle="collapse" class="dropdown-toggle">Purpose</h5>
+                            <ul class="collapse list-unstyled" id="purpose">
+                                <li><input type="checkbox" class="checks purpose-check" value="buy"> Buy</li>
+                                <li><input type="checkbox" class="checks purpose-check" value="rent"> Rent</li>
+                            </ul>
+                            <div class="sell-range hidden">
+                                <h5>Selling Price(max)</h5>
+                                <input type="range" class="range" value="50000" min="0" max="50000">
+                                <span class="rangeval">Max</span>
+                            </div>
+                            <h5 href="#brand" data-toggle="collapse" class="dropdown-toggle">Brand</h5>
+                            <ul class="collapse list-unstyled" id="brand">
+                                <li><input type="checkbox" class="checks brand-check" value="avon"> Avon</li>
+                                <li><input type="checkbox" class="checks brand-check" value="atlas"> Atlas</li>
+                                <li><input type="checkbox" class="checks brand-check" value="hercules"> Hercules</li>
+                                <li><input type="checkbox" class="checks brand-check" value="monsta"> Monsta</li>
+                                <li><input type="checkbox" class="checks brand-check" value="hero"> Hero</li>
+                                <li><input type="checkbox" class="checks brand-check" value="firefox"> Firefox</li>
+                            </ul>
+                            <h5 href="#acces" data-toggle="collapse" class="dropdown-toggle">Accessories</h5>
+                            <ul class="collapse list-unstyled" id="acces">
+                                <li><input type="checkbox" class="checks access-check" value="gear"> Gears</li>
+                                <li><input type="checkbox" class="checks access-check" value="bell"> Bell</li>
+                                <li><input type="checkbox" class="checks access-check" value="reflector"> Reflector</li>
+                                <li><input type="checkbox" class="checks access-check" value="mudguard"> Mudguard</li>
+                                <li><input type="checkbox" class="checks access-check" value="lock"> Lock</li>
+                            </ul>
+                            <h5 href="#color" data-toggle="collapse" class="dropdown-toggle">Colors</h5>
+                            <ul class="collapse list-unstyled" id="color">
+                                <li><input type="checkbox" class="checks color-check" value="red"> Red</li>
+                                <li><input type="checkbox" class="checks color-check" value="blue"> Blue</li>
+                                <li><input type="checkbox" class="checks color-check" value="green"> Green</li>
+                                <li><input type="checkbox" class="checks color-check" value="black"> Black</li>
+                                <li><input type="checkbox" class="checks color-check" value="orange"> Orange</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6" id="filter1">
+                        <div class="mb-4">
+                            <h3>Filters</h3>
+                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                <div class="btn-group mr-2 mb-2" role="group" aria-label="First group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Purpose</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <input type="checkbox" class="checks purpose-check dropdown-item" value="buy"> Buy<br>
+                                            <input type="checkbox" class="checks purpose-check dropdown-item" value="rent"> Rent<br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-group mr-2 mb-2" role="group" aria-label="Second group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Brand</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <input type="checkbox" class="checks brand-check dropdown-item" value="avon"> Avon <br>
+                                            <input type="checkbox" class="checks brand-check dropdown-item" value="atlas"> Atlas<br>
+                                            <input type="checkbox" class="checks brand-check dropdown-item" value="hercules"> Hercules<br>
+                                            <input type="checkbox" class="checks brand-check dropdown-item" value="monsta"> Monsta<br>
+                                            <input type="checkbox" class="checks brand-check dropdown-item" value="hero"> Hero<br>
+                                            <input type="checkbox" class="checks brand-check dropdown-item" value="firefox"> Firefox<br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-group mr-2 mb-2" role="group" aria-label="Third group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Color</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <input type="checkbox" class="checks color-check dropdown-item" value="red"> Red <br>
+                                            <input type="checkbox" class="checks color-check dropdown-item" value="blue"> Blue<br>
+                                            <input type="checkbox" class="checks color-check dropdown-item" value="green"> Green<br>
+                                            <input type="checkbox" class="checks color-check dropdown-item" value="black"> Black<br>
+                                            <input type="checkbox" class="checks color-check dropdown-item" value="orange"> Orange<br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-group mr-2 mb-2" role="group" aria-label="Fourth group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accessories</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <input type="checkbox" class="checks access-check dropdown-item" value="gear"> Gears <br>
+                                            <input type="checkbox" class="checks access-check dropdown-item" value="bell"> Bell <br>
+                                            <input type="checkbox" class="checks access-check dropdown-item" value="reflector"> Reflector<br>
+                                            <input type="checkbox" class="checks access-check dropdown-item" value="mudguard"> Mudguard<br>
+                                            <input type="checkbox" class="checks access-check dropdown-item" value="lock"> Lock<br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section id="all-cycles">
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/Ut_HT_3_82.webp" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/Ut_HT_3_82.webp" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/cyc.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav  hidden">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/kids-ranger-cycle-500x500.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 ">
+                            <div class="card  mb-4 box-shadow">
+                                <img class="card-img-top" src="images/images.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text cycle-model">party cycle</p>
+                                    <div class="d-flex justify-content-between sidethoda1">
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-primary neeche">Buy</button>
+                                            <div class="text-muted cycle-price neeche sidethoda">9000rs</div>
+                                        </div>
+                                        <div class="row2 pranav ">
+                                            <button type="button" class="btn btnParty btn-md btn-danger neeche">Book</button>
+                                            <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="all-cycles">
+               <div class="cycle">
+                    <div class="cycle-photo">
+                         <img src="images/kids-ranger-cycle-500x500.jpg">    
+                    </div>
+                    <div class="cycle-model">
+                        Avon-sasuranger
+                    </div>
+                    <div class="cycle-price">
+                         10/hr (expected)
+                    </div>
+                    <div class="book-button">
+                         <button class="btn btnParty btn-primary">Book</button>
+                    </div>
+               </div>
+               <div class="cycle">
+                    <div class="cycle-photo">
+                         <img src="images/Ut_HT_3_82.webp">    
+                    </div>
+                    <div class="cycle-model">
+                        Atlas-mayankbike
+                    </div>
+                    <div class="cycle-price">
+                         10/hr (expected)
+                    </div>
+                    <div class="book-button">
+                         <button class="btn btnParty btn-primary">Book</button>
+                    </div>
+               </div>
+               <div class="cycle">
+                    <div class="cycle-photo">
+                         <img src="images/cyc.jpg">    
+                    </div>
+                    <div class="cycle-model">
+                        Bsa- Utkristia
+                    </div>
+                    <div class="cycle-price">
+                         10/hr (expected)
+                    </div>
+                    <div class="book-button">
+                         <button class="btn btnParty btn-primary">Book</button>
+                    </div>
+               </div>
+               <div class="cycle">
+                    <div class="cycle-photo">
+                         <img src="images/images.jpg">    
+                    </div>
+                    <div class="cycle-model">
+                        Speed Bird-ladooo
+                    </div>
+                    <div class="cycle-price">
+                         10/hr (expected)
+                    </div>
+                    <div class="book-button">
+                         <button class="btn btnParty btn-primary">Book</button>
+                    </div>
+               </div>
+
+          </div> -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="cycle_diplay.js" type="module"></script>
+    <script src="cycle.js" type="module"></script>
+    <script src="logout.js"></script>
+</body>
+<!-- Footer -->
+<footer class="page-footer font-small blue-grey lighten-5 fandar" id="footer">
+    <div class="fsoc">
+        <div class="container">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h6 class="mb-0">Get connected with us on social networks!</h6>
+                </div>
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+                    <a class="flink fb-ic">
+                        <i class="fab fa-facebook-f  mr-4"></i>
+                    </a>
+                    <a class="flink tw-ic">
+                        <i class="fab fa-twitter  mr-4"> </i>
+                    </a>
+                    <a class="flink gplus-ic">
+                        <i class="fab fa-google-plus-g  mr-4"> </i>
+                    </a>
+                    <a class="flink li-ic">
+                        <i class="fab fa-linkedin-in  mr-4"> </i>
+                    </a>
+                    <a class="flink ins-ic">
+                        <i class="fab fa-instagram "> </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fback">
+        <div class="container text-center text-md-left">
+            <div class="row dark-grey-text uparthoda">
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Feedback!</h6>
+                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
+                    <p>Do give us your valuable feedback and reviews by contacting us with the mentioned social media accounts</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Cycle Info</h6>
+                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Edit cycle details</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Change Cycle Availability</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Add Cycle</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Remove Cycle</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">User Info</h6>
+                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Create Account</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Login</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Edit User details</a>
+                    </p>
+                    <p>
+                        <a class="flink dark-grey-text" href="#!">Logout</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
+                    <p><i class="fas fa-envelope mr-3"></i> bitcycle@gmail.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 7045457636</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 peeeeeeeee</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 ladduladdu</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center text-white-50 py-3">IEEE MegaProject: Team Name - SUPI6E</div>
+    </div>
+</footer>
+
+</html>

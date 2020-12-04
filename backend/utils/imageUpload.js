@@ -3,11 +3,11 @@ const multer = require('multer');
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
     if (file.fieldname === 'cycleImages') {
-      callback(null, 'img/cycle');
+      callback(null, 'public/img/cycle');
     } else if (file.fieldname === 'userImage') {
-      callback(null, 'img/user');
+      callback(null, 'public/img/user');
     } else if (file.fieldname === 'userId') {
-      callback(null, 'img/userId');
+      callback(null, 'public/img/userId');
     }
   },
   filename: (req, file, callback) => {

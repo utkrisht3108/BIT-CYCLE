@@ -1,14 +1,14 @@
 // var y=localStorage.getItem("selected_cycle_id");
-var buy_book = "";
-var mycycle = document.querySelector("#cycle");
-var y = "";
+var buy_book = '';
+var mycycle = document.querySelector('#cycle');
+var y = '';
 window.onload = async function () {
   var url = document.location.href,
-    params = url.split("?")[1].split("&"),
+    params = url.split('?')[1].split('&'),
     data = {},
     tmp;
   for (var i = 0, l = params.length; i < l; i++) {
-    tmp = params[i].split("=");
+    tmp = params[i].split('=');
     data[tmp[0]] = tmp[1];
   }
   // document.getElementById('here').innerHTML = data.name;
@@ -19,13 +19,13 @@ window.onload = async function () {
 };
 
 const makeTemplate = (cycle) => {
-  var access_string = "";
+  var access_string = '';
   if (cycle.accessories.length == 0) {
-    access_string = "None";
+    access_string = 'None';
   } else {
     for (var i = 0; i < cycle.accessories.length; i++) {
       if (i == 0) access_string = access_string.concat(cycle.accessories[i]);
-      else access_string = access_string.concat(",", cycle.accessories[i]);
+      else access_string = access_string.concat(',', cycle.accessories[i]);
     }
   }
   var comment_temp = comments_template(cycle.comments);
@@ -43,39 +43,39 @@ const makeTemplate = (cycle) => {
     image_temp,
     image_temp2
   );
-  var temp_div = document.createElement("div");
+  var temp_div = document.createElement('div');
   temp_div.innerHTML = temp;
-  mycycle.innerHTML = "";
+  mycycle.innerHTML = '';
   mycycle.appendChild(temp_div);
-  a=cycle.ratingAvg;
+  a = cycle.ratingAvg;
   rating_update();
-  var buybtn = document.querySelector(".buy");
-  var rentbtn = document.querySelector(".rent");
-  var rentdates = document.querySelector(".rent-cycle");
-  const chatBtn = document.querySelector(".chat");
-  if (buy_book == "1") {
-    rentbtn.classList.add("hidden");
-    rentdates.classList.add("hidden");
-  } else buybtn.classList.add("hidden");
+  var buybtn = document.querySelector('.buy');
+  var rentbtn = document.querySelector('.rent');
+  var rentdates = document.querySelector('.rent-cycle');
+  const chatBtn = document.querySelector('.chat');
+  if (buy_book == '1') {
+    rentbtn.classList.add('hidden');
+    rentdates.classList.add('hidden');
+  } else buybtn.classList.add('hidden');
   rentbtn.onclick = async () => {
     try {
-      const from = document.getElementById("from").value;
-      const till = document.getElementById("till").value;
+      const from = document.getElementById('from').value;
+      const till = document.getElementById('till').value;
       if (!from || !till) {
-        throw new Error("Kindly Enter start and end dates");
+        throw new Error('Kindly Enter start and end dates');
       }
-      const currentUser = localStorage.getItem("user_id");
+      const currentUser = localStorage.getItem('user_id');
       if (!currentUser) {
-        throw new Error("Kindly Login");
+        throw new Error('Kindly Login');
       }
       const ownerId = cycle.owner._id;
       if (ownerId === currentUser) {
-        throw new Error("Cannot rent your own cycle");
+        throw new Error('Cannot rent your own cycle');
       }
       console.log(cycle);
       console.log(from, till);
-      const resp = await fetch("http://localhost:3000/api/rent", {
-        method: "POST",
+      const resp = await fetch('/api/rent', {
+        method: 'POST',
         body: JSON.stringify({
           from,
           to: till,
@@ -84,7 +84,7 @@ const makeTemplate = (cycle) => {
           cycleId: cycle._id,
         }),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
       const respJson = await resp.json();
@@ -95,23 +95,23 @@ const makeTemplate = (cycle) => {
   };
   buybtn.onclick = async () => {
     try {
-      const currentUser = localStorage.getItem("user_id");
+      const currentUser = localStorage.getItem('user_id');
       if (!currentUser) {
-        throw new Error("Kindly Login");
+        throw new Error('Kindly Login');
       }
       const ownerId = cycle.owner._id;
       if (ownerId === currentUser) {
-        throw new Error("Cannot buy your own cycle");
+        throw new Error('Cannot buy your own cycle');
       }
-      const resp = await fetch("http://localhost:3000/api/buy", {
-        method: "POST",
+      const resp = await fetch('/api/buy', {
+        method: 'POST',
         body: JSON.stringify({
           buyerId: currentUser,
           ownerId,
           cycleId: cycle._id,
         }),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
       const respJson = await resp.json();
@@ -120,17 +120,17 @@ const makeTemplate = (cycle) => {
       console.log(err);
     }
   };
-  chatBtn.onclick = ()=>{
-    localStorage.setItem("secondUser",cycle.owner._id);
-    window.location.href = "http://localhost:3000"
-  }
+  chatBtn.onclick = () => {
+    localStorage.setItem('secondUser', cycle.owner._id);
+    window.location.href = 'http://localhost:3000';
+  };
 };
 async function get_cycles() {
   try {
-    const res = await fetch("http://localhost:3000/api/cycles/" + y);
+    const res = await fetch('/api/cycles/' + y);
     const respJson = await res.json();
     console.log(respJson);
-    if (respJson.status === "error") {
+    if (respJson.status === 'error') {
       throw new Error(respJSON.message);
     }
     var cycle = respJson.data.cycle;
@@ -140,15 +140,15 @@ async function get_cycles() {
   }
 }
 
-console.log(document.querySelector(".rent"));
+console.log(document.querySelector('.rent'));
 
 var a = 1;
 
 function rating_update() {
-  var stars = document.querySelectorAll(".rating");
+  var stars = document.querySelectorAll('.rating');
   var i = 0;
   for (i = 0; i < a; i++) {
-    stars[i].classList.add("checked");
+    stars[i].classList.add('checked');
   }
 }
 
@@ -228,8 +228,8 @@ function gettemp(
 function comments_template(comments) {
   var comment_temp = [];
   if (comments.length == 0) {
-    console.log("lol");
-    comment_temp = ["None"];
+    console.log('lol');
+    comment_temp = ['None'];
   } else {
     comments.forEach((element) => {
       comment_temp.push(get_comment_template(element));
@@ -249,10 +249,10 @@ function image_template(images) {
   var image_temp = [];
   var i = 0;
   if (images.length == 0) {
-    console.log("lol");
+    console.log('lol');
     image_temp.push(`
         <div class="carousel-item active">
-            <img class="photu" src="../backend/img/cycle/b45d18c2d27a383e95d03bf5ddfe469c.jpg" >
+            <img class="photu" src="../img/cycle/b45d18c2d27a383e95d03bf5ddfe469c.jpg" >
         </div>
         `);
   } else {
@@ -269,8 +269,8 @@ function image_template2(images) {
   var image_temp2 = [];
   var i = 0;
   if (images.length == 0) {
-    console.log("lol");
-    image_temp = ["None"];
+    console.log('lol');
+    image_temp = ['None'];
   } else {
     images.forEach((element) => {
       image_temp2.push(get_image_template2(element, i));
@@ -283,23 +283,23 @@ function image_template2(images) {
 
 function get_image_template(element, i) {
   if (i == 0) {
-    console.log("lol");
+    console.log('lol');
     return `
     <div class="carousel-item active">
-        <img class="photu" src="../backend/img/cycle/${element}" >
+        <img class="photu" src="../img/cycle/${element}" >
     </div>
     `;
   }
   return `
     <div class="carousel-item">
-        <img class="photu" src="../backend/img/cycle/${element}" >
+        <img class="photu" src="../img/cycle/${element}" >
     </div>
     `;
 }
 
 function get_image_template2(element, i) {
   if (i == 0) {
-    console.log("lol");
+    console.log('lol');
     return `
     <li data-target="#ut" data-slide-to="${i}" class="active"></li>
     `;
