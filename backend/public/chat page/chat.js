@@ -1,6 +1,6 @@
 const socket = io();
 
-const firstUser = localStorage.getItem('firstUser');
+const firstUser = localStorage.getItem('user_id');
 const secondUser = localStorage.getItem('secondUser');
 
 
@@ -9,7 +9,9 @@ const displayMessage = (message)=>{
   newMessage.innerHTML = message;
   document.querySelector('body').appendChild(newMessage);
 }
-socket.emit('load', { firstUser, secondUser });
+window.onload = ()=>{
+  socket.emit('load', { firstUser, secondUser });
+}
 socket.on('displayOldMessages', (response) => {
   localStorage.setItem("conversation",response.conversationId);
   response.oldMessages.forEach((message) => {

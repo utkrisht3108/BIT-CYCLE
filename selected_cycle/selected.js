@@ -51,6 +51,7 @@ const makeTemplate = (cycle) => {
   var buybtn = document.querySelector(".buy");
   var rentbtn = document.querySelector(".rent");
   var rentdates = document.querySelector(".rent-cycle");
+  const chatBtn = document.querySelector(".chat");
   if (buy_book == "1") {
     rentbtn.classList.add("hidden");
     rentdates.classList.add("hidden");
@@ -118,6 +119,10 @@ const makeTemplate = (cycle) => {
       console.log(err);
     }
   };
+  chatBtn.onclick = ()=>{
+    localStorage.setItem("secondUser",cycle.owner._id);
+    window.location.href = "http://localhost:3000"
+  }
 };
 async function get_cycles() {
   try {
@@ -193,7 +198,7 @@ function gettemp(
                 <h4>Owner</h4>
                 <li><span class="property">Name :</span> ${owner.name}</li>
                 <li><span class="property">Hostel:</span> 10 <span class="property"> Room no. : </span> 374</li>
-                <li><button class="btn btn-primary btn-lg upar">Chat</button></li>
+                <li><button class="btn btn-primary btn-lg upar chat">Chat</button></li>
             </div>
             <div class="rent-cycle abcd">
                 <h4>Select Booking Time</h4>
