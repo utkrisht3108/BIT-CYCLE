@@ -6,6 +6,7 @@ router.route('/').post(transactionController.addTransaction);
 router
   .route('/:id')
   .get(transactionController.sendUserTransaction)
-  .patch(transactionController.updateRating);
+  .patch(transactionController.updateTransaction)
+  .delete(transactionController.deleteTxn);
 
 module.exports = router;
