@@ -196,3 +196,53 @@ i{
 .flink:hover{
     color: turquoise;
 }
+#transaction-header{
+    padding: 3vw;
+    padding-bottom: 0;
+}
+.cycle-rating{
+    padding-bottom: 30px;
+    direction: rtl;
+}
+.cycle-rating input{
+    display: none;
+}
+.cycle-rating label{
+    display: inline block;
+    position: relative;
+    top:0;
+    cursor: pointer;
+    width: 30px;
+}
+.cycle-rating label:before{
+    content: "\2605";
+    position: absolute; 
+    top:0;
+    left: 0; 
+   
+    display: inline-block;
+    font-size: 30px;
+    
+
+}
+.cycle-rating label::after{
+    content: "\2605";
+    position: absolute;
+    display: inline-block;
+    top:0;
+    left: 0;
+    color: orange;
+    font-size: 30px;
+    opacity: 0;
+
+}
+.cycle-rating label:hover:after,
+.cycle-rating label:hover ~label:after,
+.cycle-rating input:checked ~label:after{
+    opacity: 1;
+}
+.transaction-display{
+    padding: 3vw;
+    padding-top: 1vw;
+    list-style: none;
+}

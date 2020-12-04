@@ -54,7 +54,7 @@
         </div>
     </section>
         <div id="myaccount">
-            <!-- <div class="myaccount-display">
+            <div class="myaccount-display">
                <div class="user-photo">
                    <img src="sasur.jpeg">
                </div>
@@ -67,9 +67,31 @@
                         <li><span class="property">Phone Number : </span> 1010101010</li>
                     </div>
                 </div>
-           </div> -->
+           </div>
+           <div id="transaction-header"><h2>Your Transactions</h2></div>
+           
+           <div class="transaction-display">
+               <div class="transaction-details">
+                <li><span class="property">Transaction Type : </span> Rent </li>
+                <li><span class="property">Owner : </span> Sasur </li>
+                <li><span class="property">Costumer : </span> Sasur ka chautha damaad </li>
+                <li><span class="property">Cycle : </span> monsta: giligilichhu </li>
+                <button class="btn btn-primary">Deal Complete</button>     <span><button class="btn btn-primary">Deal Cancelled</button></span>
+                <div class="cycle-rating">   
+                    <input type="radio" name="rating" class="cycle-rating-input" id="star-5" value="5"><label for="star-5" ></label>
+                    <input type="radio" name="rating" class="cycle-rating-input" id="star-4" value="4"><label for="star-4" ></label>
+                    <input type="radio" name="rating" class="cycle-rating-input" id="star-3" value="3"><label for="star-3" ></label>
+                    <input type="radio" name="rating" class="cycle-rating-input" id="star-2" value="2"><label for="star-2" ></label>
+                    <input type="radio" name="rating" class="cycle-rating-input" id="star-1" value="1"><label for="star-1" ></label>    
+                </div>
+                <button class="btn btn-warning">Send Feedback</button>
+                
+
+               </div>
+           </div>
         </div>
-        <script src="myaccount.js"></script>
+        <script src="myaccount.js" type="module"></script>
+        <script src="transaction.js" type="module"></script>
         <script src="logout.js"></script>
         <script src="index.js"></script>
     </body>

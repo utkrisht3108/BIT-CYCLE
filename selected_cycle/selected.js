@@ -47,6 +47,7 @@ const makeTemplate = (cycle) => {
   temp_div.innerHTML = temp;
   mycycle.innerHTML = "";
   mycycle.appendChild(temp_div);
+  a=cycle.ratingAvg;
   rating_update();
   var buybtn = document.querySelector(".buy");
   var rentbtn = document.querySelector(".rent");
