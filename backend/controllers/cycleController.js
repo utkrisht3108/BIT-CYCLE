@@ -39,6 +39,9 @@ module.exports = {
   }),
   getCycle: catchAsync(async (req, res, next) => {
     const cycle = await Cycle.findById(req.params.id);
+    if (!cycle) {
+      throw new Error('Invalid Id');
+    }
     res.status(200).json({
       status: 'success',
       data: {

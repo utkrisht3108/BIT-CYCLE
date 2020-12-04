@@ -20,15 +20,19 @@ module.exports = {
       const otherPartyId = txn.otherParty;
       const cycleId = txn.cycle;
       txn.ownerName = (await User.findById(ownerId).select('name')).name;
-      txn.otherPartyName = (await User.findById(otherPartyId).select('name')).name;
-      // const cycleDetails = await Cycle.findOne(
-      //   { _id: cycleId },
-      //   { brand: 1, model: 1 }
-      // );
-      // txn.cycleDetails = {
-      //   brand: cycleDetails.brand,
-      //   model: cycleDetails.model,
-      // };
+      txn.otherPartyName = (
+        await User.findById(otherPartyId).select('name')
+      ).name;
+      const cycleDetails = await Cycle.findOne(
+        { _id: cycleId },
+        { brand: 1, model: 1 }
+      );
+      if (cycleDetails) {
+        txn.cycleDetails = {
+          brand: cycleDetails.brand,
+          model: cycleDetails.model,
+        };
+      }
     }
     if (!transactions) {
       throw new Error('Invalid Id');
