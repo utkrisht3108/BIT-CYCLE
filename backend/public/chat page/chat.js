@@ -9,9 +9,7 @@ const displayMessage = (message)=>{
   newMessage.innerHTML = message;
   document.querySelector('body').appendChild(newMessage);
 }
-window.onload = ()=>{
-  socket.emit('load', { firstUser, secondUser });
-}
+socket.emit('load', { firstUser, secondUser });
 socket.on('displayOldMessages', (response) => {
   localStorage.setItem("conversation",response.conversationId);
   response.oldMessages.forEach((message) => {
