@@ -196,6 +196,11 @@ i{
     -webkit-appearance: none;
 
 } */
+.dropdown-item{
+    display: inline-block;
+    width: 20%;
+    padding: 5%;
+}
 #all-cycles{
     min-height: 100vw;
     display: flex;
@@ -260,13 +265,14 @@ i{
     height: 250px;
 }
 .card{
-    min-width: 220px;
+    min-width: 220px;   
 }
 .row2 {
-    display: flex;
     flex-wrap: wrap;
 }
-
+.pranav{
+    display: flex;
+}
 .neeche {
     margin-bottom: 2%;
 }
@@ -332,7 +338,7 @@ i{
     }
 
     .card {
-        left: 7.5%;
+        left: 4%;
         width: 70%;
     }
 
