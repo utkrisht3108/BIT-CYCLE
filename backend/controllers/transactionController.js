@@ -10,7 +10,7 @@ module.exports = {
   sendUserTransaction: catchAsync(async (req, res, next) => {
     const transactions = await Transaction.find({
       $or: [{ owner: req.params.id }, { otherParty: req.params.id }],
-    }).sort('createdAt');
+    }).sort('createdAt').limit(10);
     if (!transactions) {
       throw new Error('Invalid Id');
     }

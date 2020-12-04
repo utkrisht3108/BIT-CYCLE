@@ -3,18 +3,34 @@ var myaccount=document.querySelector("#myaccount");
 console.log(loginuser);
 show_data();
 async function show_data(){
-    user=await get_cycles();
+    user=await get_user();
+    var transactions=await get_transactions();
     console.log(user);
+    console.log(transactions);
     temp=gettemplate(user.user.name,user.user.email);
     var temp_div = document.createElement('div');
     temp_div.innerHTML = temp;
     myaccount.innerHTML="";
     myaccount.appendChild(temp_div);
 }
-async function get_cycles()
+async function get_user()
  {
     try {
       const res = await fetch('http://localhost:3000/api/users/'+loginuser);
+      const respJson = await res.json();
+      console.log(respJson);
+      if (respJson.status === 'error') {
+        throw new Error(respJSON.message);
+      }
+      return respJson;
+    }catch (error) {
+      alert(error.message);
+    }
+  }
+  async function get_transactions()
+ {
+    try {
+      const res = await fetch('http://localhost:3000/api/transactions/'+loginuser);
       const respJson = await res.json();
       console.log(respJson);
       if (respJson.status === 'error') {

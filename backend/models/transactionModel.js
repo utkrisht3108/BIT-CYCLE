@@ -25,6 +25,7 @@ const transactionSchema = new mongoose.Schema(
     },
     rating: { type: Number, default: 1 },
     txnType: { type: String, required: true, enum: ['rent', 'buy'] },
+    renterfeedback: {type: Boolean,default: false},
   },
   { timestamps: true }
 );
