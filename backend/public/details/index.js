@@ -184,3 +184,17 @@ document.querySelector('.details-form').onsubmit = async (e) => {
   }
 };
 document.getElementById('email').placeholder = userAccount.email;
+
+
+var other = document.querySelector(".other");
+var brand = document.querySelector(".brandInput");
+
+  brand.classList.add("hidden");
+
+function checkvalue(val)
+{
+    if(val==="7")
+       document.getElementById('cycleName').style.display='block';
+    else
+       document.getElementById('cycleName').style.display='none'; 
+}

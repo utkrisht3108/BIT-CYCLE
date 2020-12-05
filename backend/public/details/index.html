@@ -144,7 +144,7 @@
                                    <div class="name">Cycle Brand *</div>
                                    <div class="value">
                                         <div class="input-group">
-                                            <select name="boughtIn" class="input--style-5 brandSelect colorInput"  >
+                                            <select name="brandname" class="input--style-5 brandSelect colorInput" onchange='checkvalue(this.value)'>
                                                  <option value="1">Avon</option>
                                                   <option value="2">Atlas</option>
                                                   <option value="3">Herculus</option>
@@ -156,6 +156,7 @@
                                         </div>
                                    </div>
                               </div>
+                                <input type="text" name="color" class="input--style-5 colorInput mt-2 mb-5" placeholder="Enter Cycle Brand Here" id="cycleName" style='display:none'/>
                              <div class="form-row">
                                    <div class="name">Cycle Model *</div>
                                    <div class="value">
