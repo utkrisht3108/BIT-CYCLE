@@ -3,7 +3,6 @@ if (localStorage.getItem('loggedIn') !== 'true') {
   window.location.href = '../landing page';
 }
 
-
 var cycle_arr = []; //array of cycles(class)
 var brands = [];
 var i = 0;
@@ -14,7 +13,7 @@ var buy_purpose = -1;
 var buy_purpose1 = -1;
 var rent_purpose = -1;
 var sell_range = document.querySelector('.sell-range');
-var sell_range1=document.querySelector('.sell-range1');
+var sell_range1 = document.querySelector('.sell-range1');
 var cycle_box = document.querySelector('#all-cycles');
 var check_boxes = document.querySelectorAll('.checks');
 var loginuser = localStorage.getItem('user_id');
@@ -207,22 +206,28 @@ async function get_cycles() {
     }
 
     respJson.data.cycle.forEach((element) => {
-      cycle_arr.push(
-        new Cycle(
-          element._id,
-          element.owner,
-          element.model,
-          element.comments,
-          element.available,
-          element.brand,
-          element.color,
-          element.accessories,
-          element.images,
-          element.forbuy,
-          element.forrent,
-          element.buyPrice
-        )
-      );
+      if (
+        !element.bookingStarts ||
+        !element.bookingEnds ||
+        Date.now() > element.bookingEnds
+      ) {
+        cycle_arr.push(
+          new Cycle(
+            element._id,
+            element.owner,
+            element.model,
+            element.comments,
+            element.available,
+            element.brand,
+            element.color,
+            element.accessories,
+            element.images,
+            element.forbuy,
+            element.forrent,
+            element.buyPrice
+          )
+        );
+      }
       if (brands.indexOf(element.brand) == -1) {
         brands.push(element.brand);
       }

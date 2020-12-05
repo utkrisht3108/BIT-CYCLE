@@ -127,7 +127,7 @@ const makeTemplate = (cycle) => {
   };
   chatBtn.onclick = () => {
     localStorage.setItem('secondUser', cycle.owner._id);
-    window.location.href = 'http://localhost:3000/chat page';
+    window.location.href = '../chat page/';
   };
 };
 async function get_cycles() {
