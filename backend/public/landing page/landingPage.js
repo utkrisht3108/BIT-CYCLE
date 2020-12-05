@@ -20,6 +20,7 @@ document.querySelector(".login-btn").onclick = async () => {
     const respJSON = await resp.json();
     if (resp.status == 200) {
       localStorage.setItem("user_id", respJSON.user_id);
+      localStorage.setItem("loggedIn",true);
       window.location.href = "../cycle page/";
     }
     console.log(respJSON);

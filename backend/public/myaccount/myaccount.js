@@ -1,4 +1,9 @@
 import Transaction from './transaction.js';
+
+if (localStorage.getItem('loggedIn') !== 'true') {
+  window.location.href = '../landing page';
+}
+
 var loginuser = localStorage.getItem('user_id');
 var transaction_arr = [];
 var myaccount = document.querySelector('#myaccount');

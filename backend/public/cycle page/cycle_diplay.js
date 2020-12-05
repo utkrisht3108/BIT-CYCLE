@@ -1,4 +1,8 @@
 import Cycle from './cycle.js';
+if (localStorage.getItem('loggedIn') !== 'true') {
+  window.location.href = '../landing page';
+}
+
 
 var cycle_arr = []; //array of cycles(class)
 var brands = [];

@@ -6,6 +6,8 @@ document.querySelector(".logout").onclick = async () => {
     });
     const respJSON = await resp.json();
     if (resp.status === 200) {
+      localStorage.removeItem('user_id');
+      localStorage.removeItem('loggedIn');
       window.location.href = "../landing page/index.html";
     } else {
       throw new Error(respJSON.message);

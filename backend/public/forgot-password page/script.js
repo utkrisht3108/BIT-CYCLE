@@ -54,7 +54,7 @@ document.querySelector('.reset-password').onclick = async () => {
     });
     if (resp.status === 200) {
       document.querySelector('.success').classList.remove('hidden');
-      window.location.href = '../cycle page';
+      window.location.href = '../landing page';
     } else {
       const respJSON = await resp.json();
       throw new Error(respJSON.message);
