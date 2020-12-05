@@ -11,18 +11,29 @@ var filter_brands = [];
 var filter_access = [];
 var filter_colors = [];
 var buy_purpose = -1;
+var buy_purpose1 = -1;
 var rent_purpose = -1;
 var sell_range = document.querySelector('.sell-range');
+var sell_range1=document.querySelector('.sell-range1');
 var cycle_box = document.querySelector('#all-cycles');
 var check_boxes = document.querySelectorAll('.checks');
 var loginuser = localStorage.getItem('user_id');
 var rangeval = document.querySelector('.rangeval');
 var range = document.querySelector('.range');
+var rangeval1 = document.querySelector('.rangeval1');
+var range1 = document.querySelector('.range1');
 lol();
 function lol() {
   range.oninput = () => {
     // rangeval.innerHTML="";
     rangeval.innerHTML = range.value;
+  };
+}
+lol1();
+function lol1() {
+  range1.oninput = () => {
+    // rangeval.innerHTML="";
+    rangeval1.innerHTML = range1.value;
   };
 }
 brand_filter();
@@ -32,10 +43,16 @@ function brand_filter() {
     check_box.onclick = () => {
       if (check_box.checked === true) {
         if (check_box.classList.contains('purpose-check')) {
+          if (check_box.value == 'buy1') {
+            buy_purpose1 = 1;
+            sell_range1.classList.remove('hidden');
+            console.log('lol');
+          }
           if (check_box.value == 'buy') {
             buy_purpose = 1;
             sell_range.classList.remove('hidden');
             console.log('lol');
+            console.log(sell_range);
           }
           if (check_box.value == 'rent') {
             rent_purpose = 1;
@@ -56,6 +73,10 @@ function brand_filter() {
         filtered_render();
       } else {
         if (check_box.classList.contains('purpose-check')) {
+          if (check_box.value == 'buy1') {
+            buy_purpose1 = -1;
+            sell_range1.classList.add('hidden');
+          }
           if (check_box.value == 'buy') {
             buy_purpose = -1;
             sell_range.classList.add('hidden');
@@ -87,6 +108,9 @@ function brand_filter() {
   sell_range.oninput = () => {
     filtered_render();
   };
+  sell_range1.oninput = () => {
+    filtered_render();
+  };
 }
 
 render_cycles();
@@ -101,6 +125,17 @@ function filtered_render() {
   console.log(rent_purpose);
   cycle_arr.forEach((element) => {
     match = 1;
+    if (buy_purpose1 != -1) {
+      filterapplied = 1;
+      if (
+        element.forbuy == true &&
+        element.buyPrice <= document.querySelector('.range1').value
+      ) {
+        console.log('lol');
+      } else {
+        match = 0;
+      }
+    }
     if (buy_purpose != -1) {
       filterapplied = 1;
       if (

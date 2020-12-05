@@ -180,12 +180,32 @@ i{
     border-radius: 3px;
     width: 50px;
 }
+.sell-range1{
+    padding-bottom: 2vh;
+}
 .range{
     -webkit-appearance: none;
     width: 100%;
     height: 4px;
     outline: none;
     width: 10vw;
+    border-radius: 3px;
+    background-color:orange;
+}
+.rangeval1{
+    padding: 2px;
+    right: -60px;
+    box-sizing: border-box;
+    background-color: orange;
+    border-radius: 3px;
+    width: 50px;
+}
+.range1{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    outline: none;
+    width: 70vw;
     border-radius: 3px;
     background-color:orange;
 }

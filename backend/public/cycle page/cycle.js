@@ -40,6 +40,14 @@ export default class Cycle {
     temp_div.innerHTML = temp;
     this.el = temp_div.children[0];
     this.eventlisterners();
+    var forrent_btn=this.el.querySelector(".forrent-btn");
+    var forbuy_btn=this.el.querySelector(".forbuy-btn");
+    if(this.forbuy==false){
+      forbuy_btn.classList.add("hidden");
+    }
+    if(this.forrent==false){
+      forrent_btn.classList.add("hidden");
+    }
     return this.el;
   }
   gettemplate(model, brand, image_temp, buyPrice) {

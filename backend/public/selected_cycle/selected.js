@@ -52,7 +52,7 @@ const makeTemplate = (cycle) => {
   temp_div.innerHTML = temp;
   mycycle.innerHTML = '';
   mycycle.appendChild(temp_div);
-  a = cycle.ratingAvg;
+  a = Math.round(cycle.ratingAvg);
   rating_update();
   var buybtn = document.querySelector('.buy');
   var rentbtn = document.querySelector('.rent');
@@ -127,7 +127,7 @@ const makeTemplate = (cycle) => {
   };
   chatBtn.onclick = () => {
     localStorage.setItem('secondUser', cycle.owner._id);
-    window.location.href = 'http://localhost:3000';
+    window.location.href = 'http://localhost:3000/chat page';
   };
 };
 async function get_cycles() {
