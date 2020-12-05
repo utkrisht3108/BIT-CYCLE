@@ -207,13 +207,12 @@ function gettemp(
                 <li><button class="btn btn-primary btn-lg upar chat">Chat</button></li>
             </div>
             <div class="rent-cycle abcd">
-                <h4>Select Booking Time</h4>
+                <h4>Select Booking Time</h4><br>
                 <label for="" class="rent-dates">From (date and time) :</label><br>
-                <input type="datetime-local" id="from" name="">
-                <input class="btn btn-danger" type="submit"></input><br><br>
+                <input type="datetime-local" id="from" name=""><br><br>
+                
                 <label for="" class="rent-dates">Till (date and time) :</label><br>
-                <input type="datetime-local" id="till" name="">
-                <input class="btn btn-danger" type="submit"></input>
+                <input type="datetime-local" id="till" name=""><br><br>
             </div>
             <button class="btn btn-warning btn-block btn-lg rent neeche">Rent</button>
             <button class="btn btn-warning btn-block btn-lg buy neeche">Buy</button>
@@ -221,10 +220,11 @@ function gettemp(
                 <h4 class="userHead">User Reviews</h4> ${comment_temp}
             </div>
             <div class="review">
-            <h4 class="userHead">Review this Cycle</h4>
-            <h5>Share your thoughts with other customers</h5>
+                <h4 class="userHead">Review this Cycle</h4>
+                <h5>Share your thoughts with other customers</h5>
+                <textarea name="" id="" cols="10" rows="3" class="thodaUpar"></textarea>
+                <button class="btn btn-light btn-block btn-lg comment thodaUpar neeche">ADD COMMENT</button>
             </div>
-            <button class="btn btn-light btn-block btn-lg comment thodaUpar neeche">ADD COMMENT</button>
         </div>
     </div>
     `;

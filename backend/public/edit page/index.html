@@ -140,6 +140,23 @@
                                 </label>
                         </div>
                         <span class="part1 hidden" id="deleteCycle">
+                            <div class="form-row">
+                                   <div class="name">Cycle Brand *</div>
+                                   <div class="value">
+                                        <div class="input-group">
+                                            <select name="brandname" class="input--style-5 brandSelect colorInput" onchange='checkvalue(this.value)'>
+                                                 <option value="1">Avon</option>
+                                                  <option value="2">Atlas</option>
+                                                  <option value="3">Herculus</option>
+                                                  <option value="4">Monsta</option>
+                                                  <option value="5">Hero</option>
+                                                  <option value="6">Firefox</option>
+                                                  <option value="7">Other</option>
+                                            </select>
+                                        </div>
+                                   </div>
+                              </div>
+                                <input type="text" name="color" class="input--style-5 colorInput mt-2 mb-5" placeholder="Enter Cycle Brand Here" id="cycleName" style='display:none'/>
                              <div class="form-row">
                                    <div class="name">Cycle Model *</div>
                                    <div class="value">
@@ -175,39 +192,7 @@
                                         </div>
                                    </div>
                               </div>
-                              <div class="form-row m-b-40 ">
-                                   <div class="name">Cycle Image(s)</div>
-                                   <div class="value">
-                                        <div>
-                                             <div class="input-group-desc">
-                                                  <input type="file" name="photos" multiple id="photos">
-                                                  <label class="label--desc">Better for other people to decide. MAX 8</label><br>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="form-row p-t-30">
-                                   <label class="label x1">Do you want to Sell the Cycle? *</label>
-                                        <label class="radio-container thodaBaju">Yes
-                                             <input type="radio" name="exist1" class="exist1" onclick="party3()" >
-                                             <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">No
-                                             <input type="radio" name="exist1" class="exist1" onclick="party4()" checked>
-                                             <span class="checkmark"></span>
-                                        </label>
-                              </div>
-                              <span class="part2 hidden">
-                                   <div class="form-row">
-                                        <div class="name">Cycle Price *</div>
-                                        <div class="value">
-                                             <div class="input-group-desc">
-                                                  <input class="input--style-5 colorInput" type="text" name="cyclePrice" id="cyclePrice">
-                                                  <label class="label--desc">Don't put any commas</label>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="form-row except">
+                              <div class="form-row except">
                                         <div class="name">Accessories *</div>
                                         <div class="value uparthoda accesories">
                                                 <input class="change" type="checkbox" id="qq" name="acc">
@@ -250,6 +235,38 @@
                                                 <label for="">Seat Cover</label>
                                         </div> 
                                     </div>
+                              <div class="form-row m-b-40 ">
+                                   <div class="name">Cycle Image(s)</div>
+                                   <div class="value">
+                                        <div>
+                                             <div class="input-group-desc">
+                                                  <input type="file" name="photos" multiple id="photos">
+                                                  <label class="label--desc">Better for other people to decide. MAX 8</label><br>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="form-row p-t-30">
+                                   <label class="label x1">Do you want to Sell the Cycle? *</label>
+                                        <label class="radio-container thodaBaju">Yes
+                                             <input type="radio" name="exist1" class="exist1" onclick="party3()" >
+                                             <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">No
+                                             <input type="radio" name="exist1" class="exist1" onclick="party4()" checked>
+                                             <span class="checkmark"></span>
+                                        </label>
+                              </div>
+                              <span class="part2 hidden">
+                                   <div class="form-row">
+                                        <div class="name">Cycle Price *</div>
+                                        <div class="value">
+                                             <div class="input-group-desc">
+                                                  <input class="input--style-5 colorInput" type="text" name="cyclePrice" id="cyclePrice">
+                                                  <label class="label--desc">Don't put any commas</label>
+                                             </div>
+                                        </div>
+                                   </div>
                               </span>
                         </span>
                         <div>

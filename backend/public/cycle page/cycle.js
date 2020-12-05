@@ -49,14 +49,14 @@ export default class Cycle {
                             ${image_temp}
                             <div class="card-body">
                                 <p class="card-text cycle-model">${brand}-${model}</p>
-                                <div class="d-flex justify-content-between sidethoda1">
-                                         <div class="row2 pranav forbuy-btn">
+                                <div class="d-flex justify-content-between">
+                                         <div class="row2 ml-auto mr-auto forbuy-btn chocolate">
                                              <button type="button" class="btn btn-md btn-primary neeche buy-btn">Buy</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> ${buyPrice}rs</div>
+                                             <div class="text-muted cycle-price neeche"> ${buyPrice}rs</div>
                                          </div>
-                                         <div class="row2 pranav forrent-btn">
+                                         <div class="row2 ml-auto mr-auto forrent-btn chocolate">
                                               <button type="button" class="btn btn-md btn-danger neeche book-btn">Book</button>
-                                             <div class="text-muted cycle-price neeche sidethoda"> 20 rs/hr</div>
+                                             <div class="text-muted cycle-price neeche"> 20 rs/hr</div>
                                          </div>
                                 </div>
                             </div>

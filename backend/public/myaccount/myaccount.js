@@ -8,7 +8,7 @@ var loginuser = localStorage.getItem('user_id');
 var transaction_arr = [];
 var myaccount = document.querySelector('#myaccount');
 console.log(loginuser);
-// show_data();
+show_data();
 // var stars=document.querySelectorAll(".cycle-rating-input");
 // console.log(stars);
 // stars.forEach((element)=>{
@@ -65,11 +65,16 @@ async function get_transactions() {
     respJson.transactions.forEach((element) => {
       transaction_arr.push(
         new Transaction(
+          element._id,
           element.txnType,
           element.owner,
           element.otherParty,
           element.cycle,
-          element.renterfeedback
+          element.renterfeedback,
+          element.ownerName,
+          element.otherPartyName,
+          element.ownerfeedback,
+          element.cycleDetails
         )
       );
     });

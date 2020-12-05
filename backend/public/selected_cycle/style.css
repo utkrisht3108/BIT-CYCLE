@@ -249,10 +249,17 @@ h4{
      margin-bottom: 10%;
 }
 .comment{
-     font-size: 1.1rem;
+     /* font-size: 1.1rem; */
+     font-weight: bold;
 }
 .thodaUpar{
      margin-top: 20px;
+}
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
 }
 .rent-cycle{
      /* font-size: 1.2rem; */
