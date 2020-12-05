@@ -222,7 +222,7 @@ function gettemp(
             <div class="review">
                 <h4 class="userHead">Review this Cycle</h4>
                 <h5>Share your thoughts with other customers</h5>
-                <textarea name="" id="" cols="80%" rows="5" class="thodaUpar"></textarea>
+                <textarea name="" id="" cols="10" rows="3" class="thodaUpar"></textarea>
                 <button class="btn btn-light btn-block btn-lg comment thodaUpar neeche">ADD COMMENT</button>
             </div>
         </div>

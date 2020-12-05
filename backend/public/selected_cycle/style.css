@@ -255,6 +255,12 @@ h4{
 .thodaUpar{
      margin-top: 20px;
 }
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
 .rent-cycle{
      /* font-size: 1.2rem; */
      color: black;
