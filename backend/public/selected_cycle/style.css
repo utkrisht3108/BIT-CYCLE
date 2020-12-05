@@ -249,7 +249,8 @@ h4{
      margin-bottom: 10%;
 }
 .comment{
-     font-size: 1.1rem;
+     /* font-size: 1.1rem; */
+     font-weight: bold;
 }
 .thodaUpar{
      margin-top: 20px;

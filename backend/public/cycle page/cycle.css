@@ -270,19 +270,14 @@ i{
 .row2 {
     flex-wrap: wrap;
 }
-.pranav{
-    display: flex;
-}
 .neeche {
     margin-bottom: 2%;
-}
-
+}   
 .sidethoda {
     padding-left: 6%;
 }
-
 .sidethoda1 {
-    padding-left: 10%;
+    padding-left: 15%;
 }
 
 .card-body {
@@ -320,6 +315,10 @@ i{
     #filter {
         display: none;
     }
+    .chocolate{
+        width: 35%;
+        text-align: center;
+    }
 /* aur ye bhi toggle  */
     .open {
         font-size: 15px;
@@ -348,7 +347,7 @@ i{
     }
 
     .btnParty {
-        font-size: 0.5rem;
+        font-size: 0.8rem;
         width: 80%;
         height: 80%;
     }
