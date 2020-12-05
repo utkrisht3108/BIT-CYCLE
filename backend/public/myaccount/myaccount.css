@@ -243,6 +243,13 @@ i{
 }
 .transaction-display{
     padding: 3vw;
-    padding-top: 1vw;
+    padding-top: 1vh;
     list-style: none;
+}
+.feedback-trans{
+    padding-top: 3vh;
+    /* display: none; */
+}
+.rating-feedback{
+    display: none;
 }

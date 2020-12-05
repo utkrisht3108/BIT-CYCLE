@@ -175,6 +175,8 @@ document.querySelector('.details-form').onsubmit = async (e) => {
   }
   if (count === requiredField.length + 2) {
     const userId = await postUser(e);
+    localStorage.setItem('loggedIn', true);
+    localStorage.setItem('user_id', userId);
     if (checkRadio) {
       await postCycle(e, userId, checkRadio1);
     }

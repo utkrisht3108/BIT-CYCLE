@@ -1,4 +1,9 @@
 // var y=localStorage.getItem("selected_cycle_id");
+
+if (localStorage.getItem('loggedIn') !== 'true') {
+  window.location.href = '../landing page';
+}
+
 var buy_book = '';
 var mycycle = document.querySelector('#cycle');
 var y = '';
