@@ -20,11 +20,19 @@ async function show_data() {
   var user = await get_user();
   await get_transactions();
   console.log(user);
+  var imagetemp;
+  if(user.user.userImage){
+    imagetemp=`<img src="../img/user/${user.user.userImage}">`;
+  }
+  else{
+    imagetemp=`<img src="../img/user/1606550659885logo.png">`
+  }
   var temp = gettemplate(
     user.user.name,
     user.user.email,
     user.user.hostel,
-    user.user.room
+    user.user.room,
+    imagetemp,
   );
   var temp_div = document.createElement('div');
   temp_div.innerHTML = temp;
@@ -83,11 +91,11 @@ async function get_transactions() {
     alert(error.message);
   }
 }
-function gettemplate(name, email, hostel, room) {
+function gettemplate(name, email, hostel, room,imagetemp) {
   return `
       <div class="myaccount-display">
                <div class="user-photo">
-                   <img src="sasur.jpeg">
+                   ${imagetemp}
                </div>
                <div class="user-display">
                    <div class="user-details">
