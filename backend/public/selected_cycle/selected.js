@@ -57,6 +57,7 @@ const makeTemplate = (cycle) => {
   var buybtn = document.querySelector('.buy');
   var rentbtn = document.querySelector('.rent');
   var rentdates = document.querySelector('.rent-cycle');
+  const commentBtn = document.querySelector('.comment-btn');
   const chatBtn = document.querySelector('.chat');
   if (buy_book == '1') {
     rentbtn.classList.add('hidden');
@@ -128,6 +129,35 @@ const makeTemplate = (cycle) => {
   chatBtn.onclick = () => {
     localStorage.setItem('secondUser', cycle.owner._id);
     window.location.href = '../chat page/';
+  };
+  commentBtn.onclick = async () => {
+    try {
+      const comment = document.getElementById('comment').value;
+      const currentUser = localStorage.getItem('user_id');
+      if (!comment) {
+        throw new Error('Cannot send empty comment');
+      }
+
+      const resp = await fetch(`/api/cycles/${cycle._id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          comments: [
+            ...cycle.comments,
+            { comment: comment, user: currentUser },
+          ],
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (resp.status !== 200) {
+        throw new Error((await resp.json()).message);
+      }
+      location.reload();
+    } catch (error) {
+      alert(error.message);
+    }
+    console.log('chal raha hai');
   };
 };
 async function get_cycles() {
@@ -221,8 +251,8 @@ function gettemp(
             <div class="review">
                 <h4 class="userHead">Review this Cycle</h4>
                 <h5>Share your thoughts with other customers</h5>
-                <textarea name="" id="" cols="10" rows="3" class="thodaUpar"></textarea>
-                <button class="btn btn-light btn-block btn-lg comment thodaUpar neeche">ADD COMMENT</button>
+                <textarea name="" id="comment" cols="10" rows="3" class="thodaUpar"></textarea>
+                <button class="btn btn-light btn-block btn-lg comment-btn thodaUpar neeche">ADD COMMENT</button>
             </div>
         </div>
     </div>
@@ -230,13 +260,13 @@ function gettemp(
 }
 
 function comments_template(comments) {
-  var comment_temp = [];
+  var comment_temp = '';
   if (comments.length == 0) {
     console.log('lol');
     comment_temp = ['None'];
   } else {
     comments.forEach((element) => {
-      comment_temp.push(get_comment_template(element));
+      comment_temp+=(get_comment_template(element));
     });
   }
   console.log(comment_temp);
