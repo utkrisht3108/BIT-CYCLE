@@ -4,13 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
   </head>
   <body>
-    <form class="chat-form">
-      <input name="message">
-      <button type="submit">Submit</button>
-    </form>
+    <div id="chat-page">
+      <div id="my-chat">
+        <div class="sender-name">Sasur ka Naati</div>
+        <!-- <div class="my-message">
+          <div class="my-message-content">llllljbh uhxpoihoe hgpsohpoe ghpoxehwpc g9hpowdhxiphp9wc xbiphp9hdwhdppgbcpwdhc hbipuhdcpohcd </div>
+          <div class="my-message-time">20/12/2020 </div>
+        </div>
+        <div class="sender-message">
+          <div class="sender-message-content">bla bla lllljbh uhxpoihoe hgpsohpoe ghpoxehwpc g9hpowdhxiphp9wc xbi</div>
+          <div class="sender-message-time">21/12/2020</div>
+        </div>
+        <div class="my-message">
+          <div class="my-message-content">llllljbh </div>
+          <div class="my-message-time">20/12/2020 </div>
+        </div> -->
+
+      </div>
+      <form class="chat-form">
+        <input name="message">
+        <button type="submit" >Submit</button>
+      </form>
+    </div>
     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+
 
     <script src="./chat.js"></script>
   </body>

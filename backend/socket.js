@@ -10,7 +10,7 @@ module.exports = (server) => {
     socket.on('chat-message', async (req) => {
       const conversationId = req.conId;
       console.log(conversationId);
-      socket.to(conversationId).emit('received', { message: req.message });
+      socket.to(conversationId).emit('received', { message: req.message,time: Date.now() });
       await Message.create({
         time: Date.now(),
         conversation: conversationId,

@@ -2,8 +2,36 @@ const socket = io();
 
 const firstUser = localStorage.getItem('user_id');
 const secondUser = localStorage.getItem('secondUser');
+var my_chat=document.querySelector("#my-chat");
+function displayMyMessage(message){
+  console.log("lol");
+  var newMessage = document.createElement('div');
+  var d=new Date(Date.now());
+  console.log(d);
+  temp=`
+      <div class="my-message">
+          <div class="my-message-content">${message} </div>
+          <div class="my-message-time">${Date.now()} </div>
+        </div>
+        `;
+  newMessage.innerHTML=temp;
+  my_chat.appendChild(newMessage);
 
 
+}
+function displayUserMessage(message,time){
+  var newMessage = document.createElement('div');
+  temp=`
+  <div class="sender-message">
+  <div class="sender-message-content">${message}</div>
+  <div class="sender-message-time">${time}</div>
+  </div>
+        `;
+  newMessage.innerHTML=temp;
+  my_chat.appendChild(newMessage);
+
+
+}
 const displayMessage = (message)=>{
   const newMessage = document.createElement('div');
   newMessage.innerHTML = message;
@@ -13,15 +41,22 @@ socket.emit('load', { firstUser, secondUser });
 socket.on('displayOldMessages', (response) => {
   localStorage.setItem("conversation",response.conversationId);
   response.oldMessages.forEach((message) => {
-    const newMessage = document.createElement('div');
-    newMessage.innerHTML = message.message;
-    document.querySelector('body').appendChild(newMessage);
+    console.log(message);
+    if(message.receiver==firstUser){
+      displayMyMessage(message.message);
+    }
+    if(message.receiver==secondUser){
+      displayUserMessage(message.message,message.time);
+    }
+    // const newMessage = document.createElement('div');
+    // newMessage.innerHTML = message.message;
+    // document.querySelector('body').appendChild(newMessage);
   });
 });
 document.querySelector('.chat-form').onsubmit = (e) => {
   e.preventDefault();
   const message = e.target.message.value;
-  displayMessage(message);
+  displayMyMessage(message);
   const conId = localStorage.getItem("conversation")
   socket.emit('chat-message', {
     message,
@@ -31,7 +66,7 @@ document.querySelector('.chat-form').onsubmit = (e) => {
 };
 socket.on('received', (message) => {
   console.log(message);
-  displayMessage(message.message);
+  displayUserMessage(message.message,message.time);
 });
 
 
