@@ -171,9 +171,12 @@ const patchUser = async (e) => {
   }
 };
 
-const patchCycle = async (e, checked) => {
+const sendCycle = async (e, checked, method) => {
   const formData = new FormData();
-
+  let url = '/api/cycles/';
+  if (method === 'PATCH') {
+    url += cycle._id;
+  }
   formData.append('model', e.target.cycleModel.value);
   formData.append('color', e.target.cycleColor.value);
   formData.append(
@@ -201,13 +204,13 @@ const patchCycle = async (e, checked) => {
   if (checked) {
     formData.append('buyPrice', e.target.cyclePrice.value);
   }
-  if (e.target.photos.files.length>0) {
+  if (e.target.photos.files.length > 0) {
     [...e.target.photos.files].forEach((file) => {
       formData.append('cycleImages', file);
     });
   }
-  const resp = await fetch(`/api/cycles/${cycle._id}`, {
-    method: 'PATCH',
+  const resp = await fetch(url, {
+    method: method,
     body: formData,
   });
   const respJSON = await resp.json();
@@ -264,8 +267,8 @@ document.querySelector('.details-form').onsubmit = async (e) => {
       removeWrongInput(e, i);
     }
   }
-  if(checkRadio){
-      if (document.querySelector('select[name="brandname"]').value === '7') {
+  if (checkRadio) {
+    if (document.querySelector('select[name="brandname"]').value === '7') {
       if (!document.querySelector('#cycleBrand').value) {
         document.querySelector('#cycleBrand').classList.add('wrong-input');
       } else {
@@ -280,17 +283,21 @@ document.querySelector('.details-form').onsubmit = async (e) => {
     try {
       await patchUser(e);
       if (checkRadio) {
-        await patchCycle(e, checkRadio1);
+        if (cycle._id) {
+          await sendCycle(e, checkRadio1, 'PATCH');
+        } else {
+          await sendCycle(e, checkRadio1, 'POST');
+        }
       }
       if (cycle && !checkRadio) {
         await deleteCycle();
       }
-      document.querySelector(".success").classList.remove("hidden");
-      document.querySelector(".error").classList.add("hidden");
+      document.querySelector('.success').classList.remove('hidden');
+      document.querySelector('.error').classList.add('hidden');
       window.location.href = '../cycle page/index.html';
     } catch (error) {
-      document.querySelector(".error").classList.remove("hidden");
-      document.querySelector(".error").innerHTML = error.message;
+      document.querySelector('.error').classList.remove('hidden');
+      document.querySelector('.error').innerHTML = error.message;
     }
   }
 };
