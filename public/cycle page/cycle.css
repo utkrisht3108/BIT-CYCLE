@@ -334,6 +334,7 @@ i{
 @media(max-width: 577px) {
     #filter {
         display: none;
+        left: 0%;
     }
     .chocolate{
         width: 35%;

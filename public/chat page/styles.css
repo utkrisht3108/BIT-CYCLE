@@ -5,6 +5,7 @@ body{
 }
 #chat-page{
     margin-top: 2%;
+    margin-bottom: 4%;
     width: 70%;
     position:relative;
     left:15%;
@@ -107,5 +108,11 @@ body{
         margin-top: 10%;
         width: 90%;
         left: 5%;
+    }
+    .sender-message{
+        margin-left: 10px;
+    }
+    .my-message{
+        margin-right: 10px;
     }
 }

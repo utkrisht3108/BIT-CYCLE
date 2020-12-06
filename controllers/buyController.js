@@ -19,7 +19,7 @@ module.exports = {
     User: Name:${buyer.name}, mobile:${buyer.mobile},email:${buyer.email},hostel:${buyer.hostel},
     Room:${buyer.room}
     
-    ConfirmationLink: http://localhost:3000/success%20page/index.html?owner=${ownerId}&cycle=${cycleId}&buyer=${buyerId}&buy=true`;
+    ConfirmationLink: http://bit-cycle.ap-south-1.elasticbeanstalk.com/success%20page/index.html?owner=${ownerId}&cycle=${cycleId}&buyer=${buyerId}&buy=true`;
     await email({ email: owner.email, subject, message });
     res.status(200).json({ status: 'success' });
   }),

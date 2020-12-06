@@ -28,7 +28,7 @@ const getConversations = async () => {
 const renderConversations = async () => {
   const conversations = await getConversations();
   conversations.forEach((element) => {
-    document.querySelector('body').appendChild(element.getElement());
+    document.querySelector('.row').appendChild(element.getElement());
   });
 };
 
