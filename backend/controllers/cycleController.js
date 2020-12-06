@@ -28,7 +28,7 @@ module.exports = {
     }
     if (req.files) {
       newCycle.images = req.files.map((file) => file.filename);
-      newCycle.save();
+      await newCycle.save();
     }
     res.status(201).json({
       status: 'success',
@@ -54,15 +54,11 @@ module.exports = {
       new: true,
       runValidators: true,
     });
-    if (req.file) {
-      updatedCycle = await Cycle.findByIdAndUpdate(
-        req.params.id,
-        { image: req.file.filename },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
+    if (req.files) {
+      let images = [];
+      images = req.files.map((file) => file.filename);
+      updatedCycle.images = [...updatedCycle.images, ...images];
+      await updatedCycle.save();
     }
     res.status(200).json({
       status: 'success',

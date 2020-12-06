@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BIT Cycle | Details</title>
-    <link rel="icon" href="../landing page/favicon (1).ico">
-    <script src="https://kit.fontawesome.com/eec8b92df6.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="icon" href="../landing page/favicon (1).ico" />
+    <script
+      src="https://kit.fontawesome.com/eec8b92df6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
     <!-- font  -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-</head>
-<body>
-     <div class="page-wrapper p-t-45 p-b-50 thoda party">
-        <div class="wrapper wrapper--w790">
-            <div class="card card-5">
-                <div class="card-heading">
-                    <h2 class="title">EDIT Details</h2>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-wrapper p-t-45 p-b-50 thoda party">
+      <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+          <div class="card-heading">
+            <h2 class="title">EDIT Details</h2>
+          </div>
+          <div class="card-body">
+            <form class="details-form">
+              <div class="form-row">
+                <div class="name">Name *</div>
+                <div class="value">
+                  <div class="row row-space thodaAur">
+                    <div class="col-6">
+                      <div class="input-group-desc">
+                        <input
+                          class="input--style-5 colorInput"
+                          id="fName"
+                          type="text"
+                          name="first_name"
+                        />
+                        <label class="label--desc">first name</label>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group-desc">
+                        <input
+                          class="input--style-5 colorInput"
+                          id="sName"
+                          type="text"
+                          name="last_name"
+                        />
+                        <label class="label--desc">last name</label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
-                    <form class="details-form">
-                        <div class="form-row">
-                            <div class="name">Name *</div>
-                            <div class="value">
-                                <div class="row row-space thodaAur">
-                                    <div class="col-6">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5 colorInput" id="fName" type="text" name="first_name"  >
-                                            <label class="label--desc">first name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5 colorInput" id="sName" type="text" name="last_name">
-                                            <label class="label--desc">last name</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="form-row">
+              </div>
+              <!-- <div class="form-row">
                             <div class="name">Company</div>
                             <div class="value">
                                 <div class="input-group">
@@ -51,314 +80,420 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div class="form-row">
-                            <div class="name">Email *</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email" disabled id="email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row m-b-40">
-                            <div class="name">Phone *</div>
-                            <div class="value">
-                                <div class="row row-refine">
-                                    <div class="col-9">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5 mobile colorInput" type="text" name="phone" id="phone" >
-                                            <label class="label--desc">10 digit mobile number</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row uparthoda">
-                            <div class="name">Hostel And Room Number *</div>
-                            <div class="value">
-                                <div class="row row-space thodaAur">
-                                    <div class="col-2 khatam">
-                                        <div class="input-group-desc">
-                                            <select name="hostel" class="input--style-5 hostelSelect colorInput" id="hostel">
-                                                 <option value="1">1</option>
-                                                  <option value="2">2</option>
-                                                  <option value="3">3</option>
-                                                  <option value="4">4</option>
-                                                  <option value="5">5</option>
-                                                  <option value="6">6</option>
-                                                  <option value="7">7</option>
-                                                  <option value="8">8</option>
-                                                  <option value="9">9</option>
-                                                  <option value="10">10</option>
-                                                  <option value="11">11</option>
-                                                  <option value="12">12</option>
-                                                  <option value="13">13</option>
-                                                  <option value="14">14</option>
-                                            </select>
-                                            <label class="label--desc">Hostel(XX)</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2 push">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-x colorInput" type="text" name="room" id="room" maxlength="3" minlength="3" >
-                                            <label class="label--desc">Room(XXX)</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row m-b-40 ">
-                            <div class="name">Your Image</div>
-                            <div class="value">
-                                <div>
-                                   <div class="input-group-desc">
-                                        <input type="file" name="userPhoto" id="userPhoto">
-                                        <label class="label--desc">Better for other people to Contact you in Public</label>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row m-b-40 uparthoda">
-                            <div class="name">Your ID Card *</div>
-                            <div class="value">
-                                <div>
-                                   <div class="input-group-desc">
-                                        <input type="file" name="userId" id="userId">
-                                        <label class="label--desc">A proof that you're a student of BIT</label>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row p-t-30">
-                            <label class="label x1">Do you want to sell or rent out a Cycle? *</label>
-                                <label class="radio-container thodaBaju">Yes
-                                    <input type="radio" name="exist" class="exist" onclick="party1()" >
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="radio-container">No
-                                    <input type="radio" name="exist" class="exist" onclick="party2()" checked>
-                                    <span class="checkmark"></span>
-                                </label>
-                        </div>
-                        <span class="part1 hidden" id="deleteCycle">
-                            <div class="form-row">
-                                   <div class="name">Cycle Brand *</div>
-                                   <div class="value">
-                                        <div class="input-group">
-                                            <select name="brandname" class="input--style-5 brandSelect colorInput" onchange='checkvalue(this.value)'>
-                                                 <option value="1">Avon</option>
-                                                  <option value="2">Atlas</option>
-                                                  <option value="3">Herculus</option>
-                                                  <option value="4">Monsta</option>
-                                                  <option value="5">Hero</option>
-                                                  <option value="6">Firefox</option>
-                                                  <option value="7">Other</option>
-                                            </select>
-                                        </div>
-                                   </div>
-                              </div>
-                                <input type="text" name="color" class="input--style-5 colorInput mt-2 mb-5" placeholder="Enter Cycle Brand Here" id="cycleName" style='display:none'/>
-                             <div class="form-row">
-                                   <div class="name">Cycle Model *</div>
-                                   <div class="value">
-                                        <div class="input-group">
-                                             <input class="input--style-5 colorInput" type="text" name="cycleName" id="cycleName">
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="form-row">
-                                   <div class="name">Cycle Color *</div>
-                                   <div class="value">
-                                        <div class="input-group">
-                                             <input class="input--style-5 colorInput" type="text" name="cycleColor" id="cycleColor" >
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="form-row">
-                                   <div class="name">Bought in? *</div>
-                                   <div class="value">
-                                        <div class="input-group">
-                                            <select name="boughtIn" class="input--style-5 hostelSelect colorInput" id="boughtIn" >
-                                                 <option value="1">2011</option>
-                                                  <option value="2">2012</option>
-                                                  <option value="3">2013</option>
-                                                  <option value="4">2014</option>
-                                                  <option value="5">2015</option>
-                                                  <option value="6">2016</option>
-                                                  <option value="7">2017</option>
-                                                  <option value="8">2018</option>
-                                                  <option value="9">2019</option>
-                                                  <option value="10">2020</option>
-                                            </select>
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="form-row except">
-                                        <div class="name">Accessories *</div>
-                                        <div class="value uparthoda accesories">
-                                                <input class="change" type="checkbox" id="qq" name="acc">
-                                                <label for="">Gear</label>
-                                        </div>
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Bell</label>
-                                        </div>
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Reflector</label>
-                                        </div>
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Mudgaurd</label>
-                                        </div>
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Warranty</label>
-                                        </div> 
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Cycle Lock</label>
-                                        </div> 
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Bottle Cage</label>
-                                        </div>                           
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Carrier</label>
-                                        </div>         
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Cycle Pump</label>
-                                        </div> 
-                                        <div class="value accesories">
-                                                <input type="checkbox" id="qq" class="change" name="acc">
-                                                <label for="">Seat Cover</label>
-                                        </div> 
-                                    </div>
-                              <div class="form-row m-b-40 ">
-                                   <div class="name">Cycle Image(s)</div>
-                                   <div class="value">
-                                        <div>
-                                             <div class="input-group-desc">
-                                                  <input type="file" name="photos" multiple id="photos">
-                                                  <label class="label--desc">Better for other people to decide. MAX 8</label><br>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="form-row p-t-30">
-                                   <label class="label x1">Do you want to Sell the Cycle? *</label>
-                                        <label class="radio-container thodaBaju">Yes
-                                             <input type="radio" name="exist1" class="exist1" onclick="party3()" >
-                                             <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">No
-                                             <input type="radio" name="exist1" class="exist1" onclick="party4()" checked>
-                                             <span class="checkmark"></span>
-                                        </label>
-                              </div>
-                              <span class="part2 hidden">
-                                   <div class="form-row">
-                                        <div class="name">Cycle Price *</div>
-                                        <div class="value">
-                                             <div class="input-group-desc">
-                                                  <input class="input--style-5 colorInput" type="text" name="cyclePrice" id="cyclePrice">
-                                                  <label class="label--desc">Don't put any commas</label>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </span>
-                        </span>
-                        <div>
-                            <button class="btn btn--radius-2 btn-danger" type="submit" id="submitBtn">Submit</button>
-                        </div>
-                    </form>
+              <div class="form-row">
+                <div class="name">Email *</div>
+                <div class="value">
+                  <div class="input-group">
+                    <input
+                      class="input--style-5"
+                      type="email"
+                      name="email"
+                      disabled
+                      id="email"
+                    />
+                  </div>
                 </div>
-            </div>
+              </div>
+              <div class="form-row m-b-40">
+                <div class="name">Phone *</div>
+                <div class="value">
+                  <div class="row row-refine">
+                    <div class="col-9">
+                      <div class="input-group-desc">
+                        <input
+                          class="input--style-5 mobile colorInput"
+                          type="text"
+                          name="phone"
+                          id="phone"
+                        />
+                        <label class="label--desc"
+                          >10 digit mobile number</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row uparthoda">
+                <div class="name">Hostel And Room Number *</div>
+                <div class="value">
+                  <div class="row row-space thodaAur">
+                    <div class="col-2 khatam">
+                      <div class="input-group-desc">
+                        <select
+                          name="hostel"
+                          class="input--style-5 hostelSelect colorInput"
+                          id="hostel"
+                        >
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                        </select>
+                        <label class="label--desc">Hostel(XX)</label>
+                      </div>
+                    </div>
+                    <div class="col-2 push">
+                      <div class="input-group-desc">
+                        <input
+                          class="input--style-x colorInput"
+                          type="text"
+                          name="room"
+                          id="room"
+                          maxlength="3"
+                          minlength="3"
+                        />
+                        <label class="label--desc">Room(XXX)</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row m-b-40">
+                <div class="name">Your Image</div>
+                <div class="value">
+                  <div>
+                    <div class="input-group-desc">
+                      <input type="file" name="userPhoto" id="userPhoto" />
+                      <label class="label--desc"
+                        >Better for other people to Contact you in Public</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row m-b-40 uparthoda">
+                <div class="name">Your ID Card *</div>
+                <div class="value">
+                  <div>
+                    <div class="input-group-desc">
+                      <input type="file" name="userId" id="userId" />
+                      <label class="label--desc"
+                        >A proof that you're a student of BIT</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row p-t-30">
+                <label class="label x1"
+                  >Do you want to sell or rent out a Cycle? *</label
+                >
+                <label class="radio-container thodaBaju"
+                  >Yes
+                  <input
+                    type="radio"
+                    name="exist"
+                    class="exist"
+                    onclick="party1()"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container"
+                  >No
+                  <input
+                    type="radio"
+                    name="exist"
+                    class="exist"
+                    onclick="party2()"
+                    checked
+                  />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <span class="part1 hidden" id="deleteCycle">
+                <div class="form-row">
+                  <div class="name">Cycle Brand *</div>
+                  <div class="value">
+                    <div class="input-group">
+                      <select
+                        name="brandname"
+                        class="input--style-5 brandSelect colorInput"
+                        onchange="checkvalue(this.value)"
+                      >
+                        <option class="selectValue" value="1">Avon</option>
+                        <option class="selectValue" value="2">Atlas</option>
+                        <option class="selectValue" value="3">Herculus</option>
+                        <option class="selectValue" value="4">Monsta</option>
+                        <option class="selectValue" value="5">Hero</option>
+                        <option class="selectValue" value="6">Firefox</option>
+                        <option class="selectValue" value="7">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  name="color"
+                  class="input--style-5 colorInput mt-2 mb-5"
+                  placeholder="Enter Cycle Brand Here"
+                  id="cycleBrand"
+                  style="display: none"
+                />
+                <div class="form-row">
+                  <div class="name">Cycle Model *</div>
+                  <div class="value">
+                    <div class="input-group">
+                      <input
+                        class="input--style-5 colorInput"
+                        type="text"
+                        name="cycleModel"
+                        id="cycleModel"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="name">Cycle Color *</div>
+                  <div class="value">
+                    <div class="input-group">
+                      <input
+                        class="input--style-5 colorInput"
+                        type="text"
+                        name="cycleColor"
+                        id="cycleColor"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="name">Bought in? *</div>
+                  <div class="value">
+                    <div class="input-group">
+                      <select
+                        name="boughtIn"
+                        class="input--style-5 hostelSelect colorInput"
+                        id="boughtIn"
+                      >
+                        <option value="1">2011</option>
+                        <option value="2">2012</option>
+                        <option value="3">2013</option>
+                        <option value="4">2014</option>
+                        <option value="5">2015</option>
+                        <option value="6">2016</option>
+                        <option value="7">2017</option>
+                        <option value="8">2018</option>
+                        <option value="9">2019</option>
+                        <option value="10">2020</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row except">
+                  <div class="name">Accessories *</div>
+                  <div class="value uparthoda accesories">
+                    <input class="change" type="checkbox" id="qq" name="acc" />
+                    <label for="">Gear</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Bell</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Reflector</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Mudgaurd</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Warranty</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Cycle Lock</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Bottle Cage</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Carrier</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Cycle Pump</label>
+                  </div>
+                  <div class="value accesories">
+                    <input type="checkbox" id="qq" class="change" name="acc" />
+                    <label for="">Seat Cover</label>
+                  </div>
+                </div>
+                <div class="form-row m-b-40">
+                  <div class="name">Cycle Image(s)</div>
+                  <div class="value">
+                    <div>
+                      <div class="input-group-desc">
+                        <input type="file" name="photos" multiple id="photos" />
+                        <label class="label--desc"
+                          >Better for other people to decide. MAX 8</label
+                        ><br />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row p-t-30">
+                  <label class="label x1"
+                    >Do you want to Sell the Cycle? *</label
+                  >
+                  <label class="radio-container thodaBaju"
+                    >Yes
+                    <input
+                      type="radio"
+                      name="exist1"
+                      class="exist1"
+                      onclick="party3()"
+                    />
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="radio-container"
+                    >No
+                    <input
+                      type="radio"
+                      name="exist1"
+                      class="exist1"
+                      onclick="party4()"
+                      checked
+                    />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <span class="part2 hidden">
+                  <div class="form-row">
+                    <div class="name">Cycle Price *</div>
+                    <div class="value">
+                      <div class="input-group-desc">
+                        <input
+                          class="input--style-5 colorInput"
+                          type="text"
+                          name="cyclePrice"
+                          id="cyclePrice"
+                        />
+                        <label class="label--desc">Don't put any commas</label>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </span>
+              <div class="hidden success">Account successfully updated</div>
+              <div class="hidden error"></div>
+
+              <div>
+                <button
+                  class="btn btn--radius-2 btn-danger"
+                  type="submit"
+                  id="submitBtn"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-<!-- Footer -->
-<footer class="page-footer font-small blue-grey lighten-5 fandar" id="footer">
+  </body>
+  <!-- Footer -->
+  <footer class="page-footer font-small blue-grey lighten-5 fandar" id="footer">
     <div class="fsoc">
-        <div class="container">
-            <div class="row py-4 d-flex align-items-center">
-                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                    <h6 class="mb-0">Get connected with us on social networks!</h6>
-                </div>
-                <div class="col-md-6 col-lg-7 text-center text-md-right">
-                    <a class="flink fb-ic">
-                        <i class="fab fa-facebook-f  mr-4"></i>
-                    </a>
-                    <a class="flink tw-ic">
-                        <i class="fab fa-twitter  mr-4"> </i>
-                    </a>
-                    <a class="flink gplus-ic">
-                        <i class="fab fa-google-plus-g  mr-4"> </i>
-                    </a>
-                    <a class="flink li-ic">
-                        <i class="fab fa-linkedin-in  mr-4"> </i>
-                    </a>
-                    <a class="flink ins-ic">
-                        <i class="fab fa-instagram "> </i>
-                    </a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row py-4 d-flex align-items-center">
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+          </div>
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+            <a class="flink fb-ic">
+              <i class="fab fa-facebook-f mr-4"></i>
+            </a>
+            <a class="flink tw-ic">
+              <i class="fab fa-twitter mr-4"> </i>
+            </a>
+            <a class="flink gplus-ic">
+              <i class="fab fa-google-plus-g mr-4"> </i>
+            </a>
+            <a class="flink li-ic">
+              <i class="fab fa-linkedin-in mr-4"> </i>
+            </a>
+            <a class="flink ins-ic">
+              <i class="fab fa-instagram"> </i>
+            </a>
+          </div>
         </div>
+      </div>
     </div>
     <div class="fback">
-        <div class="container text-center text-md-left">
-            <div class="row dark-grey-text uparthoda">
-                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-                    <h6 class="text-uppercase font-weight-bold">Feedback!</h6>
-                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
-                    <p>Do give us your valuable feedback and reviews by contacting us with the mentioned social media accounts</p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase font-weight-bold">Cycle Info</h6>
-                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
-                    <p>
-                        <a class="flink dark-grey-text" href="#!">Edit cycle details</a>
-                    </p>
-                    <p>
-                        <a class="flink dark-grey-text" href="#!">Change Cycle Availability</a>
-                    </p>
-                    <p>
-                        <a class="flink dark-grey-text" href="#!">Add Cycle</a>
-                    </p>
-                    <p>
-                        <a class="flink dark-grey-text" href="#!">Remove Cycle</a>
-                    </p>
-                </div>
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase font-weight-bold">User Info</h6>
-                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
-                    <p>
-                        <a class="flink dark-grey-text" href="#!">Create Account</a>
-                    </p>
-                    <p>
-                        <a class="flink dark-grey-text" href="#!">Login</a>
-                    </p>
-                    <p>
-                        <a class="flink dark-grey-text" href="#!">Edit User details</a>
-                    </p>
-                    <p>
-                        <a class="flink dark-grey-text" href="#!">Logout</a>
-                    </p>
-                </div>
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                    <hr class="teal accent-3 d-inline-block mx-auto feedback">
-                    <p><i class="fas fa-envelope mr-3"></i> bitcycle@gmail.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> +91 7045457636</p>
-                    <p><i class="fas fa-phone mr-3"></i> +91 peeeeeeeee</p>
-                    <p><i class="fas fa-phone mr-3"></i> +91 ladduladdu</p>
-                </div>
-            </div>
+      <div class="container text-center text-md-left">
+        <div class="row dark-grey-text uparthoda">
+          <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+            <h6 class="text-uppercase font-weight-bold">Feedback!</h6>
+            <hr class="teal accent-3 d-inline-block mx-auto feedback" />
+            <p>
+              Do give us your valuable feedback and reviews by contacting us
+              with the mentioned social media accounts
+            </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Cycle Info</h6>
+            <hr class="teal accent-3 d-inline-block mx-auto feedback" />
+            <p>
+              <a class="flink dark-grey-text" href="#!">Edit cycle details</a>
+            </p>
+            <p>
+              <a class="flink dark-grey-text" href="#!"
+                >Change Cycle Availability</a
+              >
+            </p>
+            <p>
+              <a class="flink dark-grey-text" href="#!">Add Cycle</a>
+            </p>
+            <p>
+              <a class="flink dark-grey-text" href="#!">Remove Cycle</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">User Info</h6>
+            <hr class="teal accent-3 d-inline-block mx-auto feedback" />
+            <p>
+              <a class="flink dark-grey-text" href="#!">Create Account</a>
+            </p>
+            <p>
+              <a class="flink dark-grey-text" href="#!">Login</a>
+            </p>
+            <p>
+              <a class="flink dark-grey-text" href="#!">Edit User details</a>
+            </p>
+            <p>
+              <a class="flink dark-grey-text" href="#!">Logout</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr class="teal accent-3 d-inline-block mx-auto feedback" />
+            <p><i class="fas fa-envelope mr-3"></i> bitcycle@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +91 7045457636</p>
+            <p><i class="fas fa-phone mr-3"></i> +91 peeeeeeeee</p>
+            <p><i class="fas fa-phone mr-3"></i> +91 ladduladdu</p>
+          </div>
         </div>
-    <div class="footer-copyright text-center text-white-50 py-3">IEEE MegaProject: Team Name - SUPI6E</div>
+      </div>
+      <div class="footer-copyright text-center text-white-50 py-3">
+        IEEE MegaProject: Team Name - SUPI6E
+      </div>
     </div>
-</footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="index.js"></script>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="index.js"></script>
 </html>

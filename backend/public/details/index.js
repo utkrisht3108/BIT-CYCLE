@@ -25,7 +25,7 @@ function party2() {
     part1.classList.add('hidden');
     document.querySelector('input[name="cycleName"]').value = '';
     document.querySelector('input[name="cycleColor"]').value = '';
-    document.querySelector('select[name="boughtIn"]').value = 2011;
+    document.querySelector('select[name="boughtIn"]').value = 1;
     console.log('sad');
   }
 }
@@ -70,7 +70,7 @@ const postUser = async (e) => {
     formData.append('passwordConfirm', userAccount.passwordConfirm);
     const firstName = e.target.first_name.value;
     const lastName = e.target.last_name.value;
-    const name = firstName + lastName;
+    const name = firstName + ' ' + lastName;
     formData.append('name', name);
     formData.append('phone', e.target.phone.value);
     formData.append('hostel', e.target.hostel.value);
@@ -102,23 +102,36 @@ const postUser = async (e) => {
 const postCycle = async (e, userId, checked) => {
   try {
     const formData = new FormData();
-    formData.append('brand', e.target.cycleName.value);
+
+    formData.append('model', e.target.cycleModel.value);
     formData.append('color', e.target.cycleColor.value);
-    formData.append('boughtIn', e.target.boughtIn.value);
+    formData.append(
+      'boughtIn',
+      e.target.boughtIn.options[e.target.boughtIn.value - 1].innerHTML
+    );
+    if (e.target.brandname.value !== '7') {
+      formData.append(
+        'brand',
+        e.target.brandname.options[e.target.brandname.value - 1].innerHTML
+      );
+    } else {
+      formData.append('brand', document.querySelector('#cycleBrand').value);
+    }
+    console.log(formData.get('brand'));
     formData.append('owner', userId);
+    let accessories = [];
+    document.querySelectorAll('.accesories').forEach((node) => {
+      if (node.children[0].checked) {
+        accessories.push(node.children[1].innerHTML);
+      }
+    });
+    accessories.forEach((acc) => {
+      formData.append('accessories', acc);
+    });
     console.log(checked);
     if (checked) {
-      formData.append('butPrice', e.target.cyclePrice.value);
+      formData.append('buyPrice', e.target.cyclePrice.value);
       console.log(e.target.acc);
-      let accessories = [];
-      document.querySelectorAll('.accesories').forEach((node) => {
-        if (node.children[0].checked) {
-          accessories.push(node.children[1].innerHTML);
-        }
-      });
-      accessories.forEach((acc) => {
-        formData.append('accessories', acc);
-      });
     }
     if (e.target.photos.files) {
       [...e.target.photos.files].forEach((file) => {
@@ -142,7 +155,13 @@ document.querySelector('.details-form').onsubmit = async (e) => {
   const checkRadio = document.querySelectorAll('.exist')[0].checked;
   const checkRadio1 = document.querySelectorAll('.exist1')[0].checked;
   if (checkRadio) {
-    requiredField = [...requiredField, 'cycleName', 'cycleColor', 'boughtIn'];
+    requiredField = [
+      ...requiredField,
+      'cycleColor',
+      'boughtIn',
+      'cycleModel',
+      'cycleBrand',
+    ];
   }
   if (checkRadio1) {
     requiredField = [...requiredField, 'cyclePrice'];
@@ -173,6 +192,16 @@ document.querySelector('.details-form').onsubmit = async (e) => {
       removeWrongInput(e, i);
     }
   }
+  if (document.querySelector('select[name="brandname"]').value === '7') {
+    if (!document.querySelector('#cycleBrand').value) {
+      document.querySelector('#cycleBrand').classList.add('wrong-input');
+    } else {
+      count++;
+      document.querySelector('#cycleBrand').classList.remove('wrong-input');
+    }
+  } else {
+    count++;
+  }
   if (count === requiredField.length + 2) {
     const userId = await postUser(e);
     localStorage.setItem('loggedIn', true);
@@ -185,16 +214,13 @@ document.querySelector('.details-form').onsubmit = async (e) => {
 };
 document.getElementById('email').placeholder = userAccount.email;
 
+var other = document.querySelector('.other');
+var brand = document.querySelector('.brandInput');
 
-var other = document.querySelector(".other");
-var brand = document.querySelector(".brandInput");
+//brand.classList.add('hidden');
 
-  brand.classList.add("hidden");
-
-function checkvalue(val)
-{
-    if(val==="7")
-       document.getElementById('cycleName').style.display='block';
-    else
-       document.getElementById('cycleName').style.display='none'; 
+function checkvalue(val) {
+  if (val === '7')
+    document.getElementById('cycleBrand').style.display = 'block';
+  else document.getElementById('cycleBrand').style.display = 'none';
 }

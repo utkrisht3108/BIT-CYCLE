@@ -11,5 +11,5 @@ router.route('/').get(authController.getAllUser);
 router
   .route('/:id')
   .get(authController.getUser)
-  .patch(authController.updateUser);
+  .patch(authController.uploadImage,authController.updateUser);
 module.exports = router;

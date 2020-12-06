@@ -171,11 +171,28 @@ module.exports = {
     });
   }),
   updateUser: catchAsync(async (req, res, next) => {
-    const userId = req.params.id;
+    const id = req.params.id;
     if (req.body.password || req.body.passwordConfirm) {
       throw new Error('Cannot change password');
     }
-    const user = await User.findByIdAndUpdate(userId, req.body, {
+    let userId='', userImage='';
+
+    req.files.forEach((file) => {
+      if (file.fieldname === 'userId') {
+        userId = file.filename;
+      } else if (file.fieldname === 'userImage') {
+        userImage = file.filename;
+      }
+    });
+
+    if (userId) {
+      req.body.userId = userId;
+    }
+    if (userImage) {
+      req.body.userImage = userImage;
+    }
+    
+    const user = await User.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
     });

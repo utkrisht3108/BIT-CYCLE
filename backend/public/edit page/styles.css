@@ -1,6 +1,18 @@
 .hidden{
      display: none ;
 }
+.success{
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: green;
+  font-weight: bold;
+}
+.error{
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: red;
+  font-weight: bold;
+}
 .br
 html{
   scroll-behavior: smooth;
