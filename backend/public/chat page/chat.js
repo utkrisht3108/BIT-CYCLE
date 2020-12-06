@@ -3,15 +3,15 @@ const socket = io();
 const firstUser = localStorage.getItem('user_id');
 const secondUser = localStorage.getItem('secondUser');
 var my_chat=document.querySelector("#my-chat");
-function displayMyMessage(message){
+function displayMyMessage(message,time){
   console.log("lol");
   var newMessage = document.createElement('div');
-  var d=new Date(Date.now());
-  console.log(d);
+  var d=new Date(time);
+  console.log(d.toString().substring(4,21));
   temp=`
       <div class="my-message">
           <div class="my-message-content">${message} </div>
-          <div class="my-message-time">${Date.now()} </div>
+          <div class="my-message-time">${d.toString().substring(4,21)} </div>
         </div>
         `;
   newMessage.innerHTML=temp;
@@ -21,10 +21,12 @@ function displayMyMessage(message){
 }
 function displayUserMessage(message,time){
   var newMessage = document.createElement('div');
+  var d=new Date(time);
+  console.log(d.toString().substring(4,21));
   temp=`
   <div class="sender-message">
   <div class="sender-message-content">${message}</div>
-  <div class="sender-message-time">${time}</div>
+  <div class="sender-message-time">${d.toString().substring(4,21)}</div>
   </div>
         `;
   newMessage.innerHTML=temp;
@@ -43,10 +45,10 @@ socket.on('displayOldMessages', (response) => {
   response.oldMessages.forEach((message) => {
     console.log(message);
     if(message.receiver==firstUser){
-      displayMyMessage(message.message);
+      displayUserMessage(message.message,message.time);
     }
     if(message.receiver==secondUser){
-      displayUserMessage(message.message,message.time);
+      displayMyMessage(message.message,message.time);
     }
     // const newMessage = document.createElement('div');
     // newMessage.innerHTML = message.message;
@@ -56,7 +58,7 @@ socket.on('displayOldMessages', (response) => {
 document.querySelector('.chat-form').onsubmit = (e) => {
   e.preventDefault();
   const message = e.target.message.value;
-  displayMyMessage(message);
+  displayMyMessage(message,Date.now());
   const conId = localStorage.getItem("conversation")
   socket.emit('chat-message', {
     message,
