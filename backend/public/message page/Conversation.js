@@ -12,10 +12,17 @@ export default class Conversation {
     this.eventListeners();
     return this.el;
   }
+
+  // yaha pe jo return ho vo "row" wali class ke andar ho 
   getTemplate(user) {
     return `
-        <div>
-            <divc class="conversation"> User ${user}</div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+            <a href="#" >
+                <img src="images/default.jpg" alt="" class="img-circle">
+                <div class="friend-name conversation">
+                    <strong>${user}</strong>
+                </div>
+            </a>
         </div>
         `;
   }
