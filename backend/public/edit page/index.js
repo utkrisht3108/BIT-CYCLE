@@ -264,15 +264,17 @@ document.querySelector('.details-form').onsubmit = async (e) => {
       removeWrongInput(e, i);
     }
   }
-  if (document.querySelector('select[name="brandname"]').value === '7') {
-    if (!document.querySelector('#cycleBrand').value) {
-      document.querySelector('#cycleBrand').classList.add('wrong-input');
+  if(checkRadio){
+      if (document.querySelector('select[name="brandname"]').value === '7') {
+      if (!document.querySelector('#cycleBrand').value) {
+        document.querySelector('#cycleBrand').classList.add('wrong-input');
+      } else {
+        count++;
+        document.querySelector('#cycleBrand').classList.remove('wrong-input');
+      }
     } else {
       count++;
-      document.querySelector('#cycleBrand').classList.remove('wrong-input');
     }
-  } else {
-    count++;
   }
   if (count === requiredField.length + 2) {
     try {
@@ -285,7 +287,7 @@ document.querySelector('.details-form').onsubmit = async (e) => {
       }
       document.querySelector(".success").classList.remove("hidden");
       document.querySelector(".error").classList.add("hidden");
-      //window.location.href = '../cycle page/index.html';
+      window.location.href = '../cycle page/index.html';
     } catch (error) {
       document.querySelector(".error").classList.remove("hidden");
       document.querySelector(".error").innerHTML = error.message;

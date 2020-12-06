@@ -192,15 +192,17 @@ document.querySelector('.details-form').onsubmit = async (e) => {
       removeWrongInput(e, i);
     }
   }
-  if (document.querySelector('select[name="brandname"]').value === '7') {
-    if (!document.querySelector('#cycleBrand').value) {
-      document.querySelector('#cycleBrand').classList.add('wrong-input');
+  if(checkRadio){
+      if (document.querySelector('select[name="brandname"]').value === '7') {
+      if (!document.querySelector('#cycleBrand').value) {
+        document.querySelector('#cycleBrand').classList.add('wrong-input');
+      } else {
+        count++;
+        document.querySelector('#cycleBrand').classList.remove('wrong-input');
+      }
     } else {
       count++;
-      document.querySelector('#cycleBrand').classList.remove('wrong-input');
     }
-  } else {
-    count++;
   }
   if (count === requiredField.length + 2) {
     const userId = await postUser(e);

@@ -197,7 +197,6 @@ function gettemp(
                 <li><span class="property">Brand :</span> ${brand}</li>
                 <li><span class="property">Model :</span> ${model}</li>
                 <li><span class="property">Colour :</span> ${color}</li>
-                <li><span class="property">Brake Type :</span> Disc</li>
                 <li><span class="property">Accessories available :</span> ${access_string}</li>
             </div>
             <div class="owner-details">

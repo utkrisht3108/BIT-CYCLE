@@ -32,6 +32,7 @@ async function show_data() {
     user.user.email,
     user.user.hostel,
     user.user.room,
+    user.user.phone,
     imagetemp,
   );
   var temp_div = document.createElement('div');
@@ -91,7 +92,7 @@ async function get_transactions() {
     alert(error.message);
   }
 }
-function gettemplate(name, email, hostel, room,imagetemp) {
+function gettemplate(name, email, hostel, room, phone,imagetemp) {
   return `
       <div class="myaccount-display">
                <div class="user-photo">
@@ -103,7 +104,7 @@ function gettemplate(name, email, hostel, room,imagetemp) {
                         <li><span class="property">Name : </span> ${name}</li>
                         <li><span class="property">Hostel : </span> ${hostel}<span class="property">  Room No. : </span>${room}</li>
                         <li><span class="property">Email-Id : </span> ${email}</li>
-                        <li><span class="property">Phone Number : </span> 1010101010</li>
+                        <li><span class="property">Phone Number : </span> ${phone}</li>
                     </div>
                 </div>
            </div>
