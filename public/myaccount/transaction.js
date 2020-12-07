@@ -90,12 +90,6 @@ export default class Transaction {
             console.log(stars);
             stars.forEach((element)=>{
               element.oninput=()=>{
-                var star_box=this.el.querySelector(".cycle-rating");
-                // star_box.classList.remove("active");
-                // star_box.classList.add("active");
-                stars.forEach((element)=>{
-                  element.style.color="orange";
-                })
                 rating=element.value;
                 console.log(element.value);
               }

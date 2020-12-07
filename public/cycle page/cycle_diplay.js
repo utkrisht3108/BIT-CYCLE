@@ -22,7 +22,28 @@ var range = document.querySelector('.range');
 var rangeval1 = document.querySelector('.rangeval1');
 var range1 = document.querySelector('.range1');
 var clearfilters=document.querySelector(".clear-filters");
+var clearfilters1=document.querySelector(".clear-filters1");
 clearfilters.onclick=()=>{
+  check_boxes.forEach((check_box)=>{
+    check_box.checked=false;
+  });
+  range1.value=50000;
+  range.value=50000;
+  rangeval.innerHTML = range.value;
+  rangeval1.innerHTML = range1.value;
+  buy_purpose1 = -1;
+  sell_range1.classList.add('hidden');
+  buy_purpose = -1;
+  sell_range.classList.add('hidden');
+  rent_purpose = -1;
+  filter_access=[];
+  filter_colors=[];
+  filter_brands=[];
+
+  filtered_render();
+
+}
+clearfilters1.onclick=()=>{
   check_boxes.forEach((check_box)=>{
     check_box.checked=false;
   });
