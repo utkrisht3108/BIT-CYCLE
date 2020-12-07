@@ -95,12 +95,12 @@ async function get_transactions() {
 function gettemplate(name, email, hostel, room, phone,imagetemp) {
   return `
       <div class="myaccount-display">
+              <h2 class="heading">MY ACCOUNT</h2>
                <div class="user-photo">
                    ${imagetemp}
                </div>
                <div class="user-display">
                    <div class="user-details">
-                        <h2>User-Info</h2>
                         <li><span class="property">Name : </span> ${name}</li>
                         <li><span class="property">Hostel : </span> ${hostel}<span class="property">  Room No. : </span>${room}</li>
                         <li><span class="property">Email-Id : </span> ${email}</li>

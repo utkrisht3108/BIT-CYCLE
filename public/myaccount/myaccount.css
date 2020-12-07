@@ -2,29 +2,44 @@ html{
     scroll-behavior: smooth;
 }
 .myaccount-display{
-    display: flex;
-    padding: 5px;
+    padding-top: 2%;
+    text-align: center;
+    background-color: rgb(238, 238, 238);
+}
+.heading{
+    font-family: 'Almarai', sans-serif;
+    font-size: 3rem;
 }
 .user-photo{
-    width: 30vw;
-    height: 50vh;
+    margin-top: 3%;
+    text-align: center;
+    margin-left: 42.5%;
+    margin-bottom: 4%;
+    width: 15%;
+    height: 15%;
+    border: 10px outset grey;
+    border-radius: 100%;
+    background-color: black;
 }
 .user-photo img{
     width: 100%;
     height: 100%;
 }
 .user-display{
-    width: 40vw;
+    background-color: whitesmoke;
+    width: 100%;
 }
 .user-details{
+    text-align: left;
     list-style: none;
-    padding-left: 3vw;
+    padding-left: 3%;
     font-size: 25px;
-    line-height: 150%;
+    line-height: 3rem;
+    font-family: 'Delius', cursive;
 }
 .property{
     font-weight: bold;
-    
+    font-family: 'Marcellus SC', serif;
 }
 /* navbar  */
 #title {
@@ -126,7 +141,6 @@ html{
     padding-bottom: 50px;
     margin-right: 50px;
 }
-
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
@@ -252,4 +266,25 @@ i{
 }
 .rating-feedback{
     display: none;
+}
+
+@media screen and (max-width: 650px) {
+    .navbar-brand{
+        width: 82%;
+        margin-right: 0;
+    }
+    .open{
+        font-size: 20px;
+    }
+    .user-details{
+        font-size: 18px;
+    }
+    .heading{
+        font-size: 2rem;
+    }
+    .user-photo{
+            border: 8px outset grey;
+            width: 40%;
+            margin-left: 30%;
+        }
 }
