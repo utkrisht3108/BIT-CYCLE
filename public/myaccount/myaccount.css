@@ -24,6 +24,8 @@ html{
 .user-photo img{
     width: 100%;
     height: 100%;
+    min-width: 175px;
+    min-height: 175px;
     border-radius: 100%;
     padding: 1px;
 }

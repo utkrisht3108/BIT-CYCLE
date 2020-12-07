@@ -214,7 +214,10 @@ const sendCycle = async (e, checked, method) => {
     body: formData,
   });
   const respJSON = await resp.json();
-  if (resp.status != 200) {
+  if (method==='PATCH' && resp.status != 200) {
+    throw new Error(respJSON.message);
+  }
+  if (method==='POST' && resp.status != 201) {
     throw new Error(respJSON.message);
   }
 };
