@@ -25,7 +25,7 @@ async function show_data() {
     imagetemp=`<img src="../img/user/${user.user.userImage}">`;
   }
   else{
-    imagetemp=`<img src="../img/user/1606550659885logo.png">`
+    imagetemp=`<img src="../img/user/default_image.jpg">`
   }
   var temp = gettemplate(
     user.user.name,
