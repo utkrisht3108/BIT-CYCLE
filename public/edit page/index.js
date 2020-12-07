@@ -289,7 +289,7 @@ document.querySelector('.details-form').onsubmit = async (e) => {
           await sendCycle(e, checkRadio1, 'POST');
         }
       }
-      if (cycle && !checkRadio) {
+      if (cycle._id && !checkRadio) {
         await deleteCycle();
       }
       document.querySelector('.success').classList.remove('hidden');
