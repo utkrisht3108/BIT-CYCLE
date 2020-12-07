@@ -23,9 +23,15 @@ function party2() {
   console.log(checkRadio);
   if (checkRadio != null) {
     part1.classList.add('hidden');
-    document.querySelector('input[name="cycleName"]').value = '';
+    document.querySelector('input[name="cycleModel"]').value = '';
     document.querySelector('input[name="cycleColor"]').value = '';
     document.querySelector('select[name="boughtIn"]').value = 1;
+    document
+      .querySelectorAll('input[name="acc"]')
+      .forEach((node) => (node.checked = false));
+    document.querySelectorAll('input[name="exist1"]')[1].checked = true;
+    party4();
+    document.querySelectorAll('input[name="exist2"]')[1].checked = true;
     console.log('sad');
   }
 }
@@ -45,9 +51,7 @@ function party4() {
   if (checkRadio != null) {
     part1.classList.add('hidden');
     document.querySelector('input[name="cyclePrice"]').value = '';
-    document
-      .querySelectorAll('input[name="acc"]')
-      .forEach((node) => (node.checked = false));
+
     console.log('sad');
   }
 }
@@ -87,7 +91,7 @@ const postUser = async (e) => {
     });
     console.log(resp);
     const respJSON = await resp.json();
-    localStorage.removeItem('userAccount');
+    //localStorage.removeItem('userAccount');
     console.log(respJSON);
     if (resp.status === 201) {
       return respJSON.data.newUser._id;
@@ -129,10 +133,12 @@ const postCycle = async (e, userId, checked) => {
       formData.append('accessories', acc);
     });
     console.log(checked);
+    formData.append('forbuy', checked);
     if (checked) {
       formData.append('buyPrice', e.target.cyclePrice.value);
       console.log(e.target.acc);
     }
+    formData.append('forrent', document.querySelectorAll('.exist2')[0].checked);
     if (e.target.photos.files) {
       [...e.target.photos.files].forEach((file) => {
         formData.append('cycleImages', file);
@@ -143,6 +149,7 @@ const postCycle = async (e, userId, checked) => {
       body: formData,
     });
     const respJSON = await resp.json();
+    console.log(respJSON);
     if (resp.status != 201) {
       throw new Error(respJSON.message);
     }
@@ -192,8 +199,8 @@ document.querySelector('.details-form').onsubmit = async (e) => {
       removeWrongInput(e, i);
     }
   }
-  if(checkRadio){
-      if (document.querySelector('select[name="brandname"]').value === '7') {
+  if (checkRadio) {
+    if (document.querySelector('select[name="brandname"]').value === '7') {
       if (!document.querySelector('#cycleBrand').value) {
         document.querySelector('#cycleBrand').classList.add('wrong-input');
       } else {
