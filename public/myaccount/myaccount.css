@@ -292,3 +292,7 @@ i{
             margin-left: 30%;
         }
 }
+.success{
+    color: green;
+    display: none;
+}

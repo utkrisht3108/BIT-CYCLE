@@ -45,7 +45,7 @@ export default class Transaction {
                <div class="transaction-details">
                 <li><span class="property">Transaction Type : </span> ${this.type} </li>
                 <li><span class="property">Owner : </span> ${this.owner} </li>
-                <li><span class="property">Costumer : </span> ${this.costumer} </li>
+                <li><span class="property">Customer : </span> ${this.costumer} </li>
                 <li><span class="property">Cycle : </span> ${cycleName} </li>
                 <div class="feedback-trans">
                   <button class="btn btn-primary deal-done">Deal Complete</button>     <span><button class="btn btn-primary deal-canc">Deal Cancelled</button></span>
@@ -59,7 +59,10 @@ export default class Transaction {
                     </div>
                     <button class="btn btn-warning send-feed">Send Feedback</button>
                   </div>
+                  <br>
                 </div>
+                <div class="success">Thank You for your feedback !!</div>
+
                 
 
                </div>
@@ -73,7 +76,7 @@ export default class Transaction {
                <div class="transaction-details">
                 <li><span class="property">Transaction Type : </span> ${this.type} </li>
                 <li><span class="property">Owner : </span> ${this.owner} </li>
-                <li><span class="property">Costumer : </span> ${this.costumer} </li>
+                <li><span class="property">Customer : </span> ${this.costumer} </li>
                 <li><span class="property">Cycle : </span> ${cycleName} </li>
             </div>
              `;
@@ -87,6 +90,12 @@ export default class Transaction {
             console.log(stars);
             stars.forEach((element)=>{
               element.oninput=()=>{
+                var star_box=this.el.querySelector(".cycle-rating");
+                // star_box.classList.remove("active");
+                // star_box.classList.add("active");
+                stars.forEach((element)=>{
+                  element.style.color="orange";
+                })
                 rating=element.value;
                 console.log(element.value);
               }
@@ -113,7 +122,11 @@ export default class Transaction {
                   if (transactionUpdate.status !== 200) {
                     throw new Error(transactionUpdateJson.message);
                   }
-                  window.location.reload();
+                  var success=this.el.querySelector(".success");
+                  success.style.display="initial";
+                  var transac_feed= this.el.querySelector(".feedback-trans");
+                  transac_feed.style.display="none";
+                  // window.location.reload();
 
                 }
               }
@@ -131,7 +144,11 @@ export default class Transaction {
                 if (transactionUpdate.status !== 200) {
                   throw new Error(transactionUpdateJson.message);
                 }
-                window.location.reload();
+                var success=this.el.querySelector(".success");
+                success.style.display="initial";
+                var transac_feed= this.el.querySelector(".feedback-trans");
+                transac_feed.style.display="none";
+                // window.location.reload();
               }
               
               console.log("dealdone");
@@ -148,7 +165,11 @@ export default class Transaction {
               if (tranDel.status !== 200) {
                 throw new Error(tranDelJson.message);
               }
-              window.location.reload();
+              var success=this.el.querySelector(".success");
+              success.style.display="initial";
+              var transac_feed= this.el.querySelector(".feedback-trans");
+              transac_feed.style.display="none";
+              // window.location.reload();
               console.log("dealcanc");
 
             }

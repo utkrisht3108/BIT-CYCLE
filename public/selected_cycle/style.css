@@ -388,3 +388,15 @@ textarea {
           width: 90vw;
      }
 }
+.wait{
+     display: none;
+     color: blue;
+}
+.success{
+     display: none;
+     color: green;
+}
+.error{
+     display: none;
+     color: red;
+}
