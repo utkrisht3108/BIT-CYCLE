@@ -1,7 +1,18 @@
 .hidden{
      display: none ;
 }
-
+.success{
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: green;
+  font-weight: bold;
+}
+.error{
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: red;
+  font-weight: bold;
+}
 .wrong-input{
   border-color: red !important;
   border-width: 1rem;

@@ -7,7 +7,9 @@ try {
   userAccount = atob(userAccount);
   userAccount = JSON.parse(userAccount);
 } catch (error) {
-  console.log(error);
+  document.querySelector('.error').classList.remove('hidden');
+  document.querySelector('.error').innerHTML = error.message;
+  window.location.href = '../landing page/';
 }
 
 function party1() {
@@ -66,95 +68,87 @@ const removeWrongInput = (e, i) => {
 let requiredField = ['userId', 'room', 'phone', 'first_name', 'last_name'];
 
 const postUser = async (e) => {
-  try {
-    const formData = new FormData();
-    formData.append('email', userAccount.email);
-    console.log(formData.get('email'));
-    formData.append('password', userAccount.password);
-    formData.append('passwordConfirm', userAccount.passwordConfirm);
-    const firstName = e.target.first_name.value;
-    const lastName = e.target.last_name.value;
-    const name = firstName + ' ' + lastName;
-    formData.append('name', name);
-    formData.append('phone', e.target.phone.value);
-    formData.append('hostel', e.target.hostel.value);
-    formData.append('room', e.target.room.value);
-    if (e.target.userPhoto.files) {
-      formData.append('userImage', e.target.userPhoto.files[0]);
-    }
-    formData.append('userId', e.target.userId.files[0]);
-    console.log(e.target.userId.files[0]);
-    const resp = await fetch('/api/users/signup', {
-      method: 'POST',
-      body: formData,
-      credentials: 'include',
-    });
-    console.log(resp);
-    const respJSON = await resp.json();
-    //localStorage.removeItem('userAccount');
-    console.log(respJSON);
-    if (resp.status === 201) {
-      return respJSON.data.newUser._id;
-    } else {
-      throw new Error(respJSON.message);
-    }
-  } catch (error) {
-    console.log(error);
+  const formData = new FormData();
+  formData.append('email', userAccount.email);
+  console.log(formData.get('email'));
+  formData.append('password', userAccount.password);
+  formData.append('passwordConfirm', userAccount.passwordConfirm);
+  const firstName = e.target.first_name.value;
+  const lastName = e.target.last_name.value;
+  const name = firstName + ' ' + lastName;
+  formData.append('name', name);
+  formData.append('phone', e.target.phone.value);
+  formData.append('hostel', e.target.hostel.value);
+  formData.append('room', e.target.room.value);
+  if (e.target.userPhoto.files) {
+    formData.append('userImage', e.target.userPhoto.files[0]);
+  }
+  formData.append('userId', e.target.userId.files[0]);
+  console.log(e.target.userId.files[0]);
+  const resp = await fetch('/api/users/signup', {
+    method: 'POST',
+    body: formData,
+    credentials: 'include',
+  });
+  console.log(resp);
+  const respJSON = await resp.json();
+  //localStorage.removeItem('userAccount');
+  console.log(respJSON);
+  if (resp.status === 201) {
+    return respJSON.data.newUser._id;
+  } else {
+    throw new Error(respJSON.message);
   }
 };
 
 const postCycle = async (e, userId, checked) => {
-  try {
-    const formData = new FormData();
+  const formData = new FormData();
 
-    formData.append('model', e.target.cycleModel.value);
-    formData.append('color', e.target.cycleColor.value);
+  formData.append('model', e.target.cycleModel.value);
+  formData.append('color', e.target.cycleColor.value);
+  formData.append(
+    'boughtIn',
+    e.target.boughtIn.options[e.target.boughtIn.value - 1].innerHTML
+  );
+  if (e.target.brandname.value !== '7') {
     formData.append(
-      'boughtIn',
-      e.target.boughtIn.options[e.target.boughtIn.value - 1].innerHTML
+      'brand',
+      e.target.brandname.options[e.target.brandname.value - 1].innerHTML
     );
-    if (e.target.brandname.value !== '7') {
-      formData.append(
-        'brand',
-        e.target.brandname.options[e.target.brandname.value - 1].innerHTML
-      );
-    } else {
-      formData.append('brand', document.querySelector('#cycleBrand').value);
+  } else {
+    formData.append('brand', document.querySelector('#cycleBrand').value);
+  }
+  console.log(formData.get('brand'));
+  formData.append('owner', userId);
+  let accessories = [];
+  document.querySelectorAll('.accesories').forEach((node) => {
+    if (node.children[0].checked) {
+      accessories.push(node.children[1].innerHTML);
     }
-    console.log(formData.get('brand'));
-    formData.append('owner', userId);
-    let accessories = [];
-    document.querySelectorAll('.accesories').forEach((node) => {
-      if (node.children[0].checked) {
-        accessories.push(node.children[1].innerHTML);
-      }
+  });
+  accessories.forEach((acc) => {
+    formData.append('accessories', acc);
+  });
+  console.log(checked);
+  formData.append('forbuy', checked);
+  if (checked) {
+    formData.append('buyPrice', e.target.cyclePrice.value);
+    console.log(e.target.acc);
+  }
+  formData.append('forrent', document.querySelectorAll('.exist2')[0].checked);
+  if (e.target.photos.files) {
+    [...e.target.photos.files].forEach((file) => {
+      formData.append('cycleImages', file);
     });
-    accessories.forEach((acc) => {
-      formData.append('accessories', acc);
-    });
-    console.log(checked);
-    formData.append('forbuy', checked);
-    if (checked) {
-      formData.append('buyPrice', e.target.cyclePrice.value);
-      console.log(e.target.acc);
-    }
-    formData.append('forrent', document.querySelectorAll('.exist2')[0].checked);
-    if (e.target.photos.files) {
-      [...e.target.photos.files].forEach((file) => {
-        formData.append('cycleImages', file);
-      });
-    }
-    const resp = await fetch('/api/cycles/', {
-      method: 'POST',
-      body: formData,
-    });
-    const respJSON = await resp.json();
-    console.log(respJSON);
-    if (resp.status != 201) {
-      throw new Error(respJSON.message);
-    }
-  } catch (error) {
-    console.log(error);
+  }
+  const resp = await fetch('/api/cycles/', {
+    method: 'POST',
+    body: formData,
+  });
+  const respJSON = await resp.json();
+  console.log(respJSON);
+  if (resp.status != 201) {
+    throw new Error(respJSON.message);
   }
 };
 document.querySelector('.details-form').onsubmit = async (e) => {
@@ -198,6 +192,7 @@ document.querySelector('.details-form').onsubmit = async (e) => {
       count++;
       removeWrongInput(e, i);
     }
+    console.log(count,attr);
   }
   if (checkRadio) {
     if (document.querySelector('select[name="brandname"]').value === '7') {
@@ -212,13 +207,24 @@ document.querySelector('.details-form').onsubmit = async (e) => {
     }
   }
   if (count === requiredField.length + 2) {
-    const userId = await postUser(e);
-    localStorage.setItem('loggedIn', true);
-    localStorage.setItem('user_id', userId);
-    if (checkRadio) {
-      await postCycle(e, userId, checkRadio1);
+    try {
+      const userId = await postUser(e);
+      localStorage.setItem('loggedIn', true);
+      localStorage.setItem('user_id', userId);
+      if (checkRadio) {
+        await postCycle(e, userId, checkRadio1);
+      }
+      document.querySelector('.success').classList.remove('hidden');
+      document.querySelector('.error').classList.add('hidden');
+      window.location.href = '../cycle page/index.html';
+    } catch (error) {
+      document.querySelector('.error').classList.remove('hidden');
+      document.querySelector('.error').innerHTML = error.message;
     }
-    window.location.href = '../cycle page/index.html';
+  } else {
+    document.querySelector('.error').classList.remove('hidden');
+    document.querySelector('.error').innerHTML =
+      'Kindly complete all the required fields';
   }
 };
 document.getElementById('email').placeholder = userAccount.email;
