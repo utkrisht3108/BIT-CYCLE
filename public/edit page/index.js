@@ -11,9 +11,15 @@ function party2() {
   console.log(checkRadio);
   if (checkRadio != null) {
     part1.classList.add('hidden');
-    document.querySelector('input[name="cycleName"]').value = '';
+    document.querySelector('input[name="cycleModel"]').value = '';
     document.querySelector('input[name="cycleColor"]').value = '';
     document.querySelector('select[name="boughtIn"]').value = 1;
+    document
+      .querySelectorAll('input[name="acc"]')
+      .forEach((node) => (node.checked = false));
+    document.querySelectorAll('input[name="exist1"]')[1].checked = true;
+    party4();
+    document.querySelectorAll('input[name="exist2"]')[1].checked = true;
     console.log('sad');
   }
 }
@@ -33,9 +39,6 @@ function party4() {
   if (checkRadio != null) {
     part1.classList.add('hidden');
     document.querySelector('input[name="cyclePrice"]').value = '';
-    document
-      .querySelectorAll('input[name="acc"]')
-      .forEach((node) => (node.checked = false));
     console.log('sad');
   }
 }
@@ -92,6 +95,9 @@ async function show_data() {
       document.querySelector('input[name="exist1"]').checked = true;
       party3();
       document.getElementById('cyclePrice').value = cycle.buyPrice;
+    }
+    if(cycle.forrent){
+      document.querySelector('input[name="exist2"]').checked = true;
     }
   }
 
@@ -209,6 +215,8 @@ const sendCycle = async (e, checked, method) => {
       formData.append('cycleImages', file);
     });
   }
+  formData.append('forbuy', checked);
+  formData.append('forrent', document.querySelectorAll('.exist2')[0].checked);
   const resp = await fetch(url, {
     method: method,
     body: formData,

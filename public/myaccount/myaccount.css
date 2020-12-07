@@ -289,3 +289,7 @@ i{
             border: 8px outset grey;
         }
 }
+.success{
+    color: green;
+    display: none;
+}

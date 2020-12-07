@@ -57,6 +57,9 @@ const makeTemplate = (cycle) => {
   var buybtn = document.querySelector('.buy');
   var rentbtn = document.querySelector('.rent');
   var rentdates = document.querySelector('.rent-cycle');
+  var wait=document.querySelector(".wait");
+  var success=document.querySelector(".success");
+  var error=document.querySelector(".error");
   const commentBtn = document.querySelector('.comment-btn');
   const chatBtn = document.querySelector('.chat');
   if (buy_book == '1') {
@@ -78,6 +81,8 @@ const makeTemplate = (cycle) => {
       if (ownerId === currentUser) {
         throw new Error('Cannot rent your own cycle');
       }
+      success.style.display="none";
+      wait.style.display="initial";
       console.log(cycle);
       console.log(from, till);
       const resp = await fetch('/api/rent', {
@@ -95,7 +100,12 @@ const makeTemplate = (cycle) => {
       });
       const respJson = await resp.json();
       console.log(respJson);
+      if(respJson.status=="success"){
+        wait.style.display="none";
+        success.style.display="initial";
+      }
     } catch (err) {
+      alert(err.message);
       console.log(err);
     }
   };
@@ -109,6 +119,8 @@ const makeTemplate = (cycle) => {
       if (ownerId === currentUser) {
         throw new Error('Cannot buy your own cycle');
       }
+      success.style.display="none";
+      wait.style.display="initial";
       const resp = await fetch('/api/buy', {
         method: 'POST',
         body: JSON.stringify({
@@ -121,8 +133,14 @@ const makeTemplate = (cycle) => {
         },
       });
       const respJson = await resp.json();
+      if(respJson.status=="success"){
+        wait.style.display="none";
+        success.style.display="initial";
+      }
       console.log(respJson);
     } catch (err) {
+      alert(err.message);
+      // error.style.display="initial";
       console.log(err);
     }
   };
@@ -245,6 +263,9 @@ function gettemp(
             </div>
             <button class="btn btn-warning btn-block btn-lg rent neeche">Rent</button>
             <button class="btn btn-warning btn-block btn-lg buy neeche">Buy</button>
+            <div class="wait">Please Wait! Your request is being forwarded....</div>
+            <div class="success">Your request has been forwarded. You will recieve a conformation e-mail once the owner accepts your request. Thank You!</div>
+            <div class="error">Error</div>
             <div class="user-reviews">
                 <h4 class="userHead">User Reviews</h4> ${comment_temp}
             </div>

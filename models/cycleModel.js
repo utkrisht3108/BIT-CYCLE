@@ -37,8 +37,8 @@ const cycleSchema = new mongoose.Schema({
   ratingAvg: { type: Number, default: 1 },
   boughtIn: { type: String, required: true },
   buyPrice: { type: Number },
-  forbuy: { type: Boolean},
-  forrent: { type: Boolean, default: true},
+  forbuy: { type: Boolean, default: false },
+  forrent: { type: Boolean, default: true },
 });
 
 cycleSchema.pre(/^find/, function (next) {
