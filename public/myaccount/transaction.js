@@ -17,7 +17,7 @@ export default class Transaction {
     getelement() {
       var cycleName="";
       if(this.cycleDetails){
-        cycleName=this.cycleDetails.brand+" : "+this.cycleDetails.model;
+        cycleName=capitalizeFirstLetter(this.cycleDetails.brand)+" : "+capitalizeFirstLetter(this.cycleDetails.model);
         console.log(cycleName);
       }
       else{
@@ -43,9 +43,9 @@ export default class Transaction {
             return`
       <div class="transaction-display">
                <div class="transaction-details">
-                <li><span class="property">Transaction Type : </span> ${this.type} </li>
-                <li><span class="property">Owner : </span> ${this.owner} </li>
-                <li><span class="property">Customer : </span> ${this.costumer} </li>
+                <li><span class="property">Transaction Type : </span> ${capitalizeFirstLetter(this.type)} </li>
+                <li><span class="property">Owner : </span> ${capitalizeFirstLetter(this.owner)} </li>
+                <li><span class="property">Customer : </span> ${capitalizeFirstLetter(this.costumer)} </li>
                 <li><span class="property">Cycle : </span> ${cycleName} </li>
                 <div class="feedback-trans">
                   <button class="btn btn-primary deal-done">Deal Complete</button>     <span><button class="btn btn-primary deal-canc">Deal Cancelled</button></span>
@@ -74,9 +74,9 @@ export default class Transaction {
             return`
             <div class="transaction-display">
                <div class="transaction-details">
-                <li><span class="property">Transaction Type : </span> ${this.type} </li>
-                <li><span class="property">Owner : </span> ${this.owner} </li>
-                <li><span class="property">Customer : </span> ${this.costumer} </li>
+                <li><span class="property">Transaction Type : </span> ${capitalizeFirstLetter(this.type)} </li>
+                <li><span class="property">Owner : </span> ${capitalizeFirstLetter(this.owner)} </li>
+                <li><span class="property">Customer : </span> ${capitalizeFirstLetter(this.costumer)} </li>
                 <li><span class="property">Cycle : </span> ${cycleName} </li>
             </div>
              `;
@@ -170,6 +170,14 @@ export default class Transaction {
 
           }  
       }
+    }
+
+
+    function capitalizeFirstLetter(string) {
+      if(string)
+      return string.charAt(0).toUpperCase() + string.slice(1);
+      else
+      return string
     }
     
   

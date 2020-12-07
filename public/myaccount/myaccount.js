@@ -101,7 +101,7 @@ function gettemplate(name, email, hostel, room, phone,imagetemp) {
                </div>
                <div class="user-display">
                    <div class="user-details">
-                        <li><span class="property">Name : </span> ${name}</li>
+                        <li><span class="property">Name : </span> ${capitalizeFirstLetter(name)}</li>
                         <li><span class="property">Hostel : </span> ${hostel}<span class="property">  Room No. : </span>${room}</li>
                         <li><span class="property">Email-Id : </span> ${email}</li>
                         <li><span class="property">Phone Number : </span> ${phone}</li>
@@ -110,4 +110,10 @@ function gettemplate(name, email, hostel, room, phone,imagetemp) {
            </div>
            <div id="transaction-header"><h2>Your Transactions</h2></div>
       `;
+}
+function capitalizeFirstLetter(string) {
+  if(string)
+  return string.charAt(0).toUpperCase() + string.slice(1);
+  else
+  return string
 }

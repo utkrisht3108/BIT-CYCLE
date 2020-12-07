@@ -11,9 +11,11 @@ const cycleSchema = new mongoose.Schema({
   brand: {
     type: String,
     required: true,
+    lowercase: true,
   },
   model: {
     type: String,
+    required: true,
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,

@@ -7,7 +7,7 @@ if (localStorage.getItem('loggedIn') !== 'true') {
 const firstUser = localStorage.getItem('user_id');
 const secondUser = localStorage.getItem('secondUser');
 const secondUserName = document.createElement('div');
-secondUserName.innerHTML = localStorage.getItem('secondUserName');
+secondUserName.innerHTML = capitalizeFirstLetter(localStorage.getItem('secondUserName'));
 secondUserName.classList.add('userName');
 document.querySelector('.sender-name').appendChild(secondUserName);
 var my_chat = document.querySelector('#my-chat');
@@ -83,3 +83,9 @@ socket.on('received', (message) => {
 // localStorage.setItem("firstUser")
 //5fc3afe4ee3e03f5d4729332
 //5fc3afc25a05aae5268f13b9
+function capitalizeFirstLetter(string) {
+  if(string)
+  return string.charAt(0).toUpperCase() + string.slice(1);
+  else
+  return string
+}

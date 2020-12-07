@@ -56,7 +56,7 @@ export default class Cycle {
                         <div class="card  mb-4 box-shadow">
                             ${image_temp}
                             <div class="card-body">
-                                <p class="card-text cycle-model">${brand}-${model}</p>
+                                <p class="card-text cycle-model">${capitalizeFirstLetter(brand)}-${capitalizeFirstLetter(model)}</p>
                                 <div class="d-flex justify-content-between">
                                          <div class="row2 ml-auto mr-auto forbuy-btn chocolate">
                                              <button type="button" class="btn btn-md btn-primary neeche buy-btn">Buy</button>
@@ -96,4 +96,10 @@ export default class Cycle {
         `;
     }
   }
+}
+function capitalizeFirstLetter(string) {
+  if(string)
+  return string.charAt(0).toUpperCase() + string.slice(1);
+  else
+  return string
 }

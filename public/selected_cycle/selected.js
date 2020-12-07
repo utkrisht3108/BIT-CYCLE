@@ -243,15 +243,15 @@ function gettemp(
             </div>
             <div class="cycle-details">
                 <h4>Details</h4>
-                <li><span class="property">Brand :</span> ${brand}</li>
-                <li><span class="property">Model :</span> ${model}</li>
-                <li><span class="property">Colour :</span> ${color}</li>
+                <li><span class="property">Brand :</span> ${capitalizeFirstLetter(brand)}</li>
+                <li><span class="property">Model :</span> ${capitalizeFirstLetter(model)}</li>
+                <li><span class="property">Colour :</span> ${capitalizeFirstLetter(color)}</li>
                 <li><span class="property">Accessories available :</span> ${access_string}</li>
             </div>
             <div class="owner-details">
                 <h4>Owner</h4>
-                <li><span class="property">Name :</span> ${owner.name}</li>
-                <li><span class="property">Hostel:</span> 10 <span class="property"> Room no. : </span> 374</li>
+                <li><span class="property">Name :</span> ${capitalizeFirstLetter(owner.name)}</li>
+                <li><span class="property">Hostel:</span> ${owner.hostel} <span class="property"> Room no. : </span> ${owner.room}</li>
                 <li><button class="btn btn-primary btn-lg upar chat">Chat</button></li>
             </div>
             <div class="rent-cycle abcd">
@@ -297,7 +297,7 @@ function comments_template(comments) {
 
 function get_comment_template(element) {
   return `
-    <li><span class="property">${element.user.name} :</span> ${element.comment}</li>
+    <li><span class="property">${capitalizeFirstLetter(element.user.name)} :</span> ${element.comment}</li>
     `;
 }
 
@@ -363,4 +363,10 @@ function get_image_template2(element, i) {
   return `
     <li data-target="#ut" data-slide-to="${i}" ></li>
     `;
+}
+function capitalizeFirstLetter(string) {
+  if(string)
+  return string.charAt(0).toUpperCase() + string.slice(1);
+  else
+  return string
 }
