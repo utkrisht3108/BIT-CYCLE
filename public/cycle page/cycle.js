@@ -64,7 +64,6 @@ export default class Cycle {
                                          </div>
                                          <div class="row2 ml-auto mr-auto forrent-btn chocolate">
                                               <button type="button" class="btn btn-md btn-danger neeche book-btn">Book</button>
-                                             <div class="text-muted cycle-price neeche"> 20 rs/hr</div>
                                          </div>
                                 </div>
                             </div>
