@@ -18,7 +18,10 @@ body {
      margin-bottom: 5%;
 }
 .img-circle{
-  margin-right: 10px;
+  width: 40%;
+  height: 40%;
+  min-height: 150px;
+  min-width: 150px;
   border-radius: 100%;
 }
 .friend-name{

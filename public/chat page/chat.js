@@ -63,13 +63,15 @@ document.querySelector('.chat-form').onsubmit = (e) => {
   e.preventDefault();
   const message = e.target.message.value;
   e.target.message.value = '';
-  displayMyMessage(message, Date.now());
-  const conId = localStorage.getItem('conversation');
-  socket.emit('chat-message', {
-    message,
-    conId,
-    secondUser,
-  });
+  if(message){
+    displayMyMessage(message, Date.now());
+    const conId = localStorage.getItem('conversation');
+    socket.emit('chat-message', {
+      message,
+      conId,
+      secondUser,
+    });
+  }
 };
 socket.on('received', (message) => {
   console.log(message);
