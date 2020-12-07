@@ -3,6 +3,9 @@ body{
     background-image: url("images/wall.jpg");
     /* background-size: cover; */
 }
+.userName{
+    display: inline;
+}
 #chat-page{
     margin-top: 2%;
     margin-bottom: 4%;

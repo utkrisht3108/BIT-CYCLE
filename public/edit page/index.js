@@ -282,16 +282,22 @@ document.querySelector('.details-form').onsubmit = async (e) => {
   if (count === requiredField.length + 2) {
     try {
       await patchUser(e);
+      console.log(1);
       if (checkRadio) {
         if (cycle._id) {
           await sendCycle(e, checkRadio1, 'PATCH');
+          console.log(2);
         } else {
           await sendCycle(e, checkRadio1, 'POST');
+          console.log(3);
         }
       }
-      if (cycle && !checkRadio) {
+      console.log(4);
+      if (cycle._id && !checkRadio) {
         await deleteCycle();
+        console.log(5);
       }
+      console.log(6);
       document.querySelector('.success').classList.remove('hidden');
       document.querySelector('.error').classList.add('hidden');
       window.location.href = '../cycle page/index.html';

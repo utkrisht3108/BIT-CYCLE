@@ -47,6 +47,9 @@ document.getElementById('signupButton').onclick = () => {
     if (password !== passwordConfirm) {
       throw new Error('Passwords do not match');
     }
+    if (password.length < 8) {
+      throw new Error('Password is too short(8 letters)');
+    }
     let account = {
       email,
       password,

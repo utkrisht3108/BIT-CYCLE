@@ -5,6 +5,9 @@ export default class Conversation {
   }
 
   getElement() {
+    if (!this.user.userImage) {
+      this.user.userImage = 'default.jpg';
+    }
     const temp = this.getTemplate(this.user);
     var temp_div = document.createElement('div');
     temp_div.innerHTML = temp;
@@ -13,14 +16,14 @@ export default class Conversation {
     return this.el;
   }
 
-  // yaha pe jo return ho vo "row" wali class ke andar ho 
+  // yaha pe jo return ho vo "row" wali class ke andar ho
   getTemplate(user) {
     return `
     <div class="col-lg-3 col-md-4 col-sm-6">
             <a href="#" >
-                <img src="images/default.jpg" alt="" class="img-circle">
+                <img src="../img/user/${user.userImage}" alt="" class="img-circle">
                 <div class="friend-name conversation">
-                    <strong>${user}</strong>
+                    <strong>${user.name}</strong>
                 </div>
             </a>
         </div>
@@ -29,8 +32,9 @@ export default class Conversation {
 
   eventListeners() {
     this.el.querySelector('.conversation').onclick = () => {
-      localStorage.setItem('secondUser', this.user);
-      window.location.href = '../chat page/';
+      localStorage.setItem('secondUser', this.user._id);
+      localStorage.setItem('secondUserName', this.user.name);
+      window.location.href = `../chat page/`;
     };
   }
 }
