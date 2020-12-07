@@ -148,7 +148,7 @@ const addWrongInput = (e, i) => {
 const removeWrongInput = (e, i) => {
   e.target.elements[i].classList.remove('wrong-input');
 };
-let requiredField = ['room', 'phone', 'first_name', 'last_name'];
+
 
 const patchUser = async (e) => {
   const formData = new FormData();
@@ -231,12 +231,14 @@ const sendCycle = async (e, checked, method) => {
 };
 
 const deleteCycle = async () => {
+
   const resp = await fetch(`/api/cycles/${cycle._id}`, { method: 'DELETE' });
   if (resp.status !== 200) {
     throw new Error((await resp.json()).message);
   }
 };
 document.querySelector('.details-form').onsubmit = async (e) => {
+  let requiredField = ['room', 'phone', 'first_name', 'last_name'];
   e.preventDefault();
   const checkRadio = document.querySelectorAll('.exist')[0].checked;
   const checkRadio1 = document.querySelectorAll('.exist1')[0].checked;
