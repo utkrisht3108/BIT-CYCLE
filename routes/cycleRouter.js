@@ -5,12 +5,12 @@ const authController = require('../controllers/authController');
 const router = express.Router();
 router
   .route('/:id')
-  .get(cycleController.getCycle)
+  .get(authController.protect, cycleController.getCycle)
   .patch(cycleController.uploadImage, cycleController.updateCycle)
   .delete(cycleController.deleteCycle);
 router
   .route('/')
-  .get(cycleController.getAllCycles)
+  .get(authController.protect, cycleController.getAllCycles)
   .post(cycleController.uploadImage, cycleController.addCycle);
 
 module.exports = router;

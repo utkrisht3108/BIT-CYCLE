@@ -244,7 +244,7 @@ async function get_cycles() {
     const respJson = await res.json();
     console.log(respJson);
     if (respJson.status === 'error') {
-      throw new Error(respJSON.message);
+      throw new Error(respJson.message);
     }
 
     respJson.data.cycle.forEach((element) => {

@@ -7,9 +7,13 @@ router.route('/login').post(authController.login);
 router.route('/logout').post(authController.logout);
 router.route('/forgotPassword').post(authController.forgotPassword);
 router.route('/resetPassword').patch(authController.resetPasssword);
-router.route('/').get(authController.getAllUser);
+router.route('/').get(authController.protect, authController.getAllUser);
 router
   .route('/:id')
-  .get(authController.getUser)
-  .patch(authController.uploadImage,authController.updateUser);
+  .get(authController.protect, authController.getUser)
+  .patch(
+    authController.protect,
+    authController.uploadImage,
+    authController.updateUser
+  );
 module.exports = router;
