@@ -65,7 +65,7 @@ const addWrongInput = (e, i) => {
 const removeWrongInput = (e, i) => {
   e.target.elements[i].classList.remove('wrong-input');
 };
-let requiredField = ['userId', 'room', 'phone', 'first_name', 'last_name'];
+
 
 const postUser = async (e) => {
   const formData = new FormData();
@@ -152,6 +152,7 @@ const postCycle = async (e, userId, checked) => {
   }
 };
 document.querySelector('.details-form').onsubmit = async (e) => {
+  let requiredField = ['userId', 'room', 'phone', 'first_name', 'last_name'];
   e.preventDefault();
   const checkRadio = document.querySelectorAll('.exist')[0].checked;
   const checkRadio1 = document.querySelectorAll('.exist1')[0].checked;

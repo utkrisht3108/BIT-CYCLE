@@ -146,6 +146,7 @@ const makeTemplate = (cycle) => {
   };
   chatBtn.onclick = () => {
     localStorage.setItem('secondUser', cycle.owner._id);
+    localStorage.setItem('secondUserName', cycle.owner.name);
     window.location.href = '../chat page/';
   };
   commentBtn.onclick = async () => {
