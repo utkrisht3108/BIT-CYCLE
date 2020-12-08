@@ -420,10 +420,11 @@ h2 {
   text-align: center;
 }
 .test-image {
-  width: 10%;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   margin: 20px;
-  padding-bottom: 2%;
+  /* padding-bottom: 2%; */
 }
 .carousel-item {
   padding: 3% 15%;
