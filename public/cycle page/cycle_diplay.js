@@ -249,9 +249,10 @@ async function get_cycles() {
 
     respJson.data.cycle.forEach((element) => {
       if (
-        !element.bookingStarts ||
+        (!element.bookingStarts ||
         !element.bookingEnds ||
-        Date.now() > element.bookingEnds
+        Date.now() > element.bookingEnds) &&
+        (element.forbuy || element.forrent)
       ) {
         cycle_arr.push(
           new Cycle(
