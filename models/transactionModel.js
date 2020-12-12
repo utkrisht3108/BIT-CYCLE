@@ -37,7 +37,7 @@ transactionSchema.pre('save', async function (next) {
   delete doc._id;
   delete doc.createdAt;
   delete doc.updatedAt;
-  if ((await this.constructor.findOne(doc))._id) {
+  if ((await this.constructor.findOne(doc))) {
     next(new Error('Transaction exists'));
   }
 });

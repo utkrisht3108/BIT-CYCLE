@@ -14,7 +14,7 @@ const makeTransaction = async () => {
       await buyCycle(data);
     }
   } catch (error) {
-    console.log(error);
+    alert(error.message);
   }
 };
 
