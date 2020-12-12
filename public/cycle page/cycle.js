@@ -63,7 +63,7 @@ export default class Cycle {
                                              <div class="text-muted cycle-price neeche"> ${buyPrice}rs</div>
                                          </div>
                                          <div class="row2 ml-auto mr-auto forrent-btn chocolate">
-                                              <button type="button" class="btn btn-md btn-danger neeche book-btn">Book</button>
+                                              <button type="button" class="btn btn-md btn-danger book-btn extra">Book</button>
                                          </div>
                                 </div>
                             </div>

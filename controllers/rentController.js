@@ -19,7 +19,7 @@ module.exports = {
     const subject = 'BIT CYCLES Rent Offer';
     const message = `A user is interested in renting your ${cycle.brand} cycle from ${from} to ${to} your cycle. 
     You can contact the user for finalizing the price.Click the link below to confirm the booking.Details of the your are also given below
-    User: Name:${renter.name}, mobile:${renter.mobile},email:${renter.email},hostel:${renter.hostel},
+    User: Name:${renter.name}, mobile:${renter.phone},email:${renter.email},hostel:${renter.hostel},
     Room:${renter.room}
     
     ConfirmationLink: http://bit-cycle.ap-south-1.elasticbeanstalk.com/success%20page/index.html?owner=${ownerId}&cycle=${cycleId}&renter=${renterId}&from=${from}&to=${to}&rent=true`;

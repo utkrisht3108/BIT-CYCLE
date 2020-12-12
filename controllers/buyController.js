@@ -16,7 +16,7 @@ module.exports = {
     const subject = 'BIT CYCLES Buy Offer';
     const message = `A user is interested in buying your ${cycle.brand} cycle for ${cycle.buyPrice}. 
     You can contact the user for finalizing the price.Click the link below to confirm the booking.Details of the your are also given below
-    User: Name:${buyer.name}, mobile:${buyer.mobile},email:${buyer.email},hostel:${buyer.hostel},
+    User: Name:${buyer.name}, mobile:${buyer.phone},email:${buyer.email},hostel:${buyer.hostel},
     Room:${buyer.room}
     
     ConfirmationLink: http://bit-cycle.ap-south-1.elasticbeanstalk.com/success%20page/index.html?owner=${ownerId}&cycle=${cycleId}&buyer=${buyerId}&buy=true`;

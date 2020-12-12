@@ -158,18 +158,15 @@ i{
 }
 
 #filter h3 {
-    font-family: "Castoro";
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 #filter h5 {
-    font-family: "Castoro";
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #filter li {
-    font-family: "Dancing Script";
     padding-left: 8px;
     list-style: none;
-    font-weight: bold;
     font-size: 20px;
 }
 .rangeval{
@@ -225,7 +222,7 @@ i{
     min-height: 100vw;
     display: flex;
     flex-wrap: wrap;
-    min-height: 750px;
+    min-height: 775px;
 }
 
 .cycle {
@@ -242,7 +239,9 @@ i{
     transition: 0.3s;
     z-index: 3;
 }
-
+.extra{
+    margin-bottom: 24px;
+}
 .cycle-photo {
     width: 95%;
     height: 60%;
