@@ -13,7 +13,7 @@ module.exports = {
     const { cycleId, ownerId, renterId, from, to } = req.body;
     const owner = await User.findOne({ _id: ownerId }).select('email');
     const renter = await User.findOne({ _id: renterId }).select(
-      'name room hostel mobile email'
+      'name room hostel phone email'
     );
     const cycle = await Cycle.findOne({ _id: cycleId }).select('brand model');
     const subject = 'BIT CYCLES Rent Offer';
@@ -29,10 +29,10 @@ module.exports = {
   confirmCycle: catchAsync(async (req, res) => {
     const { cycleId, ownerId, renterId, from, to } = req.body;
     const owner = await User.findOne({ _id: ownerId }).select(
-      'name room hostel mobile email'
+      'name room hostel phone email'
     );
     const renter = await User.findOne({ _id: renterId }).select(
-      'name room hostel mobile email'
+      'name room hostel phone email'
     );
     const cycle = await Cycle.findOne({ _id: cycleId }).select('brand model');
     const subject = 'BIT CYCLES RENT CONFIRMATION';

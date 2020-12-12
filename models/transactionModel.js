@@ -31,4 +31,16 @@ const transactionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-exports.Transaction = mongoose.model('Transaction', transactionSchema);
+transactionSchema.pre('save', async function (next) {
+  let doc = this;
+  doc = doc.toObject();
+  delete doc._id;
+  delete doc.createdAt;
+  delete doc.updatedAt;
+  if ((await this.constructor.findOne(doc))._id) {
+    next(new Error('Transaction exists'));
+  }
+});
+const Transaction = mongoose.model('Transaction', transactionSchema);
+
+exports.Transaction = Transaction;

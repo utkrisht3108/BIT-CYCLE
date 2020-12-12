@@ -3,76 +3,79 @@ const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const { cycleSchema, Cycle } = require('./cycleModel');
 
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    trim: true,
-  },
-  email: {
-    type: String,
-    trim: true,
-    required: true,
-    match: [
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      'Please fill a valid email address',
-    ],
-    unique: true,
-  },
-  phone: {
-    type: Number,
-    // required: [true, 'Please enter a mobile number'],
-    match: [
-      /^((\+){1}91){1}[1-9]{1}[0-9]{9}$/,
-      'Please enter a valid mobile number',
-    ],
-    unique: false,
-  },
-  password: {
-    type: String,
-    required: [true, 'Please Enter a password'],
-    minlength: 8,
-    select: false,
-  },
-  passwordConfirm: {
-    type: String,
-    required: [true, 'Please Confirm your password'],
-    validate: {
-      validator: function (element) {
-        return element === this.password;
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      trim: true,
+    },
+    email: {
+      type: String,
+      trim: true,
+      required: true,
+      match: [
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+        'Please fill a valid email address',
+      ],
+      unique: true,
+    },
+    phone: {
+      type: Number,
+      required: [true, 'Please enter a mobile number'],
+      match: [
+        /^((\+){1}91){1}[1-9]{1}[0-9]{9}$/,
+        'Please enter a valid mobile number',
+      ],
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: [true, 'Please Enter a password'],
+      minlength: 8,
+      select: false,
+    },
+    passwordConfirm: {
+      type: String,
+      required: [true, 'Please Confirm your password'],
+      validate: {
+        validator: function (element) {
+          return element === this.password;
+        },
+        message: 'Passwords do not match',
       },
-      message: 'Passwords do not match',
     },
-  },
-  passwordChangedAt: {
-    type: Date,
-    select: false,
-  },
-  cycles: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Cycle',
-      unique: false,
+    passwordChangedAt: {
+      type: Date,
+      select: false,
     },
-  ],
-  hostel: {
-    type: Number,
-    min: 1,
-    max: 14,
+    cycles: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Cycle',
+        unique: false,
+      },
+    ],
+    hostel: {
+      type: Number,
+      min: 1,
+      max: 14,
+    },
+    room: {
+      type: Number,
+      min: 1,
+      max: 500,
+    },
+    userImage: {
+      type: String,
+    },
+    userId: {
+      type: String,
+    },
+    passwordResetToken: String,
+    resetTokenExpires: Date,
   },
-  room: {
-    type: Number,
-    min: 1,
-    max: 500,
-  },
-  userImage: {
-    type: String,
-  },
-  userId: {
-    type: String,
-  },
-  passwordResetToken: String,
-  resetTokenExpires: Date,
-});
+  { autoIndex: true }
+);
 
 userSchema.pre('save', async function (next) {
   if (this.isModified('password')) {
@@ -83,6 +86,15 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+userSchema.post('save', function (error, doc, next) {
+  if (error.name === 'MongoError' && error.code === 11000) {
+    if (error.message.includes('email_1 dup key'))
+      next(new Error('email must be unique'));
+    else next(new Error('phone must be unique'));
+  } else {
+    next(error);
+  }
+});
 userSchema.methods.checkPassword = async function (
   enteredPassword,
   actualPassword
@@ -126,3 +138,11 @@ userSchema.methods.checkResetToken = async function (userToken) {
 };
 exports.User = mongoose.model('User', userSchema);
 exports.userSchema = userSchema;
+
+// this.User.on('index', function(err) {
+//   if (err) {
+//       console.error('User index error: %s', err);
+//   } else {
+//       console.info('User indexing complete');
+//   }
+// });
